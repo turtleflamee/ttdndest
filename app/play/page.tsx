@@ -369,44 +369,60 @@ function PlayPageInner() {
   };
 
   /* ================================================================ */
-  /*  Redo entire game (new game, same settings)                      */
+  /*  Reset game (same game, fresh start)                             */
   /* ================================================================ */
 
-  const handleRedoGame = async () => {
-    if (!game || !gameId) return;
-    if (!confirm("Start a completely new game with the same settings? This won't delete the current game.")) return;
+  const handleResetGame = async () => {
+    if (!gameId || !game) return;
+    if (!confirm("Reset this game? All history will be wiped and it starts over from Turn 0.")) return;
 
+    setGenerating(true);
+    setError(null);
     try {
-      setGenerating(true);
-      setError(null);
+      const reset: Partial<GameState> = {
+        turnCounter: 0,
+        history: [],
+        previous_response_id: null,
+        scene_title: undefined,
+        game_complete: false,
+        lastPlayerMoves: undefined,
+        memoryBundle: {
+          canon: [],
+          beats: [],
+          open_threads: [],
+          characters: {},
+          active_consequences: [],
+          known_locations: game.memoryBundle.known_locations ?? [],
+          story_beats: game.memoryBundle.story_beats,
+          current_location: game.memoryBundle.known_locations?.[0],
+        },
+      };
 
-      const res = await fetch("/api/games", {
-        method: "POST",
+      // Clear pending cards on all players
+      const updatedPlayers = game.players.map((p) => ({
+        ...p,
+        pendingCard: undefined,
+      }));
+      (reset as Record<string, unknown>).players = updatedPlayers;
+
+      await fetch(`/api/games/${gameId}`, {
+        method: "PUT",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name: game.name,
-          playerCount: game.playerCount,
-          playerNames: game.players.map((p) => p.name),
-          scenarioId: game.scenario_id,
-          gameMode: game.game_mode,
-          deckType: game.deck ? undefined : undefined, // deck type not stored, will use default
-          promptSetCode: game.prompt_set_code,
-          inputMode: game.input_mode,
-          plateId: game.plate_id,
-          archetypes: game.players.map((p) => p.archetype).filter(Boolean),
-        }),
+        body: JSON.stringify(reset),
       });
 
-      if (!res.ok) {
-        const body = await res.json().catch(() => ({}));
-        throw new Error(body.error || "Failed to create new game");
-      }
+      // Reset local state
+      setDisplayResponse(null);
+      setSegments([]);
+      setDebugData({});
+      setHistoryTurn(null);
+      autoGenStarted.current = false;
+      hasShownHistory.current = false;
 
-      const newGame: GameState = await res.json();
-      // Navigate to the new game
-      window.location.href = `/play?id=${newGame.id}`;
+      await fetchGame();
     } catch (e: unknown) {
-      setError(e instanceof Error ? e.message : "Redo failed");
+      setError(e instanceof Error ? e.message : "Reset failed");
+    } finally {
       setGenerating(false);
     }
   };
@@ -418,28 +434,31 @@ function PlayPageInner() {
   const [debugRounds, setDebugRounds] = useState<number>(3);
   const [debugRunning, setDebugRunning] = useState(false);
   const [debugProgress, setDebugProgress] = useState<string>("");
+  const [debugCardLog, setDebugCardLog] = useState<string[]>([]);
 
   const handleDebugAutoRun = async () => {
     if (!gameId || !game || debugRunning || generating) return;
 
     setDebugRunning(true);
     setError(null);
+    setDebugCardLog([]);
 
     try {
       for (let round = 0; round < debugRounds; round++) {
-        // Re-fetch game state to get current hands and turn counter
         const gameRes = await fetch(`/api/games/${gameId}`);
         if (!gameRes.ok) throw new Error("Failed to fetch game");
         const currentGame: GameState = await gameRes.json();
 
-        const currentTurnNum = currentGame.turnCounter;
-        setDebugProgress(`Round ${round + 1}/${debugRounds} (Turn ${currentTurnNum})...`);
+        const turnNum = currentGame.turnCounter;
+        setDebugProgress(`Round ${round + 1}/${debugRounds} (Turn ${turnNum})...`);
 
         // For turns > 1, pick random cards and submit them
-        if (currentTurnNum > 1) {
+        if (turnNum > 1) {
+          const picks: string[] = [];
           for (const player of currentGame.players) {
             if (player.hand && player.hand.length > 0 && !player.pendingCard) {
               const randomCard = player.hand[Math.floor(Math.random() * player.hand.length)];
+              picks.push(`${player.name}: "${randomCard.text}"`);
               await fetch("/api/player/submit-card", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
@@ -452,6 +471,11 @@ function PlayPageInner() {
               });
             }
           }
+          if (picks.length > 0) {
+            setDebugCardLog((prev) => [...prev, `Turn ${turnNum}: ${picks.join(" | ")}`]);
+          }
+        } else {
+          setDebugCardLog((prev) => [...prev, `Turn ${turnNum}: (auto — no cards needed)`]);
         }
 
         // Generate the turn
@@ -463,7 +487,7 @@ function PlayPageInner() {
 
         if (!genRes.ok) {
           const body = await genRes.json().catch(() => ({}));
-          throw new Error(body.error || `Generation failed at turn ${currentTurnNum}`);
+          throw new Error(body.error || `Generation failed at turn ${turnNum}`);
         }
 
         const raw = await genRes.json();
@@ -475,19 +499,18 @@ function PlayPageInner() {
         hasShownHistory.current = true;
         await fetchGame();
 
-        // Check if game is complete
         if (resp.game_complete) {
-          setDebugProgress("Game completed!");
+          setDebugCardLog((prev) => [...prev, "--- Game Complete! ---"]);
           break;
         }
       }
 
-      setDebugProgress("");
+      setDebugProgress("Done!");
+      setTimeout(() => setDebugProgress(""), 3000);
     } catch (e: unknown) {
       setError(e instanceof Error ? e.message : "Debug auto-run failed");
     } finally {
       setDebugRunning(false);
-      setDebugProgress("");
     }
   };
 
@@ -689,15 +712,15 @@ function PlayPageInner() {
             </p>
           </div>
 
-          {/* Redo game button */}
+          {/* Reset game button */}
           <button
             className="btn btn-ghost text-xs px-3 py-1.5 shrink-0"
-            style={{ color: "var(--warning)" }}
-            onClick={handleRedoGame}
+            style={{ color: "var(--danger)" }}
+            onClick={handleResetGame}
             disabled={generating || debugRunning}
-            title="Start a new game with the same settings"
+            title="Reset game — wipe all history and restart from Turn 0"
           >
-            Redo Game
+            Reset Game
           </button>
 
           {/* Player status pills */}
@@ -977,7 +1000,7 @@ function PlayPageInner() {
                 )}
               </div>
 
-              {/* Debug toggle + auto-run */}
+              {/* Debug toggle */}
               <div className="flex items-center justify-between mt-2">
                 {error && (
                   <p className="text-xs" style={{ color: "var(--danger)" }}>{error}</p>
@@ -1024,8 +1047,21 @@ function PlayPageInner() {
                     )}
                   </div>
                   <p className="text-[10px] mt-1" style={{ color: "var(--text-secondary)" }}>
-                    Picks random cards from each player's hand and generates rounds automatically.
+                    Picks random cards from each player&apos;s hand per round. Turns 0-1 auto-generate without cards.
                   </p>
+
+                  {/* Card pick log */}
+                  {debugCardLog.length > 0 && (
+                    <div className="mt-2 p-2 rounded text-[11px] font-mono max-h-40 overflow-y-auto"
+                      style={{ background: "var(--bg-primary)", border: "1px solid var(--border)" }}>
+                      <p className="font-sans font-semibold text-xs mb-1" style={{ color: "var(--accent)" }}>
+                        Cards Picked:
+                      </p>
+                      {debugCardLog.map((line, i) => (
+                        <div key={i} style={{ color: "var(--text-secondary)" }}>{line}</div>
+                      ))}
+                    </div>
+                  )}
                 </div>
               )}
             </div>
