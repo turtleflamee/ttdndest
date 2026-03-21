@@ -1,0 +1,278 @@
+{
+  "id": "ancient-japan",
+  "name": "The Autumn Blade",
+  "description": "A samurai drama set during Japan's Sengoku period, where loyalty is tested, alliances shift like autumn leaves, and the path of honour leads through blood and shadow.",
+  "critique_score": 2.7,
+  "deck_type": "adventure",
+  "target_audience": {
+    "age_range": "16-18",
+    "genre": "samurai political thriller",
+    "tone": "serious, contemplative, tragic beauty",
+    "themes": [
+      "honor vs survival",
+      "loyalty and betrayal",
+      "duty",
+      "impermanence",
+      "political intrigue"
+    ],
+    "content_warnings": [
+      "violence",
+      "assassination",
+      "political intrigue",
+      "ritual suicide references"
+    ],
+    "vibe": "Kurosawa meets a spy thriller — honor is real but it's also a trap, and beauty exists alongside violence"
+  },
+  "evaluation_criteria": {
+    "primary_goal": "tension between honor and pragmatism with precise, grounded combat",
+    "tone_requirement": "serious and contemplative with moments of stillness between action — the garden matters as much as the blade",
+    "character_expectation": "NPCs wrestling with impossible loyalties, each choice carrying real weight",
+    "audio_priority": "TTS clarity with physical precision in combat — describe the mechanics of movement and strikes",
+    "success_question": "Would a player feel the tragedy of impossible choices and remember the quiet moments?",
+    "strict_genre_enforcement": true
+  },
+  "world": "Sengoku realism. No modern gadgets. If powder is used, it is ash, pepper, or lamp soot thrown by hand. Combat is grounded: foot placement, grip, distance, timing, and injury. Armor and wet ground matter. Guards fight in groups. A single cut has lasting cost.",
+  "locations": [
+    {
+      "name": "Tsuwano Castle",
+      "description": "A mountain fortress of grey stone and dark timber perched on a hilltop above the town. The approach winds upward through three gates, each narrower than the last, designed so that attackers are funneled into killing zones. The main keep is five stories tall with white plaster walls and curved tile roofs. Inside, the audience hall is austere — tatami mats, sliding paper screens, and a raised platform where Lord Mori receives guests. The castle's garden, visible through open screens, is a carefully maintained landscape of moss, stone, and a single ancient maple tree that drops red leaves into a koi pond. The beauty is deliberate. In a place built for war, the garden is a statement about what is worth defending.",
+      "connected_to": [
+        "The Castle Town",
+        "The Mountain Path"
+      ],
+      "npcs_present": [
+        "Lord Mori Takahiro",
+        "Lady Hana"
+      ]
+    },
+    {
+      "name": "The Castle Town",
+      "description": "The settlement spread below the castle — a grid of narrow streets lined with merchant shops, sake houses, workshops, and the residences of samurai who serve Lord Mori. The main street runs from the castle gate to the river bridge and is busy with commerce: rice merchants, sword polishers, fabric sellers, and food stalls serving grilled fish and soba noodles. The sake house near the bridge — the Fallen Leaf — is where off-duty samurai drink and where rumours circulate faster than the sake. Side streets lead to quieter neighborhoods where craftsmen work and monks beg and the occasional ronin sleeps under an awning.",
+      "connected_to": [
+        "Tsuwano Castle",
+        "The River Bridge",
+        "The Temple District"
+      ],
+      "npcs_present": [
+        "Goro the Innkeeper"
+      ]
+    },
+    {
+      "name": "The Temple District",
+      "description": "A cluster of Buddhist temples and Shinto shrines on the eastern edge of town, built against the forested hillside. The largest temple — Zuiho-ji — has a gravel courtyard, a bronze bell, and a meditation hall where monks chant at dawn and dusk. The temple grounds are officially neutral territory where no weapons may be drawn, a rule that has been broken exactly three times in living memory, each time with consequences that nobody wants to repeat. The head monk is old, respected, and sees more than he says. The graveyard behind the temple holds fresh graves from the recent feast incident.",
+      "connected_to": [
+        "The Castle Town",
+        "The Mountain Path"
+      ],
+      "npcs_present": [
+        "Abbot Ryozen"
+      ]
+    },
+    {
+      "name": "The River Bridge",
+      "description": "A wooden bridge spanning the Tsuwano River at the southern edge of town. The river runs fast and cold from the mountains, and the bridge is wide enough for a cart but narrow enough that two swordsmen could hold it against an army — which has happened twice in the castle's history, and the locals have not stopped talking about either time. The bridge is also the checkpoint where travelers enter and leave town. Guards check travel papers and collect tolls, and they have been more thorough than usual since the death at the feast.",
+      "connected_to": [
+        "The Castle Town",
+        "The Trade Road"
+      ],
+      "npcs_present": []
+    },
+    {
+      "name": "The Mountain Path",
+      "description": "A narrow trail that climbs from behind the Temple District into the forested mountains above Tsuwano. Cedar and pine grow thick on either side, and the path twists through moss-covered boulders and across streams on stepping stones. A ruined watchtower sits at the highest point, abandoned decades ago but still offering a clear view of the valley below and the trade road approaching from the south. The path is used by hunters, monks seeking solitude, and people who need to leave town without passing through the bridge checkpoint.",
+      "connected_to": [
+        "Tsuwano Castle",
+        "The Temple District"
+      ],
+      "npcs_present": [
+        "Kaze"
+      ]
+    },
+    {
+      "name": "The Trade Road",
+      "description": "The main road connecting Tsuwano to the wider world — a packed-earth highway lined with pine trees that runs south toward the coast and north toward the interior. Way stations offer food and shelter at intervals of a day's walk, and the road is busy with merchants, soldiers, pilgrims, and messengers. Bandits occasionally operate in the forested stretches between towns, but the real danger is the checkpoints where rival domains inspect travelers and sometimes confiscate them.",
+      "connected_to": [
+        "The River Bridge"
+      ],
+      "npcs_present": []
+    }
+  ],
+  "npcs": [
+    {
+      "name": "Lord Mori Takahiro",
+      "role": "Daimyo of Tsuwano",
+      "portrait": "Lord Mori is fifty-two and carries the years like armour — they have made him heavier and harder to move but also harder to damage. He is of average height but powerfully built, with a thick neck and broad shoulders that speak of decades of martial training. His hair is grey and tied in a severe topknot, and his face is square-jawed with deep-set eyes that evaluate everyone he meets as either an asset, a threat, or irrelevant. He wears formal kamishimo — the wide-shouldered vest and hakama trousers of a lord — in muted dark blue with his clan mon embroidered in silver. His hands are scarred from a lifetime of swordsmanship and he keeps them folded in his lap when seated, which makes them invisible, which is the point.",
+      "personality": "Strategic, cautious, and burdened by the knowledge that his small domain survives only through careful political navigation. He is not cruel but he is pragmatic to the point of ruthlessness when his people are threatened. He values loyalty above all else because he has been betrayed before.",
+      "speaking_style": "Formal, deliberate, and controlled. Every word is chosen. He speaks less than anyone in the room and observes more. When he gives an order, it sounds like a suggestion, but everyone understands it is not.",
+      "agenda": "Keep Tsuwano independent, identify who poisoned the visiting diplomat at the feast, and decide which of the great warlords to ally with before the choice is made for him",
+      "secret": "He knows who ordered the poisoning. His own wife arranged it to prevent an alliance that would have put Tsuwano under Nobunaga's control. He has not decided what to do about this."
+    },
+    {
+      "name": "Lady Hana",
+      "role": "Wife of Lord Mori and Political Strategist",
+      "portrait": "Lady Hana is forty-five and beautiful in the way a well-forged blade is beautiful — with purpose, precision, and an edge that draws blood before you know you have been cut. She is tall for a woman of the period, slender, with hair that was once black and is now streaked with silver, worn up in elaborate arrangement with lacquered pins that are sharper than they need to be. Her face is pale and composed, with high cheekbones and eyes like polished obsidian — dark, reflective, and revealing nothing. She wears layered kimono in seasonal colours — currently autumn reds and golds — and moves with the practiced grace of someone trained from childhood in the art of being watched.",
+      "personality": "Brilliant, ruthless when necessary, and devoted to her husband's domain with a ferocity that terrifies the castle staff. She sees politics as warfare conducted with words and poison instead of swords, and she is better at it than anyone else in Tsuwano.",
+      "speaking_style": "Elegant, indirect, and layered with meaning. She speaks through implication, suggestion, and the careful arrangement of silences. What she does not say is always more important than what she does.",
+      "agenda": "Protect Tsuwano's independence by any means necessary, including the elimination of threats her husband is too honourable to handle himself",
+      "secret": "She poisoned the visiting diplomat because his proposed alliance would have made Tsuwano a vassal state. She does not regret it, but she knows her husband suspects, and the distance between them is growing."
+    },
+    {
+      "name": "Kaze",
+      "role": "Ronin and Former Ninja",
+      "portrait": "Kaze is thirty and looks like the road has been chewing on him for a while. He is lean to the point of gaunt, with sharp features weathered by sun and wind, and dark eyes that move constantly — scanning exits, counting threats, measuring distances. His hair is unkempt, tied loosely back, and a thin scar crosses his throat from ear to ear, the souvenir of someone who almost killed him and failed by a quarter inch. He wears a faded, patched kimono over worn hakama and carries a single katana in a battered scabbard. His sandals are held together with cord. He looks like a vagabond, which is deliberate — people who look dangerous get watched, and Kaze's greatest skill is not being watched until it is too late.",
+      "personality": "Quiet, observant, and haunted by a past he does not discuss. He has the discipline of a trained warrior and the wariness of a man who has been betrayed by people he trusted. He helps people who cannot help themselves, but he does it quietly, and he does not stay long enough to be thanked.",
+      "speaking_style": "Sparse and direct. Speaks only when necessary, using as few words as possible. Occasionally says something unexpectedly poetic, revealing an education he tries to hide. Prefers silence to small talk.",
+      "agenda": "He is tracking someone — a former associate from the Iga ninja clan who betrayed their team and is now operating in Tsuwano. He will find them. What happens after that depends on what he learns.",
+      "secret": "He was Iga-trained — a ninja who left the clan after being ordered to kill a family, including children, during a political assassination. The scar on his throat is from the clan's attempt to silence him for deserting."
+    },
+    {
+      "name": "Abbot Ryozen",
+      "role": "Head Monk of Zuiho-ji Temple",
+      "portrait": "Abbot Ryozen is sixty-eight, bald, and built like a rock that has been smoothed by a river — round, solid, and deceptively still. His face is broad and creased with deep lines that map a lifetime of laughter, grief, and meditation in roughly equal proportion. He wears simple grey robes and wooden sandals, and he carries a string of prayer beads wrapped around his left wrist. His eyes are warm and patient, the eyes of a man who has learned to sit with suffering without trying to fix it. His hands are those of a man who splits his own firewood, and despite his age he can still sit in meditation for six hours without moving.",
+      "personality": "Compassionate, perceptive, and entirely unimpressed by worldly power. He offers tea, advice, and sanctuary with equal generosity. He does not take sides in political disputes, but he has opinions about right and wrong that he will share when asked.",
+      "speaking_style": "Gentle and unhurried, with long pauses that most people fill with nervous chatter, which he then addresses rather than whatever they originally asked. Speaks in simple language but occasionally drops a Zen koan that rearranges your assumptions.",
+      "agenda": "Maintain the temple as neutral ground and provide sanctuary to those who need it. He is also quietly gathering information about the poisoning because it happened at a feast he blessed.",
+      "secret": "He was a samurai before he was a monk. He killed seventeen men in a battle he no longer believes was justified, and he took vows to atone. The sword he carried is hidden beneath the temple's altar stone."
+    },
+    {
+      "name": "Goro the Innkeeper",
+      "role": "Owner of the Fallen Leaf Sake House",
+      "portrait": "Goro is forty and shaped like a barrel — round, solid, and slightly larger at the middle than at either end. His face is ruddy from proximity to cook fires and sake fumes, and his hands are massive, thick-fingered things that can carry four ceramic bottles at once and have broken at least one man's jaw, though he claims the jaw had it coming. He has a broad, flat nose, small cheerful eyes, and a moustache that curves downward like a disappointed smile. He wears a stained apron over a plain kimono and moves through his sake house with the easy authority of a man who knows every customer by name and has cut off at least a third of them at one point or another.",
+      "personality": "Jovial, shrewd, and deeply nosy. He listens to everything said in his establishment and remembers all of it. He is loyal to Tsuwano rather than to any particular lord, and he helps whoever he thinks is good for the town.",
+      "speaking_style": "Loud, warm, and full of local gossip delivered as though sharing a confidence. Calls everyone 'friend' and means it about half the time. Drops his voice and leans in when sharing something actually important.",
+      "agenda": "Keep the Fallen Leaf profitable and peaceful, gather useful information, and make sure the right people know the right things at the right time",
+      "secret": "He is a retired spy who worked for the Mori clan's intelligence network for fifteen years. The sake house was his cover story that became his real life. He still has contacts in every major domain."
+    }
+  ],
+  "factions": [
+    {
+      "name": "The Mori Clan",
+      "description": "The ruling family of Tsuwano, small but fiercely independent. Lord Mori holds his domain through military skill, political cunning, and a network of alliances that require constant maintenance. The clan's samurai are loyal and well-trained but outnumbered by any major power.",
+      "agenda": "Preserve Tsuwano's independence and navigate the dangerous politics of the Sengoku period without being absorbed by one of the great powers",
+      "members": [
+        "Lord Mori Takahiro",
+        "Lady Hana"
+      ]
+    },
+    {
+      "name": "Oda Nobunaga's Agents",
+      "description": "Spies and diplomats working for the most powerful warlord in Japan. Nobunaga is methodically conquering the country and Tsuwano's trade routes interest him. His agents operate openly as diplomats and covertly as intelligence gatherers, and the line between the two is invisible.",
+      "agenda": "Bring Tsuwano into the Oda alliance — willingly through negotiation or unwillingly through destabilization",
+      "members": []
+    },
+    {
+      "name": "The Iga Remnants",
+      "description": "Former ninja of the Iga clan, scattered after Nobunaga's invasion of their homeland. Some work as freelance assassins and spies. Others seek revenge. At least one is operating in Tsuwano, and their agenda is unclear.",
+      "agenda": "Unknown — possibly assassination, possibly espionage, possibly personal revenge against someone in the castle",
+      "members": [
+        "Kaze"
+      ]
+    },
+    {
+      "name": "The Temple Neutrals",
+      "description": "The Buddhist monks of Zuiho-ji and the smaller shrines in Tsuwano. They claim neutrality in political affairs and provide sanctuary, counsel, and burial services with equal impartiality. Their neutrality is genuine but not absolute — the Abbot has his own moral compass.",
+      "agenda": "Maintain peace, provide sanctuary, and prevent violence on temple grounds",
+      "members": [
+        "Abbot Ryozen"
+      ]
+    }
+  ],
+  "opening_situation": "At the Fallen Leaf Sake House, a dying servant delivers a blood-smeared notice naming Lord Mori. The seal is torn and smells of lamp oil and bitter root. Mori’s retainers arrive to seize the message and anyone who touched it. A hidden hatch under the bar opens from below. Someone inside is a witness. If Kenji and Yuki protect him, they defy lawful authority. If they surrender him, they may be handing an innocent man to execution.",
+  "story_arc": [
+    {
+      "id": "japan-1",
+      "description": "Arrive in Tsuwano and learn about the suspicious death at the diplomatic feast",
+      "act": 1,
+      "priority": "required",
+      "status": "upcoming"
+    },
+    {
+      "id": "japan-2",
+      "description": "Get drawn into the investigation as suspicion falls on multiple parties — Nobunaga's agents, the ninja, and someone within the castle itself",
+      "act": 1,
+      "priority": "required",
+      "status": "upcoming",
+      "trigger": "Players enter the castle town and hear about the poisoning"
+    },
+    {
+      "id": "japan-3",
+      "description": "Discover evidence of a larger conspiracy — the poisoning was not an isolated act but part of a plan to destabilize Tsuwano",
+      "act": 2,
+      "priority": "required",
+      "status": "upcoming"
+    },
+    {
+      "id": "japan-4",
+      "description": "A betrayal is revealed — someone trusted is working against the Mori clan, and the truth forces impossible choices about loyalty and honour",
+      "act": 2,
+      "priority": "required",
+      "status": "upcoming"
+    },
+    {
+      "id": "japan-5",
+      "description": "An assassination attempt or military threat forces a crisis — the castle is attacked, a key figure is targeted, or a secret is exposed publicly",
+      "act": 2,
+      "priority": "optional",
+      "status": "upcoming"
+    },
+    {
+      "id": "japan-6",
+      "description": "The final confrontation approaches — alliances are forged, blades are drawn, and the fate of Tsuwano hangs on a handful of choices",
+      "act": 3,
+      "priority": "required",
+      "status": "upcoming"
+    },
+    {
+      "id": "japan-7",
+      "description": "The climactic resolution — defend the castle, expose the conspiracy, or choose a side in the conflict that will determine Tsuwano's future",
+      "act": 3,
+      "priority": "required",
+      "status": "upcoming"
+    }
+  ],
+  "writing_style": {
+    "tone": "Serious, restrained, and observant. Violence is fast and practical, not showy. Quiet beats land between threats: breath, posture, small sounds, and ritual courtesy. Humor is rare and dry. No swagger. No modern sarcasm. Every choice should feel costly and irreversible.",
+    "instructions": "Write for text-to-speech. Use short sentences. Target 8 to 14 words. Hard limit 18 words. Never exceed 20 words. One action per sentence. Name the speaker before dialogue every time. Avoid stacked clauses and lists. Repeat key nouns instead of pronouns when clarity matters. In combat, describe stance, distance, grip, footwork, line of attack, and contact. Include at least one concrete mechanical detail per strike or block.",
+    "banned_phrases": [
+      "ancient honour",
+      "the way of the samurai",
+      "mystical Japan",
+      "Oriental",
+      "ninja vanish",
+      "chosen warrior"
+    ]
+  },
+  "target_game_length": 10,
+  "relationship_map": [
+    {
+      "from": "Lord Mori Takahiro",
+      "to": "Lady Hana",
+      "type": "Husband and Conspirator",
+      "description": "They love each other but the poisoning has driven a wedge of silence between them. He suspects. She knows he suspects. Neither speaks of it."
+    },
+    {
+      "from": "Kaze",
+      "to": "Lady Hana",
+      "type": "Unknowing Connection",
+      "description": "The former Iga ninja Kaze is tracking was hired by Lady Hana to carry out the poisoning. Kaze does not know this yet."
+    },
+    {
+      "from": "Abbot Ryozen",
+      "to": "Kaze",
+      "type": "Protector",
+      "description": "Ryozen recognizes a fellow former warrior in Kaze and has offered him shelter at the temple. He sees the pain Kaze carries and wants to help him find peace, but suspects that Kaze's path leads through violence first."
+    },
+    {
+      "from": "Goro the Innkeeper",
+      "to": "Lord Mori Takahiro",
+      "type": "Intelligence Asset",
+      "description": "Goro feeds information to Lord Mori through a trusted intermediary. Mori considers Goro's reports more reliable than his official intelligence."
+    },
+    {
+      "from": "Lord Mori Takahiro",
+      "to": "Abbot Ryozen",
+      "type": "Old Friend",
+      "description": "They have known each other for thirty years. Ryozen was the samurai who trained alongside Mori before taking his vows. When Mori needs honest advice, he goes to the temple."
+    }
+  ]
+}

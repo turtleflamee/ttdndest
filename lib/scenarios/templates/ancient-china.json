@@ -1,0 +1,261 @@
+{
+  "id": "ancient-china",
+  "name": "The Jade Edict",
+  "description": "A political thriller set in the dying days of the Han Dynasty, where warlords scheme, Taoist monks guard ancient secrets, and the Silk Road carries more than silk.",
+  "critique_score": 2.7,
+  "deck_type": "adventure",
+  "target_audience": {
+    "age_range": "16-18",
+    "genre": "historical political thriller",
+    "tone": "serious, strategic, philosophical",
+    "themes": [
+      "political intrigue",
+      "martial arts",
+      "philosophy",
+      "loyalty vs survival",
+      "the fall of empires"
+    ],
+    "content_warnings": [
+      "violence",
+      "political assassination",
+      "war"
+    ],
+    "vibe": "Romance of the Three Kingdoms meets Crouching Tiger — strategy, honor, and beautiful violence"
+  },
+  "evaluation_criteria": {
+    "primary_goal": "tense political intrigue balanced with grounded martial arts action",
+    "tone_requirement": "serious and philosophical without being preachy — let the dilemmas speak for themselves",
+    "character_expectation": "complex NPCs with competing loyalties, each believing they are right",
+    "audio_priority": "TTS clarity with spatial awareness — describe positions in combat, who speaks before dialogue",
+    "success_question": "Would a player feel the weight of their choices and remember the NPCs' names afterward?",
+    "strict_genre_enforcement": true
+  },
+  "world": "Late Eastern Han, year 200. No modern technology or terminology. Signaling uses horns, drums, smoke pots, mirror flashes, and fire arrows. Medical aid uses linen, wine, vinegar, herbal salves, and splints. Supplies are stored in sealed jars, bamboo crates, and lacquered boxes. Politics centers on seals, edicts, hostages, grain, and commandery loyalties.",
+  "locations": [
+    {
+      "name": "Temple of the Jade Edict",
+      "description": "A Taoist monastery perched on a granite ledge two thousand feet above the valley floor. The buildings are ancient wood and grey stone, connected by covered walkways that creak in the wind. Prayer flags snap from the eaves. The training courtyard overlooks a drop that would kill anything that slipped, which the monks consider an excellent incentive for maintaining balance. The inner sanctum houses the jade tablets — or so the monks claim. Getting there requires passing through three gates, each guarded by monks who ask questions that have no correct answers.",
+      "connected_to": [
+        "Wudang Mountain Path",
+        "The Hidden Valley"
+      ],
+      "npcs_present": [
+        "Master Chen",
+        "Sister Lian"
+      ]
+    },
+    {
+      "name": "Wudang Mountain Path",
+      "description": "A narrow trail that switchbacks up the mountain through bamboo forest and cloud. Stone steps carved centuries ago are slippery with moss and mist. Rope bridges span gorges where the wind howls like a wounded animal. Pilgrims, merchants, and spies all use this path, which means you never know if the person walking behind you is praying or calculating the best spot to push you off the edge. Tea houses dot the route at intervals, run by people who hear everything and say nothing unless paid.",
+      "connected_to": [
+        "Temple of the Jade Edict",
+        "The Market Town of Junzhou"
+      ],
+      "npcs_present": []
+    },
+    {
+      "name": "The Market Town of Junzhou",
+      "description": "A walled town at the base of the Wudang Mountains where the mountain path meets the trade road. Junzhou is a crossroads — Silk Road caravans pass through, soldiers from three different armies drink in the same taverns, and the magistrate collects taxes from whoever is currently in charge. The market sells everything from rice to stolen swords to forged travel documents. The teahouse near the east gate is where deals are made, alliances are broken, and information changes hands over cups of pu'er that taste like smoke and secrets.",
+      "connected_to": [
+        "Wudang Mountain Path",
+        "Cao Cao's Northern Camp",
+        "The Silk Road Waystation"
+      ],
+      "npcs_present": [
+        "Magistrate Zhou",
+        "Old Bao"
+      ]
+    },
+    {
+      "name": "Cao Cao's Northern Camp",
+      "description": "A military encampment spread across the plains north of Junzhou — ten thousand tents in orderly rows, cook fires burning day and night, cavalry horses picketed in long lines. Cao Cao's banner — a black flag with a golden character — flies from the command tent at the center. The camp is disciplined, well-supplied, and radiates the quiet menace of a force that knows it could take the town any time it wants but is waiting for a better reason. Scouts come and go at all hours. Prisoners are interrogated in a tent that nobody lingers near.",
+      "connected_to": [
+        "The Market Town of Junzhou"
+      ],
+      "npcs_present": [
+        "General Xu Huang"
+      ]
+    },
+    {
+      "name": "The Hidden Valley",
+      "description": "A valley behind the monastery accessible through a cave passage that the monks do not mention to outsiders. Cherry trees grow wild along a stream that runs ice-cold from a spring. Ancient stone markers line the stream, carved with characters in a script that predates the Han Dynasty by a thousand years. Something is buried here — or hidden, or sealed. The monks come here to meditate, but they always face away from the far end of the valley, where the stone markers stop and the ground is scorched black in a perfect circle.",
+      "connected_to": [
+        "Temple of the Jade Edict"
+      ],
+      "npcs_present": []
+    }
+  ],
+  "npcs": [
+    {
+      "name": "Master Chen",
+      "role": "Head Monk of the Temple",
+      "portrait": "Master Chen is seventy years old and looks it in the face — deep wrinkles, wispy white beard, eyebrows like small clouds — but moves with the fluid precision of a man half his age. He is slight, barely five foot four, and wears plain grey robes that have been mended so many times they are more patch than original fabric. His hands are scarred across the knuckles from decades of iron palm training and he holds them clasped behind his back when talking, as though keeping weapons holstered. His eyes are the problem. They are dark and sharp and they see through every lie you have ever told yourself. He smiles often, which makes it worse, because the smile says he knows exactly what you are and finds it amusing rather than threatening.",
+      "personality": "Patient, perceptive, and deeply pragmatic beneath a veneer of monastic serenity. He plays the role of the wise old monk perfectly because it makes people underestimate him. He has killed before and will again if the temple demands it.",
+      "speaking_style": "Calm, measured, uses parables and koans that sound wise but often contain very practical instructions. Pauses before answering to make you think he is contemplating when he already decided thirty seconds ago.",
+      "agenda": "Protect the jade tablets at all costs and prevent any warlord from obtaining the Mandate Seal — not because he doubts it exists, but because he knows exactly what it does and it is not what anyone expects",
+      "secret": "He has already read the jade tablets. The Mandate Seal is not a physical object — it is a ritual, and performing it requires a sacrifice that no sane person would make."
+    },
+    {
+      "name": "Sister Lian",
+      "role": "Temple Martial Arts Instructor",
+      "portrait": "Sister Lian is thirty-two and built like a drawn bow — lean, taut, and coiled with potential energy. She stands five foot eight, tall for a woman of the period, and her hair is cut short in the style of a monk rather than the elaborate arrangements expected of her gender. A thin scar runs from her right ear to the corner of her jaw, white against sun-darkened skin. She wears the same grey robes as the other monks but hers are always tucked and belted for movement. She carries no visible weapon because she does not need one — her hands and feet have been trained since childhood to strike with the precision and force of a blacksmith's hammer. Her expression at rest is the flat calm of still water, and when she is angry the calm does not change, which is far more frightening.",
+      "personality": "Disciplined, protective, and fiercely loyal to the temple and its people. She distrusts outsiders on principle and makes them earn every inch of trust through action, not words. She has a dry sense of humor that surfaces unexpectedly.",
+      "speaking_style": "Direct and economical. Does not waste words. When she gives an order it sounds like a statement of fact — not because she is arrogant but because she has never given an order she was not prepared to enforce personally.",
+      "agenda": "Defend the temple from the coming siege and train the younger monks to survive what she believes will be a war",
+      "secret": "She was not born in the temple — she is the daughter of a minor warlord who was killed when she was twelve. She came to Wudang to learn how to fight, not how to meditate."
+    },
+    {
+      "name": "Magistrate Zhou",
+      "role": "Town Administrator and Triple Agent",
+      "portrait": "Magistrate Zhou is a round, sweating man in his mid-forties who looks exactly like what he is: a mid-level bureaucrat who is in over his head. He wears official robes that were expensive when they were new ten years ago and are now faded at the cuffs and stained under the arms. His face is soft and expressive, designed by nature for obsequious smiling, and his hands flutter when he talks as though conducting an invisible orchestra. His eyes, however, do not match the rest of him. They are small and quick and they track movement the way a cat watches a bird. He is smarter than he looks, which is his only real weapon, and he uses it by making everyone think he is an easily manipulated fool.",
+      "personality": "Anxious, calculating, and desperately trying to survive a political landscape where one wrong word means execution. He serves whoever is winning at any given moment and has the survival instincts of a cockroach.",
+      "speaking_style": "Nervous and verbose, full of honorifics and flattery. Agrees with everything you say while his eyes are already planning his next move. Laughs too often and too loudly at things that are not funny.",
+      "agenda": "Survive the power struggle, keep Junzhou intact, and ideally end up on the winning side — whichever side that turns out to be",
+      "secret": "He has been selling information to all three warlord factions simultaneously and knows that when they find out, he is dead. He has an escape plan involving a Silk Road caravan and a new identity."
+    },
+    {
+      "name": "General Xu Huang",
+      "role": "Cao Cao's Field Commander",
+      "portrait": "General Xu Huang is a wall of a man — six foot one, broad-shouldered, with arms like tree trunks and a neck that seems to begin at his ears and end at his shoulders without narrowing. His face is weathered and hard, with a flattened nose that has been broken multiple times and a jaw darkened by a perpetual shadow of stubble. He wears functional armor — dented, scratched, and maintained with the care of a man who trusts his equipment with his life. A massive halberd is never far from his hand. He has the calm, unhurried demeanor of a professional soldier who has fought in enough battles to know that the ones who panic die first.",
+      "personality": "Honorable, direct, and genuinely conflicted about his loyalty. He serves Cao Cao because Cao Cao wins, but he is increasingly troubled by the methods required. He respects courage and honesty and despises political games.",
+      "speaking_style": "Blunt and spare, like a man who has spent more of his life giving orders than making conversation. Says what he means. Does not repeat himself. When he makes a threat it is a simple statement of what will happen, delivered without emotion.",
+      "agenda": "Secure the jade tablets for Cao Cao, but he is beginning to question whether giving his lord this kind of power is wise",
+      "secret": "He received a letter from Liu Bei offering him a command position. He has not thrown it away."
+    },
+    {
+      "name": "Old Bao",
+      "role": "Teahouse Owner and Information Broker",
+      "portrait": "Old Bao is somewhere between sixty and a hundred — nobody is sure and he gives a different answer every time he is asked. He is thin as a bamboo pole, stooped at the shoulders, and missing the little finger on his left hand, which he claims was bitten off by a tiger, a woman, or a tax collector depending on his mood. His face is a road map of wrinkles and his eyes are permanently narrowed into a squint that might be poor vision or might be suspicion. He moves slowly, deliberately, and pours tea with the precision of a court ceremony. His teahouse near the east gate of Junzhou is the safest and most dangerous place in town — safe because Bao allows no violence on his premises, dangerous because everything said in his teahouse reaches the ears of whoever is paying the most.",
+      "personality": "Shrewd, amused by human folly, and utterly mercenary. He has no loyalty except to survival and profit. He likes clever people and will occasionally help them for free, which is the most dangerous kind of generosity.",
+      "speaking_style": "Rambling, folksy, and full of proverbs that may or may not be real proverbs. Tells long stories that seem irrelevant until the last sentence, which always contains exactly the information you needed.",
+      "agenda": "Stay alive, keep his teahouse running, and sell information to the highest bidder while keeping all sides convinced he is on their side",
+      "secret": "He is a former Imperial spy who was left behind when the court collapsed. The intelligence network he built thirty years ago still functions, and he still runs it."
+    }
+  ],
+  "factions": [
+    {
+      "name": "The Temple of the Jade Edict",
+      "description": "The Wudang monks guard the jade tablets and claim neutrality in the wars below. They practice martial arts and Taoist philosophy in equal measure and believe that the Mandate Seal — whatever it is — must never fall into the hands of a warlord. They are prepared to destroy the tablets rather than surrender them. Not all monks agree on this.",
+      "agenda": "Protect the jade tablets and prevent the Mandate Seal from being used by any faction",
+      "members": [
+        "Master Chen",
+        "Sister Lian"
+      ]
+    },
+    {
+      "name": "Cao Cao's Northern Army",
+      "description": "The most powerful military force in China, commanded by a man who writes poetry about the battles he wins and the friends he buries. Cao Cao wants the Mandate Seal to legitimize his rule and end the civil war on his terms. His army is disciplined, well-supplied, and ruthless when required.",
+      "agenda": "Obtain the jade tablets by negotiation or force, and use the Mandate Seal to establish a new dynasty under Cao Cao's rule",
+      "members": [
+        "General Xu Huang"
+      ]
+    },
+    {
+      "name": "The Silk Road Syndicate",
+      "description": "A loose network of merchants, smugglers, and spies who operate along the trade routes connecting China to the western kingdoms. They profit from chaos and have no interest in any particular warlord winning — a unified China would regulate trade and cut into their margins. They deal in information, rare goods, and favors.",
+      "agenda": "Keep the civil war going as long as possible, profit from all sides, and prevent any single faction from consolidating enough power to control the trade routes",
+      "members": [
+        "Old Bao"
+      ]
+    }
+  ],
+  "opening_situation": "At dawn, Player1 and Player2 reach the Jade Edict Temple gate. A courier from a nearby warlord demands entry to inspect the temple’s jade tablets. Master Chen refuses without a writ from the provincial governor. Sister Lian argues they must stall, because a second force is already climbing the eastern notch. The players must choose: bargain with the courier, help the monks hide evidence, or open the gate and risk a purge.",
+  "story_arc": [
+    {
+      "id": "china-1",
+      "description": "Arrive in Junzhou and learn about the jade tablets and the factions hunting for the Mandate Seal",
+      "act": 1,
+      "priority": "required",
+      "status": "upcoming"
+    },
+    {
+      "id": "china-2",
+      "description": "Ascend the mountain and gain entry to the Temple of the Jade Edict",
+      "act": 1,
+      "priority": "required",
+      "status": "upcoming",
+      "trigger": "Players learn about the temple from Old Bao or the soldiers"
+    },
+    {
+      "id": "china-3",
+      "description": "Discover that spies from multiple factions have already infiltrated the temple",
+      "act": 2,
+      "priority": "required",
+      "status": "upcoming"
+    },
+    {
+      "id": "china-4",
+      "description": "Learn the true nature of the Mandate Seal — it is not what anyone expected",
+      "act": 2,
+      "priority": "required",
+      "status": "upcoming",
+      "trigger": "Players earn the trust of Master Chen or find the Hidden Valley"
+    },
+    {
+      "id": "china-5",
+      "description": "Cao Cao's army begins marching on the mountain — the siege is coming",
+      "act": 2,
+      "priority": "optional",
+      "status": "upcoming"
+    },
+    {
+      "id": "china-6",
+      "description": "Choose a side or forge a new path — the fate of the temple and the tablets hangs in the balance",
+      "act": 3,
+      "priority": "required",
+      "status": "upcoming"
+    },
+    {
+      "id": "china-7",
+      "description": "The climactic confrontation — defend the temple, seize the Seal, or destroy the tablets forever",
+      "act": 3,
+      "priority": "required",
+      "status": "upcoming"
+    }
+  ],
+  "writing_style": {
+    "tone": "Wuxia meets political thriller. Think Crouching Tiger Hidden Dragon's quiet intensity mixed with the scheming of Romance of the Three Kingdoms. Honour matters. Betrayal cuts deep. The landscape is as much a character as the people.",
+    "instructions": "Write for text-to-speech. Keep every sentence under 14 words. Use one action per sentence. Before every line of dialogue, name the speaker in narration (e.g., \"Magistrate Zhou says,\"). At the start of each turn, restate positions in one sentence: who is at the gate, who is by the cart, who holds the slip. Avoid abstract phrases like \"tension,\" \"chaos,\" \"political weight,\" or \"two breaths.\" Replace them with visible actions (hands tightening, men stepping back, weapons lowering).",
+    "banned_phrases": [
+      "ancient wisdom",
+      "the Orient",
+      "mystic East",
+      "kung fu fighting",
+      "dragon energy",
+      "chosen ones"
+    ]
+  },
+  "target_game_length": 10,
+  "relationship_map": [
+    {
+      "from": "Master Chen",
+      "to": "Sister Lian",
+      "type": "Mentor",
+      "description": "Master Chen trained Sister Lian since she was twelve. She is his finest student and his most likely successor, but he has never told her the full truth about the jade tablets."
+    },
+    {
+      "from": "General Xu Huang",
+      "to": "Master Chen",
+      "type": "Adversary",
+      "description": "Xu Huang respects Master Chen as a warrior but has orders to take the tablets by force if negotiation fails. He is hoping negotiation works."
+    },
+    {
+      "from": "Old Bao",
+      "to": "Magistrate Zhou",
+      "type": "Handler",
+      "description": "Old Bao has been managing Magistrate Zhou as an intelligence asset for years. Zhou thinks he is playing all sides — he does not realize that Bao is the one playing him."
+    },
+    {
+      "from": "Magistrate Zhou",
+      "to": "General Xu Huang",
+      "type": "Informant",
+      "description": "Zhou feeds Xu Huang information about the temple's defenses in exchange for a promise of protection when the siege begins."
+    },
+    {
+      "from": "Sister Lian",
+      "to": "General Xu Huang",
+      "type": "Rival",
+      "description": "They fought once, years ago, when Xu Huang's troops tried to enter the mountain path. It ended in a draw. Neither has forgotten."
+    }
+  ]
+}

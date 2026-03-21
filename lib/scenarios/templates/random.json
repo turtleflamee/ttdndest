@@ -1,0 +1,24 @@
+{
+  "id": "random",
+  "name": "Random Adventure",
+  "description": "Let the AI create a unique world from scratch — any genre, any setting",
+  "world": "An infinite multiverse of possibilities awaits. Every story begins differently, shaped by the players' choices and the AI Game Master's imagination. No two adventures are ever the same.",
+  "opening_hook": "The AI Game Master will create a completely unique world and opening scenario based on player actions and choices.",
+  "locations": [
+    {
+      "name": "The Unknown",
+      "description": "A place yet to be discovered, waiting to be shaped by adventure"
+    }
+  ],
+  "writing_style": {
+    "tone": "Adaptive — shifts to match the emerging genre and mood",
+    "pacing": "Dynamic storytelling with player-driven narrative",
+    "themes": ["discovery", "creativity", "emergent narrative"]
+  },
+  "special_rules": [
+    "The AI Game Master has complete creative freedom to generate any type of world",
+    "Genre, setting, and tone emerge from player card choices",
+    "No predefined story structure — pure improvisation",
+    "The world adapts and expands based on player actions"
+  ]
+}

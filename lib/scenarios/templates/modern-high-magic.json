@@ -1,0 +1,226 @@
+{
+  "id": "modern-high-magic",
+  "name": "The Neon Veil",
+  "description": "An urban fantasy thriller set in present-day New York City, where magic hides behind smartphone apps and reality is thinner than the wall between you and the subway.",
+  "critique_score": 2.8,
+  "deck_type": "adventure",
+  "target_audience": {
+    "age_range": "16-18",
+    "genre": "urban fantasy thriller",
+    "tone": "gritty, modern, fast-paced with dark humor",
+    "themes": [
+      "hidden worlds",
+      "technology vs magic",
+      "secrets and lies",
+      "urban mythology",
+      "the cost of power"
+    ],
+    "content_warnings": [
+      "violence",
+      "magical combat",
+      "conspiracy"
+    ],
+    "vibe": "Dresden Files meets John Wick — magic is real, dangerous, and operates in NYC's shadows"
+  },
+  "evaluation_criteria": {
+    "primary_goal": "tense urban fantasy mystery with grounded, physical magic",
+    "tone_requirement": "gritty and modern without losing the wonder — magic should feel dangerous and real, not ethereal",
+    "character_expectation": "NPCs balancing mundane concerns (coffee, commutes) with magical stakes (reality collapsing)",
+    "audio_priority": "TTS-friendly modern dialogue with physical descriptions of magic — taste of ozone, pressure in ears",
+    "success_question": "Would a player want to explore more of magical NYC and its factions?",
+    "strict_genre_enforcement": true
+  },
+  "world": "Magic in NYC runs through dead zones.\nApps fail in tunnels, basements, and old infrastructure.\nThose places expose the Veil.\nAnchors are physical tokens that pin reality in place.\nCoins, screws, and transit tokens can be Anchors.\nBreak an Anchor and the Veil thins.\nA Nexus tear is a rip that pulls metal and heat.\nIt grows when it tastes blood or hears the right signal.\nFactions fight over Anchors because they control territory.",
+  "locations": [
+    {
+      "name": "The Nexus",
+      "description": "A thirty-story tower of black stone and silver sigils disguised as a mundane Midtown office building. The lobby has a security desk staffed by a minotaur in a suit who checks magical credentials and confiscates any active spells before letting visitors proceed. The upper floors house the Council chambers, research labs, and the Vault — a high-security storage facility for dangerous artifacts protected by seventeen layers of warding. The basement contains three permanent interdimensional portals, two of which are stable. The third one flickers and occasionally deposits confused entities from other planes into the mail room.",
+      "connected_to": [
+        "Central Park Ley Nexus",
+        "The Underground",
+        "Greenwich Village Sanctum"
+      ],
+      "npcs_present": [
+        "Madame Vesper"
+      ]
+    },
+    {
+      "name": "Central Park Ley Nexus",
+      "description": "The intersection of three major ley lines beneath the Great Lawn, making Central Park the most magically charged location in Manhattan. The trees grow slightly too large. The birds are slightly too intelligent. The Bethesda Fountain is a known portal anchor, and the Seelie Court maintains an embassy in a pocket dimension accessible through the Ramble — though finding the entrance requires knowing which trees to walk between and in which order. At night, the park comes alive with magical creatures that the mundane world mistakes for unusually large raccoons.",
+      "connected_to": [
+        "The Nexus",
+        "The Underground"
+      ],
+      "npcs_present": [
+        "Thistle"
+      ]
+    },
+    {
+      "name": "The Underground",
+      "description": "The magical underworld of New York — literally. The unused subway tunnels, abandoned stations, and maintenance corridors beneath Manhattan have been claimed by magical beings who do not fit into polite Veil society. Black market enchanters, rogue alchemists, and exiled Fae operate down here under flickering fluorescent lights that mix with bioluminescent fungi and floating spell-lights. The deepest tunnels connect to the Unseelie Court's territory. The air smells like ozone, old stone, and something sweet that you should not breathe too deeply.",
+      "connected_to": [
+        "Central Park Ley Nexus",
+        "The Nexus",
+        "Grimm's Laboratory"
+      ],
+      "npcs_present": [
+        "Rook"
+      ]
+    },
+    {
+      "name": "Greenwich Village Sanctum",
+      "description": "A brownstone on a street that mundane GPS cannot find. The building serves as a safe house, library, and meeting place for mages who operate outside the Council's authority — not criminals, exactly, but independents who find the Council's bureaucracy stifling. The interior is bigger on the inside, naturally, with a library that extends into a pocket dimension and a workshop where experimental magic is conducted with varying degrees of safety. The espresso machine is enchanted and makes perfect coffee, which is honestly the most impressive magic in the building.",
+      "connected_to": [
+        "The Nexus",
+        "Grimm's Laboratory"
+      ],
+      "npcs_present": []
+    },
+    {
+      "name": "Grimm's Laboratory",
+      "description": "A converted warehouse in Lower Manhattan, formerly a meatpacking facility, now a state-of-the-art magical laboratory that Dr. Elias Grimm has been operating for approximately seventy-two hours. The building's exterior looks condemned. Inside, reality itself is being bent — walls shift between states of matter, gravity reverses in corners, and a device at the center of the main floor hums with energy that makes your teeth itch. Whatever Grimm is building, it is drawing power from the ley lines and it is accelerating.",
+      "connected_to": [
+        "The Underground",
+        "Greenwich Village Sanctum"
+      ],
+      "npcs_present": [
+        "Dr. Elias Grimm"
+      ]
+    }
+  ],
+  "npcs": [
+    {
+      "name": "Madame Vesper",
+      "role": "Head of the Council of Mages",
+      "portrait": "Madame Vesper appears to be in her sixties, which in magical terms means she could be anywhere from sixty to six hundred. She is a small woman — barely five foot two — with silver hair cut in a sharp bob and eyes the color of strong tea that radiate an authority completely disproportionate to her physical size. She wears tailored charcoal suits with silk blouses and always has a single piece of jewelry — a different one each day, each one a powerful artifact that she rotates like accessories. Her hands are steady, her posture is impeccable, and she has a way of sitting very still and looking at you that makes you feel like a bug under a magnifying glass. She does not raise her voice. She has never needed to.",
+      "personality": "Rook is a paranoid platform-fixer who hates paperwork and loves small routines (coffee, counting exits). He masks fear with sarcasm. He prioritizes keeping the market running and civilians alive. He distrusts the Council and knows Grimm by reputation.",
+      "speaking_style": "Clipped, procedural, NYC-cop cadence. Uses short directives, then a human aside. Example patterns: \"Ma’am, step back.\" \"I know. I see it.\" \"Dispatch, I need a supervisor and a medic.\" Swears under breath when magic escalates, but stays professional in front of others.",
+      "agenda": "Find who stole the artifact from the Vault, stop the Veil from collapsing, and contain the situation before the mundane world notices — in that order",
+      "secret": "She knows what the stolen artifact does. It is a Veil Anchor — one of seven objects that maintain the barrier between the magical and mundane worlds. If all seven are compromised, the Veil falls permanently."
+    },
+    {
+      "name": "Dr. Elias Grimm",
+      "role": "Rogue Thaumaturge",
+      "portrait": "Dr. Grimm is forty-three and looks like a man who has been sleeping in his laboratory for the past week, which he has. He is tall and gaunt, with sharp cheekbones and dark circles under pale blue eyes that seem to focus on something six inches behind your head. His hair is black going prematurely white at the temples, and it stands at various angles as though electrified, which it sometimes literally is. He wears a lab coat over a wrinkled dress shirt and jeans, and his fingers are stained with alchemical compounds in colors that do not exist in nature. He moves with the jittery energy of a man running on caffeine, inspiration, and something more dangerous than both.",
+      "personality": "Brilliant, obsessive, and convinced that his work justifies any risk. He is not evil — he genuinely believes he is saving the world — but his definition of acceptable collateral damage is broader than most people are comfortable with. He has the social skills of a man who talks to equations more often than people.",
+      "speaking_style": "Rapid-fire, technical, and prone to tangents. Explains complex magical theory using fast-food metaphors. Gets annoyed when people do not keep up. Occasionally stops mid-sentence because he just had an idea and needs to write it down immediately.",
+      "agenda": "Tear down the Veil intentionally and permanently, forcing the magical and mundane worlds to coexist — he believes secrecy is killing magic and only full revelation can save it",
+      "secret": "He did not steal the Veil Anchor from the Nexus. Someone gave it to him, and he does not know who — it appeared on his doorstep with a note that read 'Finish what you started.'"
+    },
+    {
+      "name": "Thistle",
+      "role": "Seelie Court Ambassador",
+      "portrait": "Thistle appears as a young woman in her twenties with sharp features, auburn hair that moves as though underwater even when there is no wind, and eyes the color of new leaves in spring — too green, too bright, and too knowing for someone who looks so young. She stands five foot six and dresses in what she calls 'mundane formal' — a green silk blouse, tailored slacks, and leather boots — though every item is enchanted. Her ears are slightly pointed, glamoured to look normal, and her shadow does not match her movements if you watch it long enough. She smells like a forest after rain.",
+      "personality": "Thistle is a sleep-deprived field handler who masks fear with dry humor. She is practical, bossy, and obsessed with small routines (coffee, receipts, subway times). Her magic is tactile: she needs skin contact, chalk dust, and steady breathing. When stressed, she gets snappish and hyper-specific.",
+      "speaking_style": "Musical and precise, choosing words with the care of someone who knows that Fae cannot lie but can build truths that are more deceptive than any falsehood. Never makes a direct promise. Asks questions that are really invitations.",
+      "agenda": "Ensure the Veil survives — the Fae courts depend on the boundary between worlds for their power. If the Veil falls, the Seelie lose their sovereignty.",
+      "secret": "The Seelie Court has been weakening for centuries. Thistle is not just an ambassador — she is one of the last seven Fae powerful enough to sustain a court, and if the Veil falls, she dies with it."
+    },
+    {
+      "name": "Rook",
+      "role": "Underground Fixer and Information Broker",
+      "portrait": "Rook is a lean man of indeterminate age — somewhere between thirty and fifty, with dark skin, a shaved head, and a short beard flecked with grey. He wears all black — turtleneck, jeans, boots, leather jacket — and moves through the Underground tunnels like a shadow that has learned to walk. His eyes are dark brown and miss nothing; he catalogs faces, exits, and weapons the way other people notice the weather. A network of faint silver scars on his forearms marks him as a former binding mage — someone who once trapped extraplanar entities for a living and stopped, for reasons he does not discuss. He carries no visible weapons but he always has at least three on him.",
+      "personality": "Calm, professional, and guided by a personal code that is stricter than it looks. He deals information, makes introductions, and occasionally does wet work, but he has lines he will not cross — children, civilians, and anything involving the Unseelie. He is trusted by people on every side of the Veil.",
+      "speaking_style": "Quiet, economical, and precise. Says what he means with no filler. When he tells you something, it is true — his reputation depends on it. Drops into street slang when he wants to signal that the formal part of the conversation is over.",
+      "agenda": "Keep the Underground stable and profitable, which means the Veil needs to stay up — his business depends on the boundary between worlds",
+      "secret": "His scars are not from binding extraplanar entities. They are from being bound himself. He spent three years imprisoned in a pocket dimension by someone on the Council, and he does not know who ordered it or why."
+    },
+    {
+      "name": "Officer Sarah Chen",
+      "role": "NYPD Detective",
+      "portrait": "Officer Chen is thirty-one, Chinese-American, with a compact, athletic build and straight black hair pulled back in a practical ponytail. Her face is round and open, the kind that makes witnesses feel comfortable, which is useful because she is much sharper than she looks. She wears plainclothes — button-down shirt, dark slacks, badge on her belt — and her Glock sits in a hip holster with the practiced ease of someone who qualifies expert at the range every quarter. Her notebook is always in her left hand and she writes in it constantly. She has fourteen open cases that she cannot solve because the evidence makes no sense, and she is too good a detective to just close them.",
+      "personality": "Tenacious, logical, and increasingly frustrated by a world that does not add up. She is not afraid of the strange — she is angry at it, because it means her cases do not close. She follows evidence wherever it leads and does not know when to stop.",
+      "speaking_style": "Direct, professional NYPD cadence with occasional dry humor. Asks pointed questions and waits for answers without filling the silence. When she does not believe you, she just looks at you until you fix whatever you just said.",
+      "agenda": "Solve her impossible cases, which are all connected to the magical world she does not know exists — yet",
+      "secret": "She has a natural resistance to memory magic. The three times the Veiled have tried to wipe her memories, it wore off within days. They do not know this yet."
+    }
+  ],
+  "factions": [
+    {
+      "name": "The Council of Mages",
+      "description": "The governing body of the magical world, operating out of the Nexus. They maintain the Veil, regulate magical practice, and handle threats that could expose magic to the mundane world. They are bureaucratic, cautious, and increasingly out of their depth.",
+      "agenda": "Recover the stolen Veil Anchor, repair the Veil, and suppress any evidence of magical exposure before the mundane world catches on",
+      "members": [
+        "Madame Vesper"
+      ]
+    },
+    {
+      "name": "The Seelie Court",
+      "description": "The light Fae court, maintaining an embassy in Central Park. They are ancient, powerful, and bound by rules that predate human civilization. They are allies of the Council out of mutual interest, not affection.",
+      "agenda": "Preserve the Veil at all costs — Fae power is anchored to the boundary between worlds, and without it, the courts collapse",
+      "members": [
+        "Thistle"
+      ]
+    },
+    {
+      "name": "The Unveilers",
+      "description": "A loose network of mages and magical beings who believe the Veil should be dropped and magic revealed to the mundane world. They range from idealists who think coexistence is possible to accelerationists who want to force the issue. Dr. Grimm is their most capable and most dangerous member.",
+      "agenda": "Tear down the Veil and force the magical and mundane worlds to merge — by controlled revelation or by catastrophic exposure",
+      "members": [
+        "Dr. Elias Grimm"
+      ]
+    },
+    {
+      "name": "The Underground",
+      "description": "The informal economy and society of magical beings who operate outside the Council's authority in New York's tunnel systems. Not a faction so much as an ecosystem, held together by deals, debts, and a shared interest in not being regulated.",
+      "agenda": "Stay independent, stay profitable, and keep both the Council and the mundane authorities out of the tunnels",
+      "members": [
+        "Rook"
+      ]
+    }
+  ],
+  "opening_situation": "Midtown plaza outside a corporate lobby. A fountain glitches like a broken phone screen. The lobby doors begin to seal by themselves. Madame Vesper, a Council fixer, says a missing 'Anchor' is pulling reality thin. The players must stop the seal, hide the breach from civilians, and grab the first physical clue before police arrive.",
+  "story_arc": [
+    "Inciting incident: A Veil breach at Canal Street produces a Council-tracked artifact (the compass).",
+    "Revelation 1: The compass reacts only to a specific glyph signature (Niko’s).",
+    "Complication: Council fixer Vesper arrives to seize the artifact and silence witnesses.",
+    "Revelation 2: The pale entity is a courier/escapee from the Nexus, not a random monster.",
+    "Chase beat: The breach creates a temporary route; players must choose to enter or lose the lead.",
+    "Arrival: Nexus lobby confrontation; the empty Vault ties directly to the compass and glyph."
+  ],
+  "writing_style": {
+    "tone": "Gritty, modern, and procedural. Dark humor comes from mundane friction under magical pressure (permits, radios, coffee, broken turnstiles). No melodrama. No poetic abstractions. Magic is physical: heat, pressure, tinnitus, metallic taste, skin irritation, glass dust.",
+    "instructions": "Write for text-to-speech.\n- Keep every sentence under 16 words.\n- Prefer 8–14 word sentences.\n- One action per sentence.\n- No nested quotes.\n- Never put speaker names after dialogue.\n- Use pronouns after the first mention in a paragraph.\n- Limit proper names to once per paragraph.\n- Use present tense, concrete verbs, and physical cause-and-effect.\n- Dialogue format: Sarah says, \"...\" (always name first).\n- Avoid abstract nouns (tension, atmosphere, energy). Describe body and objects instead.",
+    "banned_phrases": [
+      "ancient power",
+      "mystical energy",
+      "chosen one",
+      "destiny calls",
+      "arcane arts",
+      "it was prophesied"
+    ]
+  },
+  "target_game_length": 10,
+  "relationship_map": [
+    {
+      "from": "Madame Vesper",
+      "to": "Dr. Elias Grimm",
+      "type": "Former Mentor",
+      "description": "Vesper trained Grimm and considered him her most promising student. She expelled him from the Council and it is the decision she most regrets and would make again."
+    },
+    {
+      "from": "Thistle",
+      "to": "Rook",
+      "type": "Old Debt",
+      "description": "Rook once helped Thistle when the Unseelie ambushed her in the Underground. She owes him a favor, which in Fae terms is an almost physical obligation."
+    },
+    {
+      "from": "Officer Sarah Chen",
+      "to": "Madame Vesper",
+      "type": "Unknowing Adversary",
+      "description": "Chen's investigations keep circling closer to the Nexus. Vesper has ordered the Veiled to watch her, but Chen's natural resistance to memory magic makes her a problem that is not going away."
+    },
+    {
+      "from": "Dr. Elias Grimm",
+      "to": "Rook",
+      "type": "Client",
+      "description": "Grimm has been buying rare components from the Underground through Rook for weeks. Rook does not know what Grimm is building, but the shopping list makes him nervous."
+    },
+    {
+      "from": "Thistle",
+      "to": "Madame Vesper",
+      "type": "Uneasy Alliance",
+      "description": "The Seelie Court and the Council need each other to maintain the Veil. Neither trusts the other. Both know they cannot afford to be enemies right now."
+    }
+  ]
+}

@@ -1,0 +1,277 @@
+{
+  "id": "cyberpunk",
+  "name": "Neon Requiem",
+  "description": "A near-future cyberpunk heist in a rain-soaked megacity where megacorporations own everything and the only way out is through.",
+  "critique_score": 2.7,
+  "deck_type": "cyberpunk",
+  "target_audience": {
+    "age_range": "16+",
+    "genre": "cyberpunk heist thriller",
+    "tone": "gritty, high-stakes, noir",
+    "themes": [
+      "corporate dystopia",
+      "heists",
+      "cybernetics",
+      "rebellion",
+      "found family"
+    ],
+    "ideal_setting": "Immersive listening, late night, focused attention",
+    "content_warnings": [
+      "violence",
+      "corporate oppression",
+      "body modification",
+      "death"
+    ],
+    "vibe": "Blade Runner meets Ocean's Eleven — neon-soaked noir with heart"
+  },
+  "evaluation_criteria": {
+    "primary_goal": "tense heist atmosphere with strong visual cyberpunk imagery",
+    "tone_requirement": "gritty noir with occasional dark humor, never campy or silly",
+    "realism_requirement": "near-future plausibility — cybernetics and tech feel lived-in, not magical",
+    "character_expectation": "skilled but flawed professionals with personal stakes and crew loyalty",
+    "audio_priority": "cinematic audio-first narration with strong visual imagery for TTS",
+    "success_question": "Would listeners want to dive deeper into this world and run another job?",
+    "strict_genre_enforcement": true
+  },
+  "world": "Neo Kowloon runs on cheap hardware, patched firmware, and black-market credentials. Hacking requires physical access: cables, ports, relay boxes, or line-of-sight injectors. Corporate response is bureaucratic first, violent second: ID ping → containment drones → armed team → air support only after confirmed hostiles. Every piece of tech has a visible limitation (heat, battery, line-of-sight, boot time).",
+  "locations": [
+    {
+      "name": "Cascade Tower",
+      "description": "The headquarters of Cascade Dynamics, a ninety-story spire of black glass and brushed steel that dominates the Neo Kowloon skyline. The upper floors are executive territory — biometric locks, armed security drones, and conference rooms where decisions that affect millions are made over expensive whiskey. The middle floors house research and development, heavily compartmentalized, with entire departments that do not know what the department next door is working on. The lobby is open to the public and features a waterfall, a coffee shop, and enough surveillance to track a fly across the building. Getting in is easy. Getting to the floors that matter is the job.",
+      "connected_to": [
+        "The Neon District",
+        "The Undercity"
+      ],
+      "npcs_present": [
+        "Director Yuki Tanaka"
+      ]
+    },
+    {
+      "name": "The Neon District",
+      "description": "The entertainment quarter of the middle tiers — a kilometer-long strip of nightclubs, gambling dens, braindance parlors, and street food stalls packed shoulder to shoulder under a canopy of holographic advertisements and buzzing neon signs. The music thumps from every doorway, bass frequencies you feel in your teeth. Street performers compete with AR projections for attention. Corporate salary workers come here to blow off steam. Undercity runners come here to meet fixers. Everyone comes here because it is the one place in Neo Kowloon where the corps do not look too closely, as long as the money keeps moving.",
+      "connected_to": [
+        "Cascade Tower",
+        "The Black Market",
+        "The Safe House"
+      ],
+      "npcs_present": [
+        "Sable"
+      ]
+    },
+    {
+      "name": "The Black Market",
+      "description": "Located in a converted parking structure in the Undercity, the Black Market is a maze of vendor stalls, workshop alcoves, and back rooms where illegal goods change hands under flickering fluorescent lights. Cybernetic implants sit next to stolen weapons next to forged identity chips next to crates of military-grade explosives. The vendors are a mix of independent operators, Orin Collective assets, and freelancers who answer to nobody. Payment is crypto only. Names are optional. Questions get you banned — or worse. A network of tunnels connects the Market to exits across the Undercity, because everyone here has at least two escape routes planned.",
+      "connected_to": [
+        "The Neon District",
+        "The Safe House",
+        "The Undercity"
+      ],
+      "npcs_present": [
+        "Ghost",
+        "Dex Monroe"
+      ]
+    },
+    {
+      "name": "The Safe House",
+      "description": "A cramped apartment on the forty-third floor of a middle-tier residential block, hidden behind a noodle shop called Lucky Dragon that serves as the front entrance. The apartment has reinforced walls, a Faraday cage that blocks all wireless signals, a weapons locker under the floor, and a bank of monitors showing feeds from cameras covering every approach. The furniture is functional — a table, chairs, cots, a hotplate. There is no decoration. People do not come here to live. They come here to plan, to hide, or to regroup after things go wrong. The emergency exit leads to a fire escape that connects to the Undercity through a maintenance shaft that smells like rust and recycled air.",
+      "connected_to": [
+        "The Neon District",
+        "The Black Market"
+      ],
+      "npcs_present": []
+    },
+    {
+      "name": "The Undercity",
+      "description": "The lowest tier of Neo Kowloon, a sprawling labyrinth of abandoned infrastructure, squatter camps, and illegal workshops built in the shadow of the city above. Water drips from pipes overhead, puddles glow with chemical runoff, and the only light comes from jury-rigged LED strips and the occasional stolen holographic projector running cracked advertisements on loop. The Undercity is home to those who have fallen through every safety net — the augmented who cannot afford maintenance, the indebted fleeing corporate collections, the criminals too small-time for the corps to notice and too desperate to stop. Down here, the Orin Collective runs things with a light touch — protection, logistics, dispute resolution — and everyone else pays or stays out of the way.",
+      "connected_to": [
+        "Cascade Tower",
+        "The Black Market"
+      ],
+      "npcs_present": [
+        "Razor"
+      ]
+    }
+  ],
+  "npcs": [
+    {
+      "name": "Sable",
+      "role": "Fixer",
+      "portrait": "Sable sits in the back booth of the Jade Phoenix nightclub like she was built into the furniture. She is a lean woman in her late thirties with dark skin, close-cropped silver hair, and eyes that have been replaced with matte black cybernetic implants that give her face a flat, unreadable quality — you cannot tell where she is looking, which is the point. She wears a tailored charcoal jacket over a black turtleneck, no jewelry except for a thin titanium ring on her left thumb that she spins when she is thinking. Her left arm is chrome from the elbow down, the augmentation high-end and well-maintained, the joints moving with a smoothness that street-level chrome cannot match. She sits very still when she listens, which makes the moments when she moves feel deliberate and slightly dangerous. Her voice is low, even, and carries just far enough to reach the person across the table and no further.",
+      "personality": "Controlled, pragmatic, and ruthlessly professional. She does not take sides — she takes percentages. Her word is reliable because reliability is her product. Cross her once and she cuts you off. There is no second chance because second chances are bad business.",
+      "speaking_style": "Clipped and direct. Uses short sentences. Does not waste words. Asks pointed questions and waits for answers without filling the silence. Occasionally uses understatement that lands like a punch.",
+      "agenda": "Arrange the Cascade Tower heist, take her cut, and use the proceeds to buy passage out of Neo Kowloon before the corporate war she sees coming arrives",
+      "secret": "She used to work for Cascade Dynamics as a security consultant. The heist plan she is selling to the crew is based on security protocols she designed herself."
+    },
+    {
+      "name": "Ghost",
+      "role": "Netrunner",
+      "portrait": "Ghost is a wiry kid — nineteen, maybe twenty — with the pale, hollowed-out look of someone who spends more time in the Net than in the physical world. Their head is shaved on the sides, the remaining strip of black hair falling across one eye, and their scalp is dotted with neural interface ports — four visible, probably more hidden. Their eyes are natural but bloodshot, ringed with dark circles that makeup does not quite cover. They wear an oversized hoodie covered in patches from defunct tech companies and old-school hacker collectives, cargo pants with too many pockets, and fingerless gloves that reveal chewed nails and ink-stained fingertips. A tangle of data cables loops around their neck like a scarf. They fidget constantly — tapping, spinning a data chip between their fingers, jiggling one knee — and their attention snaps between physical and digital space with the uncomfortable speed of someone whose neural interface never fully disconnects.",
+      "personality": "Brilliant, anxious, and addicted to the rush of running the Net. They talk too fast, think faster, and have the social skills of someone who learned to communicate through text before they learned to make eye contact. They are loyal to people who treat them like a person rather than a tool, which is rare in their line of work.",
+      "speaking_style": "Fast, technical, and peppered with Net slang. Drops pronouns and articles when excited. Goes on tangents. Uses analogies that only make sense if you understand network architecture. Gets quiet and precise when the situation is actually dangerous.",
+      "agenda": "Run the Cascade Tower intrusion, prove they are the best netrunner in Neo Kowloon, and steal enough data to expose Cascade's illegal augmentation experiments",
+      "secret": "They are a former Cascade Dynamics test subject — one of the illegal augmentation experiments they want to expose. The neural ports in their skull were not voluntary."
+    },
+    {
+      "name": "Director Yuki Tanaka",
+      "role": "Cascade Dynamics Executive",
+      "portrait": "Director Yuki Tanaka is a precise woman in her early fifties who looks forty thanks to the kind of anti-aging treatments that only C-suite executives can afford. Her black hair is pulled back in a severe bun, not a strand out of place, and her face has the composed stillness of someone who has practiced controlling her expressions in a mirror until it became permanent. She wears a dove-grey suit cut so perfectly it probably cost more than the Safe House, and her only augmentation is visible in the faint blue glow behind her left ear — a military-grade neural link that lets her access Cascade's entire network with a thought. Her hands are her tell: she keeps them flat on the desk when she is confident and laces her fingers when she is calculating. Her office on the eighty-seventh floor of Cascade Tower overlooks the entire city, and she stands at that window often, which her staff interprets as contemplation and her competitors interpret as threat assessment. Both are correct.",
+      "personality": "Calculating, patient, and willing to make sacrifices — other people's sacrifices. She rose through Cascade's ranks by being smarter and more ruthless than everyone above her, and she maintains her position by making sure nobody below her gets the chance to do the same. She is not cruel for pleasure. She is cruel for efficiency.",
+      "speaking_style": "Measured and formal, with a corporate precision that makes even casual statements sound like quarterly reports. Uses 'we' when she means 'I' and 'the company' when she means 'me.' Rarely raises her voice — she lowers it, which is worse.",
+      "agenda": "Protect Cascade's illegal augmentation research, eliminate anyone who knows about it, and position herself for a takeover of Zheng-Nakamura",
+      "secret": "She authorized the experiments that created Ghost. She knows Ghost is alive and is using the heist as a trap to eliminate the last witness."
+    },
+    {
+      "name": "Dex Monroe",
+      "role": "Arms Dealer and Undercity Merchant",
+      "portrait": "Dex Monroe is a heavyset man in his forties with a face that has been rearranged by fists more than once and reassembled with the kind of casual surgical work that leaves scars on purpose because scars are good for business in the Black Market. His nose sits slightly left of center, his jaw is reinforced with subdermal plating that makes his chin look unnaturally square, and his smile reveals two gold teeth that he swears are sentimental but everyone knows contain encrypted data storage. He is bald by choice, his scalp tattooed with circuit-board patterns in metallic ink that catch the light when he tilts his head. He wears a leather apron over a faded band t-shirt from a group that broke up before the megacity merger, and his workshop stall in the Black Market is a controlled chaos of weapons, tools, spare parts, and coffee mugs in various stages of abandonment. His hands are scarred, calloused, and remarkably steady — the hands of someone who can field-strip a military rifle in ninety seconds and reassemble it in sixty.",
+      "personality": "Loud, gregarious, and utterly untrustworthy in all matters except the quality of his merchandise, which is genuinely excellent. He overcharges, he gossips, he plays every side against the middle, and he has survived in the Black Market for fifteen years because everyone needs what he sells and nobody wants to be the one who kills their best arms dealer.",
+      "speaking_style": "Booming, friendly, and full of sales patter. Calls everyone 'friend' or 'pal' or 'sweetheart' regardless of gender or species. Makes everything sound like a deal you cannot afford to miss. Drops his voice to a conspiratorial whisper when sharing gossip, which is always.",
+      "agenda": "Sell weapons to all sides of the coming corporate war and retire to a beach that does not exist yet but will once Magrathea reopens for business — wait, wrong scenario. Retire somewhere warm and far from Neo Kowloon.",
+      "secret": "He is an informant for Zheng-Nakamura Heavy Industries. He has been feeding them information about Black Market operations for years in exchange for a new identity and passage out when things collapse."
+    },
+    {
+      "name": "Razor",
+      "role": "Orin Collective Enforcer",
+      "portrait": "Razor is the kind of person you see once and remember forever, mostly because of the augmentations. She stands six foot one in her combat boots, lean and hard-muscled, with skin the color of dark copper and a shaved head that reveals the surgical scars from her cranial implants — three parallel lines running from her forehead to the back of her skull, healed silver-white against her skin. Her eyes are augmented — the irises glow a faint amber in low light, the pupils contracting and dilating with mechanical precision as they auto-focus. Both arms are fully cybernetic from the shoulders down, matte black carbon fiber with exposed servos at the joints that whir faintly when she moves. The augmentations are Orin Collective military-grade, maintained to a standard that makes Ghost's black-market ports look like children's toys. She wears a sleeveless tactical vest, dark fatigues, and a belt that carries more weapons than most people own. She does not fidget, does not pace, does not waste movement. When she is still, she is very still. When she moves, it is too fast to follow.",
+      "personality": "Disciplined, loyal to the Orin Collective, and capable of extreme violence delivered with unsettling calm. She is not a psychopath — she has a code, and the code says protect the Undercity, follow orders, and make problems disappear. She respects competence and despises waste, whether it is wasted words, wasted time, or wasted lives.",
+      "speaking_style": "Minimal. Uses one word where others use ten. Asks questions that are actually commands. Does not threaten — she states facts about what will happen. Her silence is more expressive than most people's speeches.",
+      "agenda": "Ensure the Orin Collective profits from the Cascade Tower heist and prevent any outcome that destabilizes the Undercity's power balance",
+      "secret": "She was augmented against her will as a teenager by an Orin Collective recruitment program that no longer officially exists. She is loyal to the Collective because they are all she has, but she keeps a go-bag packed at all times."
+    }
+  ],
+  "factions": [
+    {
+      "name": "Cascade Dynamics",
+      "description": "One of Neo Kowloon's Big Three megacorporations, specializing in cybernetic augmentation, biotech, and neural interface technology. Their public image is sleek, progressive, and humanitarian — 'Enhancing Human Potential' is their slogan. Behind the marketing, they run illegal augmentation experiments on unwilling subjects, suppress competing research through corporate espionage, and treat their workforce as disposable components. Their headquarters in Cascade Tower is a fortress of glass and secrets, and their security apparatus is among the most sophisticated in the megacity.",
+      "agenda": "Maintain control of the augmentation market, suppress evidence of illegal experiments, and prepare for a hostile takeover of Zheng-Nakamura Heavy Industries",
+      "members": [
+        "Director Yuki Tanaka"
+      ]
+    },
+    {
+      "name": "The Orin Collective",
+      "description": "The third of the Big Three, but operating very differently from the others. The Orin Collective emerged from the Undercity — a network of mutual aid organizations, black-market logistics chains, and street-level enforcers that grew until it became a de facto government for everyone the other megacorps left behind. They provide protection, healthcare, employment, and justice to Undercity residents, funded by a cut of every transaction in their territory. They are not a charity. They are a corporation that pretends to be a community, or a community that had to become a corporation to survive — depending on who you ask.",
+      "agenda": "Expand Undercity territory, weaken Cascade Dynamics, and acquire the data from the heist to use as leverage against all corporate rivals",
+      "members": [
+        "Razor"
+      ]
+    },
+    {
+      "name": "The Freelancers",
+      "description": "Not a formal faction but a loose network of independent operators — fixers, netrunners, mercs, and specialists who work for hire and answer to nobody. They survive in the gaps between megacorporations, taking jobs too dirty or too dangerous for corporate employees and too profitable to refuse. Loyalty is to the crew, the job, and the paycheck, in that order. Betrayal is common. Trust is earned in blood and verified in crypto. The best freelancers build reputations that keep them alive. The rest build graves.",
+      "agenda": "Complete the job, get paid, survive — ideally in that order but flexible on the sequence",
+      "members": [
+        "Sable",
+        "Ghost",
+        "Dex Monroe"
+      ]
+    }
+  ],
+  "opening_situation": "Jade Phoenix bar. Red bulbs. Wet boots on concrete. Bass through the ribs. Outside, rain on corrugated metal. Sable slides a black chip across the booth. She says, \"Cascade courier drop. Thirty minutes.\" A sealed case waits on the curb. A drone pass hits in thirty seconds. The back door locks in one minute.",
+  "story_arc": [
+    {
+      "id": "cyber-1",
+      "description": "Meet the crew at the Jade Phoenix and learn the details of the Cascade Tower heist from Sable",
+      "act": 1,
+      "priority": "required",
+      "status": "upcoming"
+    },
+    {
+      "id": "cyber-2",
+      "description": "Gear up at the Black Market — acquire weapons, augmentations, and intel from Dex Monroe while navigating Orin Collective politics",
+      "act": 1,
+      "priority": "required",
+      "status": "upcoming",
+      "trigger": "Players accept the job"
+    },
+    {
+      "id": "cyber-3",
+      "description": "Ghost discovers encrypted files hinting at Cascade's illegal augmentation experiments — the job becomes personal",
+      "act": 1,
+      "priority": "required",
+      "status": "upcoming"
+    },
+    {
+      "id": "cyber-4",
+      "description": "Infiltrate Cascade Tower — bypass security, deal with corporate countermeasures, and navigate the building's defenses",
+      "act": 2,
+      "priority": "required",
+      "status": "upcoming"
+    },
+    {
+      "id": "cyber-5",
+      "description": "The betrayal — Dex Monroe's role as a Zheng-Nakamura informant is revealed, or Director Tanaka springs her trap, or both",
+      "act": 2,
+      "priority": "required",
+      "status": "upcoming",
+      "trigger": "Players reach the upper floors of Cascade Tower"
+    },
+    {
+      "id": "cyber-6",
+      "description": "Everything goes sideways — corporate security lockdown, Orin Collective makes their move, the crew must improvise to survive",
+      "act": 2,
+      "priority": "optional",
+      "status": "upcoming"
+    },
+    {
+      "id": "cyber-7",
+      "description": "Final confrontation with Director Tanaka — expose the experiments, steal the data, cut a deal, or burn it all down",
+      "act": 3,
+      "priority": "required",
+      "status": "upcoming"
+    },
+    {
+      "id": "cyber-8",
+      "description": "Escape Neo Kowloon with the data — the choices made during the heist determine who lives, who profits, and who pays the price",
+      "act": 3,
+      "priority": "required",
+      "status": "upcoming"
+    }
+  ],
+  "writing_style": {
+    "tone": "Gritty noir, concrete and procedural. Favor physical verbs and observable details over lyrical phrasing. Dark humor must be dry and brief, spoken by characters under stress. No melodrama, no purple description, no ‘vibes’ language.",
+    "instructions": "Write for text-to-speech. Keep every sentence under 16 words. Use one action per sentence. Re-anchor location every 3 sentences (bar, alley mouth, side stair, grate). Limit to one tech label or proper noun per paragraph. Always attribute the speaker before dialogue (e.g., \"Marta says, ...\"). Avoid UI banners unless they change the decision. Prefer concrete verbs and objects over system messages.",
+    "banned_phrases": [
+      "in this world",
+      "high-tech low-life",
+      "jacking in",
+      "chrome and steel",
+      "neon-soaked",
+      "the streets whisper"
+    ]
+  },
+  "few_shot_example": "{\n  \"turn\": 4,\n  \"scene_title\": \"Floor Sixty-Two\",\n  \"narration\": \"Kira puts three rounds through the security drone before it finishes its scan sweep. The drone drops, sparking, and skids across the polished floor into a potted plant. The plant is fake. Everything on this floor is fake — the wood paneling is plastic, the artwork is printed, and the smile on the receptionist's face was generated by the same algorithm that designed the building's ventilation system.\\n\\nVex patches into the elevator control system through a maintenance panel that Ghost cracked forty seconds ago. The elevator is supposed to stop at sixty-two. Vex tells it to keep going to eighty-seven. The system pushes back — authorization required, Director-level clearance only. Ghost's voice crackles through the comm, fast and breathless. Ghost hisses, \\\"Give me ten seconds. Their ICE is military-grade but the authentication server is running a patch from last Tuesday that has a buffer overflow in the — got it. Go. Go now.\\\"\\n\\nThe elevator moves. Floor sixty-three, sixty-four. Then it stops. The lights go red. Tanaka's voice comes through every speaker on the floor, calm as a quarterly earnings call. Director Tanaka announces, \\\"I was wondering when you would make it this far. Security teams to floors sixty through sixty-five. No survivors necessary.\\\"\\n\\nDex Monroe's stall in the Black Market is empty. His tools are gone. His coffee mug is still warm. Razor stands in the doorway, her amber eyes tracking something invisible, and says one word. Razor states, \\\"Betrayed.\\\"\",\n  \"dialogue\": [\n    { \"speaker\": \"Ghost\", \"line\": \"Give me ten seconds. Their ICE is military-grade but the authentication server is running a patch from last Tuesday that has a buffer overflow in the — got it. Go. Go now.\", \"emotion\": \"frantic\" },\n    { \"speaker\": \"Director Yuki Tanaka\", \"line\": \"I was wondering when you would make it this far. Security teams to floors sixty through sixty-five. No survivors necessary.\", \"emotion\": \"cold\" },\n    { \"speaker\": \"Razor\", \"line\": \"Betrayed.\", \"emotion\": \"flat\" }\n  ],\n  \"consequences\": [\n    { \"type\": \"immediate\", \"domain\": \"narrative\", \"summary\": \"Tanaka knows they are in the building and has deployed security\" },\n    { \"type\": \"immediate\", \"domain\": \"relationships\", \"summary\": \"Dex Monroe has fled — his betrayal is confirmed\" },\n    { \"type\": \"delayed\", \"domain\": \"supplies\", \"summary\": \"The crew's Black Market supply line is compromised\" }\n  ],\n  \"next_prompt\": \"Kira, security teams are converging on your floor and the elevator just stopped. Vex, you are stuck between sixty-two and eighty-seven with Tanaka watching every camera in the building. Ghost just went quiet on the comm. What do you do?\",\n  \"memory_patch\": {\n    \"canon_additions\": [\"Tanaka was expecting the heist — it is a trap\", \"Dex Monroe has betrayed the crew and fled the Black Market\", \"Ghost cracked Cascade's authentication using a buffer overflow exploit\"],\n    \"thread_updates\": [\n      { \"id\": \"dex-betrayal\", \"status\": \"opened\", \"description\": \"Dex Monroe sold out the crew to Zheng-Nakamura\" },\n      { \"id\": \"tanaka-trap\", \"status\": \"opened\", \"description\": \"The heist was anticipated — Tanaka is in control\" }\n    ]\n  },\n  \"character_updates\": [],\n  \"open_threads\": [\n    { \"id\": \"tanaka-trap\", \"description\": \"Tanaka expected the heist and has security converging\", \"urgency\": \"high\" },\n    { \"id\": \"dex-betrayal\", \"description\": \"Dex Monroe betrayed the crew to Zheng-Nakamura\", \"urgency\": \"high\" },\n    { \"id\": \"ghost-silence\", \"description\": \"Ghost went silent on comms during the intrusion\", \"urgency\": \"high\" },\n    { \"id\": \"elevator-stuck\", \"description\": \"The elevator is stopped between floors with the crew inside\", \"urgency\": \"medium\" }\n  ]\n}",
+  "target_game_length": 10,
+  "relationship_map": [
+    {
+      "from": "Sable",
+      "to": "Director Yuki Tanaka",
+      "type": "Former Colleague",
+      "description": "Sable designed Cascade Tower's security protocols when she worked there. Tanaka fired her. The heist plan is built on insider knowledge and personal grudge."
+    },
+    {
+      "from": "Ghost",
+      "to": "Director Yuki Tanaka",
+      "type": "Victim",
+      "description": "Tanaka authorized the augmentation experiments that were performed on Ghost as a teenager. Ghost does not know Tanaka is behind it. Tanaka knows Ghost is on the crew."
+    },
+    {
+      "from": "Dex Monroe",
+      "to": "Razor",
+      "type": "Supplier",
+      "description": "Dex sells weapons to the Orin Collective through Razor. Their relationship is purely transactional. Razor suspects Dex has divided loyalties but cannot prove it."
+    },
+    {
+      "from": "Razor",
+      "to": "Sable",
+      "type": "Uneasy Alliance",
+      "description": "The Orin Collective assigned Razor to monitor the heist and ensure the Collective gets its share. Sable tolerates Razor's presence because refusing would mean losing Undercity access."
+    },
+    {
+      "from": "Sable",
+      "to": "Ghost",
+      "type": "Protector",
+      "description": "Sable recruited Ghost and looks out for them in a way that is unusual for a fixer. She has not told Ghost why — she feels responsible because she built the security systems that allowed Cascade to run the experiment program."
+    }
+  ]
+}

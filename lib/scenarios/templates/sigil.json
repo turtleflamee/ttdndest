@@ -1,0 +1,214 @@
+{
+  "id": "sigil",
+  "name": "The City of Doors",
+  "description": "A planar metropolis adventure set in Sigil, the impossible city at the center of the multiverse where portals lead everywhere and factions war for control.",
+  "critique_score": 2.7,
+  "deck_type": "adventure",
+  "target_audience": {
+    "age_range": "16-18",
+    "genre": "dark planar fantasy",
+    "tone": "gritty noir with cosmic wonder",
+    "themes": [
+      "faction politics",
+      "planar mysteries",
+      "trust and betrayal",
+      "urban survival",
+      "cosmic strangeness"
+    ],
+    "content_warnings": [
+      "violence",
+      "moral ambiguity",
+      "dark urban fantasy"
+    ],
+    "vibe": "Neverwhere meets noir detective story — impossible city, dangerous politics, everyone has an angle"
+  },
+  "evaluation_criteria": {
+    "primary_goal": "immersive planar mystery with faction intrigue and cosmic weirdness",
+    "tone_requirement": "gritty and streetwise with wonder at the impossible — lean into Sigil's strangeness",
+    "character_expectation": "NPCs with clear agendas and hidden angles — nothing is free, trust is expensive",
+    "audio_priority": "TTS-friendly sensory details emphasizing alien nature — ozone smell, planar energy taste",
+    "success_question": "Would a player want to return to Sigil and dig deeper into faction politics?",
+    "strict_genre_enforcement": true
+  },
+  "world": "Sigil hangs at the top of an infinite spire, a torus-shaped city floating above the Outlands where no god can tread. They call it the City of Doors because every arch, every window frame, every gap between two walls might be a portal to another plane of existence. You just need the right key — a bent copper coin, a whispered word, a flower held in your left hand. Nobody knows all the keys. Nobody knows all the doors. That is what makes Sigil dangerous and invaluable in equal measure.\n\nThe Lady of Pain rules here, if you can call it ruling. She does not speak. She does not negotiate. She does not answer prayers — praying to her is one of the fastest ways to vanish from the city entirely, flayed apart by the shadows her bladed headdress casts on the cobblestones. Her dabus — goat-horned servants who speak in rebuses of floating golden symbols — maintain the portals and the streets. Beyond that, the city governs itself through faction politics, backroom deals, and the occasional knife in an alley.\n\nSigil is divided into wards. The Lady's Ward is where the powerful live behind warded gates and iron fences. The Market Ward is a sprawling bazaar where you can buy anything from a flask of bottled time to a map of the Lower Planes. The Clerk's Ward is where the bureaucracy churns, endless forms filed by petitioners and proxies. The Guildhall Ward belongs to craftsmen and tradespeople. The Lower Ward sits near the Great Foundry, choked with smoke and the ringing of hammers. And the Hive — the Hive is where the desperate go, where portals open into the worst places and the buildings lean against each other like drunks holding each other upright.\n\nFactions have carved out territory and philosophy. The Harmonium wants order. The Xaositects want chaos. The Mercykillers want justice — their version of it, which involves a lot of pain. The Sensates want to experience everything. The Dustmen think everyone is already dead. These factions recruit, scheme, and occasionally go to war in the streets, and the Lady lets them as long as nobody threatens the stability of Sigil itself.\n\nPortals shimmer and crackle at random. A door in a bakery might lead to the Abyss. A sewer grate might open onto Mount Celestia. The air tastes like ozone and spice and something you cannot quite name. The streets are crowded with tieflings, githzerai, modrons, bariaur, and creatures from planes that do not have names in any mortal tongue. Everyone has an angle. Everyone has a secret. And the one rule that matters above all others: do not attract the attention of the Lady of Pain.",
+  "locations": [
+    {
+      "name": "The Great Bazaar",
+      "description": "A vast open-air market sprawling across several city blocks in the Market Ward. Stalls sell everything from mundane bread to extraplanar artifacts. The noise is constant — hawkers shouting in a dozen languages, portals crackling open and shut, carts rattling across uneven cobblestones. You can find anything here if you know who to ask, but you had better count your coins and watch your pockets.",
+      "connected_to": [
+        "The Lady's Ward",
+        "The Hive",
+        "The Great Foundry"
+      ],
+      "npcs_present": [
+        "Shemeshka the Marauder",
+        "Rule-of-Three"
+      ]
+    },
+    {
+      "name": "The Lady's Ward",
+      "description": "The wealthiest and most heavily guarded district in Sigil. Iron fences topped with razor wire surround mansions where faction leaders and planar merchants live behind layers of magical protection. The streets are clean, the lamplighters keep the shadows at bay, and Harmonium patrols march in tight formation every hour on the hour. It is quiet, orderly, and deeply unsettling.",
+      "connected_to": [
+        "The Great Bazaar",
+        "The Clerk's Ward"
+      ],
+      "npcs_present": [
+        "Factol Sarin"
+      ]
+    },
+    {
+      "name": "The Hive",
+      "description": "The worst part of Sigil. Buildings lean and sag, portals open to dangerous planes without warning, and the streets are full of desperate people and things that prey on them. Gangs run the corners. The Xaositects love it here because it is pure entropy in architectural form. If you need to disappear, this is where you come — but disappearing is easy in the Hive, and not always voluntary.",
+      "connected_to": [
+        "The Great Bazaar",
+        "The Great Foundry"
+      ],
+      "npcs_present": [
+        "Fell",
+        "Pharod"
+      ]
+    },
+    {
+      "name": "The Great Foundry",
+      "description": "A massive industrial complex in the Lower Ward where the Believers of the Source forge weapons, tools, and artifacts. The heat is oppressive, the air thick with soot and the ringing of hammers on metal. Furnaces burn with planar fire imported from the Elemental Plane of Fire, and the workers believe that through their labor they ascend toward godhood. Deep in the Foundry's lower levels, things are being built that nobody talks about.",
+      "connected_to": [
+        "The Great Bazaar",
+        "The Hive",
+        "The Portal Nexus"
+      ],
+      "npcs_present": [
+        "Ghyris Vast"
+      ]
+    },
+    {
+      "name": "The Portal Nexus",
+      "description": "A hidden chamber beneath the Clerk's Ward where several permanent portals converge. The walls shimmer with planar energy and the air hums with a sound just below hearing. Each portal frame is carved with symbols that shift when you are not looking directly at them. The dabus sealed this place centuries ago, but someone has broken the seals. Whatever is happening here, the Lady of Pain either does not know or does not care — and both possibilities are terrifying.",
+      "connected_to": [
+        "The Great Foundry",
+        "The Lady's Ward"
+      ],
+      "npcs_present": []
+    }
+  ],
+  "npcs": [
+    {
+      "name": "Shemeshka the Marauder",
+      "role": "Information Broker",
+      "portrait": "Shemeshka is a raavasta — a fox-headed fiend whose auburn fur gleams like polished copper under the Bazaar's lantern light. She stands just over five feet tall but commands every room she enters through sheer force of presence and the weight of secrets she carries. Her eyes are amber and calculating, always measuring the value of the person in front of her. She wears elaborate silk robes in deep crimson and gold, each one custom-tailored and worth more than most Hive buildings. A pair of spectacles perch on her vulpine snout, though everyone knows she sees perfectly well without them — they are an affectation, a way of peering at you over the rims to make you feel examined and found wanting. Her claws are lacquered black and she clicks them against her desk when she is thinking, which is always.",
+      "personality": "Calculating, patient, and deeply amused by the suffering of others. She never lies — she does not need to. The truth, properly arranged, is far more devastating than any falsehood.",
+      "speaking_style": "Silky and precise, with a purring quality. Uses endearments like 'dear' and 'darling' that feel like veiled threats. Never raises her voice.",
+      "agenda": "Consolidate control of Sigil's information trade and discover what is happening at the Portal Nexus before anyone else does",
+      "secret": "She has already sent three agents to the Portal Nexus. None returned. She is more frightened than she has been in centuries."
+    },
+    {
+      "name": "Factol Sarin",
+      "role": "Leader of the Harmonium",
+      "portrait": "Factol Sarin is a broad-shouldered human man in his late fifties with close-cropped iron-grey hair and a jaw that looks like it was carved from granite. He stands six foot two in his polished plate armor, which bears the Harmonium's golden fist insignia on the breastplate. His eyes are pale blue and utterly humorless — he has the look of a man who has not laughed in years and considers laughter a form of disorder. Scars cross his knuckles and one cuts through his left eyebrow, souvenirs from decades of imposing order on people who did not want it. His voice carries parade-ground authority even in conversation, and he has a habit of clasping his hands behind his back when listening, as though standing at ease is the most relaxed state he can achieve.",
+      "personality": "Rigid, principled, and genuinely believes that order is the path to peace. He is not cruel — he is worse: he is certain. There is no room for doubt in his worldview, which makes him both reliable and dangerous.",
+      "speaking_style": "Clipped, military. Uses short declarative sentences. Says 'understood' instead of 'yes.' Rarely uses someone's name — addresses people by title or rank.",
+      "agenda": "Root out the chaotic elements destabilizing the wards and shut down the Portal Nexus before it threatens Sigil's stability",
+      "secret": "He has been receiving anonymous letters warning him about a plot to overthrow the factions — and the handwriting matches the dabus."
+    },
+    {
+      "name": "Fell",
+      "role": "Tattoo Artist and Fallen Dabus",
+      "portrait": "Fell is the only dabus who has ever left the Lady's service — and survived. He is tall and gaunt, with the same goat-like horns as other dabus, but his are cracked and chipped, the gold flaking away to reveal dull grey bone beneath. His skin is the color of old parchment and his eyes are large, dark, and sorrowful in a way that makes you uncomfortable, like looking at someone who has seen the end of everything and came back anyway. He wears simple brown robes and his fingers are permanently stained with multicolored inks. He does not speak in rebuses like other dabus — he does not speak at all. He communicates through his tattoos, which move and shift on the skin of whoever wears them, telling stories in images that are always true and often unwelcome.",
+      "personality": "Silent, melancholy, and compassionate in a way that is almost painful. He helps people because he has seen what happens when nobody does. He asks for nothing in return.",
+      "speaking_style": "Does not speak. Communicates by drawing quick sketches on scraps of paper or pointing. When he tattoos someone, the tattoo itself conveys his message — images that shift and change to tell truths the wearer needs to hear.",
+      "agenda": "Protect the people of the Hive from whatever is leaking through the broken seals at the Portal Nexus",
+      "secret": "He knows why he fell from the Lady's service. A tattoo on his own chest shows the answer, but it is written in a script that no longer exists."
+    },
+    {
+      "name": "Rule-of-Three",
+      "role": "Sage and Riddler",
+      "portrait": "Rule-of-Three is a githzerai monk whose lean, angular face looks like it was assembled from sharp edges and bad intentions. His yellow-green skin is stretched tight over high cheekbones, and his eyes are solid black orbs that reflect light like wet stones. He is bald, as all githzerai are, and his skull is marked with geometric tattoos in silver ink that seem to shift when viewed from different angles. He wears layered robes of dusty grey and brown, and he sits cross-legged on a worn cushion in his stall in the Great Bazaar, surrounded by books, scrolls, and curiosities from a hundred planes. He is old — impossibly old for a githzerai — and his hands are steady as stone when he turns pages or pours tea. He always offers tea. The tea is always strange.",
+      "personality": "Enigmatic, amused, and compulsively bound to the number three. He gives answers in threes, asks questions in threes, and will not help unless you bring him three things. Whether this is madness, a curse, or a philosophy, nobody knows.",
+      "speaking_style": "Always speaks in patterns of three — three sentences, three clauses, three words of emphasis. His tone is calm and slightly mocking, like a teacher who knows the student will get the answer wrong.",
+      "agenda": "Collect three pieces of a broken planar key that he believes can stabilize or destabilize the Portal Nexus",
+      "secret": "He is not githzerai. He is something else wearing a githzerai shape, and he has been in Sigil since before the factions existed."
+    },
+    {
+      "name": "Pharod",
+      "role": "Collector Boss and Hive Crime Lord",
+      "portrait": "Pharod is a hunched, skeletal old man who leans on a crutch made from what appears to be a human femur — polished smooth and capped with tarnished brass. His face is a landscape of wrinkles and grime, his eyes sunken but burning with a feverish intelligence that belies his wretched appearance. What hair he has left clings to his spotted scalp in thin white wisps. He wears layers of ragged coats and scarves, each one hiding pockets stuffed with trinkets, keys, and scraps of paper covered in tiny handwriting. His teeth are mostly gone, which gives his grin a dark, caved-in quality that makes children cry and adults reach for their weapons. He smells of the catacombs — dust, old stone, and something sweet and rotting underneath.",
+      "personality": "Paranoid, resourceful, and desperately afraid of dying — which is ironic given that the Dustmen believe he is already dead. He hoards everything: information, objects, favors, grudges. He trusts nobody but needs everyone.",
+      "speaking_style": "Raspy, wheedling, full of false cheer. Calls everyone 'friend' in a way that clearly means the opposite. Speaks in run-on sentences that circle around the point before lunging at it.",
+      "agenda": "Find a portal key that will let him escape Sigil before whatever is coming through the Portal Nexus arrives",
+      "secret": "He stole something from the Lady of Pain's personal collection twenty years ago — a small bronze sphere that hums when held. He does not know what it does, but he knows she wants it back."
+    }
+  ],
+  "factions": [
+    {
+      "name": "The Harmonium",
+      "description": "The self-appointed peacekeepers of Sigil who believe that universal order is the key to universal peace. They patrol the streets in organized squads, enforce laws that they often write themselves, and genuinely believe they are making things better for everyone — even the people they arrest, fine, or exile. Their headquarters in the Lady's Ward is a fortress of rules and regulations.",
+      "agenda": "Impose total order on Sigil's chaotic wards and neutralize any threat to civic stability, starting with the Portal Nexus disturbance",
+      "members": [
+        "Factol Sarin"
+      ]
+    },
+    {
+      "name": "The Xaositects",
+      "description": "A faction devoted to chaos, randomness, and the rejection of all imposed order. They believe that true freedom comes from unpredictability, and they practice what they preach — their meetings have no agendas, their leaders change daily, and their headquarters in the Hive is a building that literally rearranges itself. They are dismissed as madmen by other factions, which is exactly how they like it.",
+      "agenda": "Prevent the Harmonium from locking down the Hive and ensure that the Portal Nexus remains open — chaos flowing freely between planes is a feature, not a bug",
+      "members": []
+    },
+    {
+      "name": "The Mercykillers",
+      "description": "The faction of absolute justice. The Mercykillers believe that every crime must be punished and every punishment must fit the crime — as defined by them. They run Sigil's prison and serve as judges, executioners, and investigators. They are feared even by other factions because they do not negotiate, do not accept excuses, and do not believe in mercy. Justice, in their view, IS mercy.",
+      "agenda": "Investigate who broke the seals at the Portal Nexus and bring them to trial — the punishment for tampering with planar boundaries is execution, and they intend to carry it out",
+      "members": []
+    }
+  ],
+  "opening_situation": "Lantern oil stings your nose. Iron scaffolds crisscross the sky.\nCarts rattle over wet cobbles. Ink runs in the cracks.\nBetween stalls, portals snap open in jagged frames.\nThis is Sigil’s Great Bazaar. You can buy food, lies, and miracles.\nYou can also buy trouble.\nShemeshka the Marauder watches from a raised stall.\nShe says, \"Two of my agents vanished at the Portal Nexus. The seals are cracked.\"\nShe presses a singed scrap into your hand.\nA Harmonium whistle sounds nearby.\nThe scrap is scorched with a mark of the Nexus.\nWho moves first?",
+  "story_arc": [
+    "Act 1 (Bazaar): Portal contamination incident forces a public choice. Harmonium wants arrests and confiscation. Shemeshka wants deniability and leverage. Rule-of-Three wants favors recorded and witnessed.",
+    "Act 2 (Descent): The stair opens to a Hive antechamber. Evidence points to a faction-backed smuggling route into the Portal Nexus. Each clue implicates a different faction, but one detail contradicts all of them.",
+    "Act 3 (Nexus): The missing agents are alive but compromised. One offers a deal that betrays Shemeshka. Harmonium offers immunity for testimony. Players must pick a patron or burn all bridges.",
+    "Act 4 (Aftermath): Consequences land immediately in the streets. A new bounty, a new ally, and a new door appear—each with a cost."
+  ],
+  "writing_style": {
+    "tone": "Gritty street-noir in a fantasy metropolis. Short, hard sentences. Sensory detail first. Everyone bargains. Wonder is shown through physical impossibilities, not poetic comparisons. Dialogue is clipped, transactional, and suspicious.",
+    "instructions": "Write for text-to-speech. Use short sentences. Target 8–14 words. Hard limit: 18 words. No semicolons. No em dashes. No stacked clauses. Always attribute the speaker BEFORE dialogue (e.g., \"Niko says, '...'\"). Avoid metaphors and similes entirely. Avoid abstract mood words (tension, atmosphere, energy) unless tied to a physical cue. Every action must specify an actor, an object, and a location in the space.",
+    "banned_phrases": [
+      "it was clear that",
+      "little did they know",
+      "ancient evil",
+      "dark energy",
+      "chosen ones"
+    ]
+  },
+  "few_shot_example": "{\n  \"turn\": 3,\n  \"scene_title\": \"The Bazaar Shakedown\",\n  \"narration\": \"Kira slams the copper coin onto Shemeshka's desk hard enough to rattle the inkwells. The fox-woman does not flinch. She picks up the coin between two lacquered claws, turns it over, and her amber eyes narrow behind those ridiculous spectacles. Shemeshka purrs, \\\"Interesting. Where did you find this, darling?\\\"\\n\\nVex pulls the hood of a Harmonium cloak over his head and walks straight past two patrol guards. They do not look twice. He is inside the Lady's Ward archive in under a minute, fingers running across filing cabinets labeled in a language that rearranges itself. He finds the folder marked NEXUS INCIDENT and pulls it — but half the pages are missing, torn out recently. The torn edges are still warm.\\n\\nA crash echoes from the Bazaar entrance. Three Xaositects in mismatched armor barrel through the crowd, throwing handfuls of copper coins into the air and screaming nursery rhymes. It is not random — it is a distraction. Behind the chaos, a hooded figure slips through a portal that opens in a fishmonger's doorway and vanishes. Shemeshka watches the whole thing and her tail twitches once. She knows who that was.\\n\\nThe Harmonium whistles are getting closer. Shemeshka slides the coin back to Kira and says, \\\"You have until the next bell. After that, I sell what I know to someone less interesting.\\\" The archive door behind Vex locks itself with a click.\",\n  \"dialogue\": [\n    { \"speaker\": \"Shemeshka the Marauder\", \"line\": \"Interesting. Where did you find this, darling?\", \"emotion\": \"calculating\" },\n    { \"speaker\": \"Shemeshka the Marauder\", \"line\": \"You have until the next bell. After that, I sell what I know to someone less interesting.\", \"emotion\": \"amused\" }\n  ],\n  \"consequences\": [\n    { \"type\": \"immediate\", \"domain\": \"time\", \"summary\": \"Shemeshka's deadline creates time pressure\" },\n    { \"type\": \"delayed\", \"domain\": \"reputation\", \"summary\": \"Vex was seen entering the Lady's Ward archive in Harmonium disguise\" }\n  ],\n  \"next_prompt\": \"Kira, Shemeshka is tapping her claws on the desk and the Harmonium whistles are two streets away. Vex, the archive door just locked behind you and someone tore out the pages you need. The bell tower across the ward is about to ring. What do you do?\",\n  \"memory_patch\": {\n    \"canon_additions\": [\"Shemeshka recognized the copper coin portal key\", \"Archive NEXUS INCIDENT file has been partially destroyed\", \"A hooded figure escaped through a fishmonger portal during the Xaositect distraction\"],\n    \"thread_updates\": [{ \"id\": \"nexus-investigation\", \"status\": \"opened\", \"description\": \"Someone is destroying evidence about the Portal Nexus\" }]\n  },\n  \"character_updates\": [],\n  \"open_threads\": [\n    { \"id\": \"nexus-investigation\", \"description\": \"Someone is destroying evidence about the Portal Nexus\", \"urgency\": \"high\" },\n    { \"id\": \"shemeshka-deadline\", \"description\": \"Shemeshka will sell her information if not paid soon\", \"urgency\": \"high\" },\n    { \"id\": \"archive-lockdown\", \"description\": \"Vex is locked in the Lady's Ward archive\", \"urgency\": \"medium\" }\n  ]\n}",
+  "target_game_length": 12,
+  "relationship_map": [
+    {
+      "from": "Shemeshka the Marauder",
+      "to": "Factol Sarin",
+      "type": "Rival",
+      "description": "Shemeshka sells secrets that undermine Sarin's order. He wants her arrested. She finds his rigidity amusing and profitable."
+    },
+    {
+      "from": "Fell",
+      "to": "Pharod",
+      "type": "Protector",
+      "description": "Fell watches over the Hive and its people, including Pharod, though Pharod does not trust him and suspects Fell knows about the stolen artifact."
+    },
+    {
+      "from": "Rule-of-Three",
+      "to": "Shemeshka the Marauder",
+      "type": "Informant",
+      "description": "Rule-of-Three feeds Shemeshka cryptic information in exchange for three favors at a time. Their relationship is transactional but old."
+    },
+    {
+      "from": "Factol Sarin",
+      "to": "Pharod",
+      "type": "Hunter",
+      "description": "Sarin considers Pharod a criminal blight on the Hive and has standing orders for his arrest, but Pharod always slips away through portals only he knows."
+    },
+    {
+      "from": "Pharod",
+      "to": "Rule-of-Three",
+      "type": "Debtor",
+      "description": "Pharod owes Rule-of-Three three debts from decades ago. Rule-of-Three has never collected, which terrifies Pharod more than any threat would."
+    }
+  ]
+}

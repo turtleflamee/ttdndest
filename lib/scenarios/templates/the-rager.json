@@ -1,0 +1,275 @@
+{
+  "id": "the-rager",
+  "name": "The Rager",
+  "description": "A massive house party spirals out of control in a beach town. Social chaos, awkward romance, terrible decisions, and the host's parents are coming home early. Teen comedy energy — think Superbad meets Project X.",
+  "critique_score": 2.8,
+  "deck_type": "party",
+  "target_audience": {
+    "age_range": "16-18",
+    "genre": "teen party comedy",
+    "tone": "fun, chaotic, emotionally messy",
+    "themes": [
+      "house party",
+      "social drama",
+      "awkward romance",
+      "bad decisions",
+      "friendship chaos"
+    ],
+    "ideal_setting": "With friends, laughing together, sharing the experience",
+    "content_warnings": [
+      "underage drinking references",
+      "social embarrassment",
+      "relationship drama"
+    ],
+    "vibe": "Superbad meets Project X — messy, funny, relatable teen chaos"
+  },
+  "evaluation_criteria": {
+    "primary_goal": "maximum fun, social chaos, and relatable teen comedy moments",
+    "tone_requirement": "embrace comedy, absurdity, and dramatic teen emotions — serious moments should land but comedy is king",
+    "realism_requirement": "modern teen life authenticity — no fantasy elements, but wild party logic is encouraged",
+    "character_expectation": "teenagers being messy, emotional, funny, and real — relationships and social dynamics matter more than plot logic",
+    "audio_priority": "TTS-friendly but prioritize humor and emotional beats over rigid sentence structure",
+    "success_question": "Would teens at a party want to keep playing this and talk about the funniest moments?",
+    "strict_genre_enforcement": false
+  },
+  "world": "It is Saturday night in Dune Cove, a small beach town where nothing ever happens — until tonight. Morgan Chase's parents left for a weekend trip to Napa and Morgan made the mistake of telling six people about the empty house. Six people told six people. Someone posted the address on Instagram. Now there are 200 people in a four-bedroom beach house and more arriving every minute.\n\nThe Chase house is the nicest place in Dune Cove — two stories, a pool out back, a three-car garage full of things that should not be touched, and a living room with white carpets that are no longer white. Morgan's parents are the kind of rich that has security cameras, except Morgan turned them off at 7 PM and is now deeply regretting that decision.\n\nDune Cove is a beach town that runs on tourism and boredom. There is a boardwalk with a taco stand and an arcade. A beach with bonfires. A 7-Eleven that does not check IDs very carefully. A parking lot behind the arcade where people hang out in their cars. The whole town is maybe eight blocks and everyone knows everyone's business by morning. Whatever happens tonight will be the only thing anyone talks about for the rest of the year.\n\nThis is the last weekend of summer. School starts Monday. People are desperate and reckless and emotional in the way that only teenagers on the last night of freedom can be. Crushes need to be confessed. Scores need to be settled. Dumb ideas need to be executed. Tomorrow everything changes, which means tonight nothing matters — or everything does, depending on who you ask.\n\nThe vibe started fun. Now it is tipping toward chaos. The music is too loud. Someone is crying in the bathroom. Someone else is on the roof. The neighbor's lights just turned on. And Morgan just got a text from their mom asking why the Ring doorbell is offline.",
+  "locations": [
+    {
+      "name": "The Main Floor",
+      "description": "The heart of the chaos. Morgan's living room has been turned into a dance floor — furniture shoved against walls, someone's phone plugged into a Bluetooth speaker stack, and 80 people packed into a space meant for 20. The white carpet has footprints, spilled drinks, and at least one mystery stain. The kitchen is connected by an open archway and has become the social hub — people lean against counters, raid the fridge, and have conversations they will either deeply regret or deeply treasure by morning. The front door keeps opening as more people arrive. The air is hot, loud, and smells like body spray and bad decisions.",
+      "connected_to": [
+        "The Pool Area",
+        "The Garage",
+        "The Upstairs"
+      ],
+      "npcs_present": [
+        "DJ Blaze"
+      ]
+    },
+    {
+      "name": "The Pool Area",
+      "description": "The backyard is lit by string lights and the blue glow of the pool. About 40 people are out here — some swimming, some sitting on lounge chairs, some standing in groups talking louder than they need to. There is a cooler with drinks, a broken pool floatie shaped like a flamingo, and a hot tub that is way too full of people. The pool speakers play whatever DJ Blaze is pumping from inside, muffled by the glass doors. The fence to the neighbor's yard is low enough to see over, and the neighbor — a retired man named Mr. Hendricks — has turned on his porch light twice already. The vibe out here is flirty, chaotic, and one shove away from someone going into the pool fully clothed.",
+      "connected_to": [
+        "The Main Floor",
+        "The Beach Path"
+      ],
+      "npcs_present": [
+        "Kai Nakamura"
+      ]
+    },
+    {
+      "name": "The Upstairs",
+      "description": "The second floor is darker and quieter — the party noise thumps through the floor but up here conversations happen in hallways and doorways. Morgan's parents' bedroom is locked. Morgan's room is supposed to be locked but someone picked it. The guest bathroom has had a line of four people outside it for 30 minutes. The hallway has family photos on the wall that someone has drawn mustaches on with a Sharpie. There is a balcony off the master bedroom that overlooks the pool — the spot where people go for serious conversations, romantic moments, or to get away from the noise for five minutes.",
+      "connected_to": [
+        "The Main Floor"
+      ],
+      "npcs_present": [
+        "Morgan Chase"
+      ]
+    },
+    {
+      "name": "The Garage",
+      "description": "Morgan's parents' three-car garage. One bay has a BMW that nobody should be anywhere near. The second has kayaks, surfboards, and camping gear. The third has a workbench, tools, and a mini fridge that someone has already found and is treating like their personal bar. The garage door is half open, letting in the night air and letting people drift in and out. A group is sitting on camping chairs in a circle. The lighting is a single fluorescent tube that buzzes and flickers. It is quieter out here — the place for people who want to talk without shouting, for deals and dares and the kind of conversations that start with 'okay but you cannot tell anyone.'",
+      "connected_to": [
+        "The Main Floor",
+        "The Beach Path"
+      ],
+      "npcs_present": [
+        "Tanya Okafor"
+      ]
+    },
+    {
+      "name": "The Beach Path",
+      "description": "A sandy trail that cuts between beach grass from the Chase house to the beach, about a two-minute walk. The beach is wide and dark, waves crashing in the background, a bonfire burning fifty meters down where a smaller group of maybe 15 people are hanging out away from the main party. The boardwalk is visible in the distance — the taco stand is closed but the arcade lights are still on. The 7-Eleven glows like a beacon two blocks up. Out here the music from the house is faint, the stars are visible, and the ocean makes everything feel bigger and more important than it actually is. It is the spot for walks, confessions, and dramatic moments.",
+      "connected_to": [
+        "The Pool Area",
+        "The Garage"
+      ],
+      "npcs_present": []
+    }
+  ],
+  "npcs": [
+    {
+      "name": "Morgan Chase",
+      "role": "The Host (Who Did Not Want This)",
+      "portrait": "Morgan is seventeen, white, medium height, with sandy brown hair that keeps falling into their eyes because they keep running their hands through it out of stress. They are wearing a button-down shirt that started the night tucked in and now hangs open over a vintage band tee, khaki shorts, and Vans with no socks. Their face is flushed, their eyes are slightly wild, and they keep checking their phone every 30 seconds. They are holding a red cup that they have not actually drunk from because they are too anxious. There is a Sharpie mustache drawn on one of the family photos behind them and they have not noticed yet. They move through the party like a nervous border collie trying to herd 200 cats — picking up cups, wiping surfaces, saying 'please be careful with that' to people who are not listening.",
+      "personality": "Type-A anxiety wrapped in a desperate need to be liked. Morgan wanted to throw a small, cool party to cement their social status before senior year. Instead they are watching their parents' house get destroyed and calculating how much trouble they are in while simultaneously trying to act like everything is fine. They oscillate between panic and people-pleasing every 90 seconds. Deep down they actually hate parties but would never admit it.",
+      "speaking_style": "Fast, slightly high-pitched when stressed, which is always. Starts sentences with 'Okay so' and 'No no no.' Laughs nervously at things that are not funny. Gets weirdly formal when panicking — 'I would really appreciate it if you could not do that.' Texts in full sentences with correct grammar even when drunk.",
+      "agenda": "Survive the night without the house being destroyed, without their parents finding out, and without losing social status — in that order, though the order keeps changing",
+      "secret": "Morgan has a massive crush on Kai and the entire party was an excuse to invite Kai over without it being weird. Everything that has gone wrong tonight is because Morgan was too distracted trying to figure out how to talk to Kai."
+    },
+    {
+      "name": "Kai Nakamura",
+      "role": "The One Everyone Wants",
+      "portrait": "Kai is eighteen, Japanese-American, tall and lean with black hair that does the effortlessly messy thing that other people spend 40 minutes trying to achieve. They are wearing a faded denim jacket over a white t-shirt, black jeans, and beat-up Chelsea boots — the kind of outfit that looks like they did not try but definitely did. They have a silver ring on their thumb and a small tattoo of a wave on the inside of their wrist that they got in Bali and mention exactly never because talking about it would be trying too hard. They move slowly, speak quietly, and have the unearned confidence of someone who has been attractive their entire life and does not fully understand why everyone acts weird around them. They are leaning against the pool fence with a drink, watching the chaos with a half-smile that could mean anything.",
+      "personality": "Genuinely chill in a way that people mistake for mysterious. Kai is not playing hard to get — they are just slightly oblivious to the effect they have on people. They are kind, a little spacey, and more interested in having one real conversation than being the center of attention. They get uncomfortable when people compete for their attention and tend to disappear to quiet spots when the energy gets too intense. They are funnier than people expect — dry, deadpan humor that catches people off guard.",
+      "speaking_style": "Quiet, unhurried, says less than everyone around them. Asks questions instead of making statements. Uses 'yeah?' as a complete response. Pauses before answering in a way that makes people lean in. Laughs genuinely at dumb jokes. Gets more talkative one-on-one than in groups.",
+      "agenda": "Have a good last night of summer, maybe figure out if the person they like feels the same way, definitely avoid being the center of whatever drama Tanya is cooking up",
+      "secret": "Kai is moving away next week. Their family is relocating to Seattle. They have not told anyone at the party because they do not want the night to become about them leaving. This is their goodbye and nobody knows it."
+    },
+    {
+      "name": "DJ Blaze",
+      "role": "The Worst DJ in Dune Cove (Real Name: Dennis Park)",
+      "portrait": "Dennis is sixteen, Korean-American, short and skinny, wearing a backwards snapback, an oversized hoodie with LED strips sewn into the sleeves that he soldered himself, and headphones around his neck that cost more than everything else he owns combined. He has braces and acne and the unshakeable confidence of someone who has decided they are already famous and the world just has not caught up. He set up his laptop and a light-up DJ controller on the kitchen counter and has declared it 'the booth.' He has taped a piece of paper to the counter that says 'DJ BLAZE — REQUESTS WELCOME (but I will play what I want).' He bobs his head constantly, even between songs, even when there is no music playing. He has somehow connected the speaker system in a way that nobody else can undo without unplugging the entire house.",
+      "personality": "Absolute delusion combined with genuine enthusiasm. Dennis is not good at DJing. He plays songs that do not match, talks over the music into a microphone he brought from home, and gives himself shoutouts. But he is so committed and so happy to be there that it is almost impossible to be mean to him. He takes requests and then ignores them. He has a DJ name, a DJ logo (that he made in Canva), and a SoundCloud with 11 followers, 7 of which are his family. He is having the best night of his life.",
+      "speaking_style": "Loud, hyped, talks like a radio host even in normal conversation. Says 'let's go' constantly. Refers to himself as Blaze in third person. Uses air horns (from his phone) as punctuation. Narrates what he is doing — 'Blaze is about to drop something crazy right now.' Completely immune to criticism.",
+      "agenda": "Prove to everyone that he is a real DJ, get someone to follow his SoundCloud, and not get kicked off the speaker system",
+      "secret": "He knows the party is getting out of control and he is secretly scared, but the DJ booth is the only place at the party where he feels like he belongs and he will defend it to the death."
+    },
+    {
+      "name": "Tanya Okafor",
+      "role": "The One With Receipts",
+      "portrait": "Tanya is seventeen, Nigerian-British, with long box braids pulled up in a high ponytail, gold hoop earrings, and nails so long they click on her phone screen, which she is looking at constantly. She is wearing a crop top, high-waisted jeans, and platform sneakers that make her already above-average height intimidating. Her makeup is flawless — the kind that took an hour and is engineered to look like it took ten minutes. She sits in the garage like it is her throne, legs crossed, phone in hand, surrounded by three friends who function as an audience and an intelligence network. Her smile is the kind that makes people check their recent texts to see if they said something they should not have. She showed up at 10 PM, fashionably late, and she did not come here to dance.",
+      "personality": "Sharp, theatrical, and ruthless in the way that only a teenage girl with a good memory and no filter can be. Tanya collects information like currency. She screenshots everything. She remembers who said what about whom six months ago. She is not evil — she has a strong sense of justice and genuinely believes she is holding people accountable — but her version of justice involves maximum public embarrassment. She is loyal to her friends and devastating to everyone else. Under the armor she is insecure about being seen as mean, which makes her meaner when she feels vulnerable.",
+      "speaking_style": "Dramatic, cutting, and quotable. Starts sentences with 'No because' and 'The thing is.' Uses pauses for effect. Reads texts out loud in a deadpan voice that makes everything sound worse. Says 'anyway' to dismiss entire humans. Gets quiet and cold when she is actually angry, as opposed to her normal loud and theatrical angry which is mostly performance.",
+      "agenda": "Expose the fact that someone at this party has been talking behind everyone's backs all summer, collect the social fallout, and look amazing doing it",
+      "secret": "The person she has receipts on is Kai. She found out Kai is moving away next week and is furious that Kai did not tell anyone — especially Morgan, who Tanya knows has feelings for Kai. She sees Kai's silence as a betrayal and she plans to announce it tonight in the most dramatic way possible."
+    }
+  ],
+  "factions": [
+    {
+      "name": "The Inner Circle",
+      "description": "Morgan, Kai, and the original six people who were supposed to be at this party. They know each other from school, have complicated histories of crushes and friendship drama, and are now scattered across a party that has grown beyond anyone's control. They keep finding each other in hallways and kitchens for quick conversations before the crowd pulls them apart again.",
+      "agenda": "Have the night they planned before everything went sideways. Stay close. Deal with feelings that have been building all summer.",
+      "members": [
+        "Morgan Chase",
+        "Kai Nakamura"
+      ]
+    },
+    {
+      "name": "The Court of Tanya",
+      "description": "Tanya and her three friends who operate as a social intelligence unit. They are stationed in the garage, monitoring their phones, collecting gossip, and building toward whatever Tanya has planned for tonight. They are connected to every group chat and every rumor in Dune Cove. People come to them for information and leave feeling like they just made a deal they did not fully understand.",
+      "agenda": "Control the narrative. Tanya has a bomb to drop and the timing has to be perfect — maximum audience, maximum impact.",
+      "members": [
+        "Tanya Okafor"
+      ]
+    },
+    {
+      "name": "The Randoms",
+      "description": "The 150+ people who showed up because of the Instagram post. They do not know Morgan. They do not care about Morgan's carpet. They are here to party and they are the reason everything is escalating. Some are from Dune Cove, some drove from neighboring towns. They are the chaos engine — they break things, start chants, push people into the pool, and turn every situation up to eleven. They are not villains. They are just a crowd with no stake in what happens to this house.",
+      "agenda": "Party. Hard. Now.",
+      "members": [
+        "DJ Blaze"
+      ]
+    }
+  ],
+  "opening_situation": "The bass is making the kitchen cabinets rattle. There are at least 200 people in this house and the players just walked through the front door into a wall of sound, heat, and body spray. DJ Blaze is on the kitchen counter screaming 'DUNE COVE LET'S GOOO' into a microphone while playing a song nobody recognizes. Morgan Chase pushes past with a roll of paper towels, saying 'Please do not touch the — okay never mind' as someone backs into a shelf of family photos. Through the sliding glass doors, the pool is packed and glowing blue. Somewhere upstairs, a door slams. And across the room, leaning against the far wall of the living room with a drink and a half-smile, is Kai Nakamura — looking directly at the players like they just made the party interesting.",
+  "story_arc": [
+    {
+      "id": "rager-1",
+      "description": "Arrive at the party and get pulled into the social dynamics — meet the key players, pick up on the tensions, get a drink, find your place in the chaos",
+      "act": 1,
+      "priority": "required",
+      "status": "upcoming"
+    },
+    {
+      "id": "rager-2",
+      "description": "A social situation creates awkward drama — someone flirts with the wrong person, a dare goes too far, DJ Blaze does something that divides the party, or Tanya drops a hint about what she knows",
+      "act": 1,
+      "priority": "required",
+      "status": "upcoming",
+      "trigger": "Players have met at least two NPCs"
+    },
+    {
+      "id": "rager-3",
+      "description": "The party escalates out of control — too many people, something expensive breaks, the neighbor calls in a noise complaint, or someone finds something in the garage they should not have found",
+      "act": 1,
+      "priority": "required",
+      "status": "upcoming"
+    },
+    {
+      "id": "rager-4",
+      "description": "Morgan's crisis — the parents text that they are coming home early, or the house sustains real damage, or both. Morgan needs help and is desperate enough to ask",
+      "act": 2,
+      "priority": "required",
+      "status": "upcoming"
+    },
+    {
+      "id": "rager-5",
+      "description": "Tanya drops the bomb — she reveals Kai's secret (moving away) publicly, forcing Kai, Morgan, and everyone else to deal with it in real time at a party with 200 witnesses",
+      "act": 2,
+      "priority": "required",
+      "status": "upcoming",
+      "trigger": "The party is at peak chaos and maximum audience"
+    },
+    {
+      "id": "rager-6",
+      "description": "The fallout — relationships fracture and reform. Kai has to explain. Morgan has to process. The players are in the middle of it. Meanwhile the party is still raging and real-world consequences are closing in",
+      "act": 2,
+      "priority": "required",
+      "status": "upcoming"
+    },
+    {
+      "id": "rager-7",
+      "description": "The night reaches its peak — everything converges. The parents, the drama, the party, the feelings. Someone has to make a big choice that defines how the summer ends",
+      "act": 3,
+      "priority": "required",
+      "status": "upcoming"
+    },
+    {
+      "id": "rager-8",
+      "description": "The morning after — the party is over, the sun is coming up, and what is left is the truth about who these people are and what they mean to each other. Messy, honest, and real.",
+      "act": 3,
+      "priority": "required",
+      "status": "upcoming"
+    }
+  ],
+  "writing_style": {
+    "tone": "Teen party comedy driven by social status, embarrassment, and impulsive cover-ups. Keep jokes rooted in believable teen choices: clout-chasing, flirting, panic-lying, and friend betrayal. Absurdity is allowed, but it must be caused by a character goal (impress, escape, protect a friend, save face).",
+    "instructions": "Write for text-to-speech. Keep every sentence under 14 words. Use one action per sentence. Use short paragraphs (max 2 sentences). Always introduce the speaker before dialogue (e.g., \"Morgan says, '...'\"). Avoid repeating character names twice in one sentence. Prefer concrete verbs over summaries. When adding a new threat (cops, parents, fire), restate it in a clean standalone sentence.",
+    "banned_phrases": [
+      "ancient",
+      "mystical",
+      "realm",
+      "quest",
+      "brave heroes",
+      "adventurers",
+      "tavern",
+      "potion",
+      "spell",
+      "warriors",
+      "the darkness within",
+      "fate had other plans",
+      "little did they know",
+      "steely resolve",
+      "with determination in their eyes",
+      "the weight of the moment",
+      "echoed through"
+    ],
+    "max_sentence_length": 18
+  },
+  "few_shot_example": "{\n  \"turn\": 2,\n  \"scene_title\": \"The Pool Incident\",\n  \"narration\": \"Niko walks up to Kai Nakamura like he has a plan. He does not have a plan. He has a red cup and the vague idea that saying something funny will work. Niko opens his mouth and what comes out is, 'Hey, so, this pool is... wet.' Kai blinks. Then Kai laughs — a real laugh, not a polite one — and says, Kai says, 'Yeah. Most pools are.'\\n\\nFedor spots DJ Blaze reaching for the microphone again and decides the only move is full commitment. Fedor walks straight to the kitchen counter, grabs the mic out of Blaze's hand, and starts doing a fake Russian accent karaoke of whatever song is playing. It is terrible. It is so terrible it wraps around to incredible. Forty people start filming. DJ Blaze stands there with his mouth open for three full seconds, then grabs his backup mic — he brought a backup mic — and tries to battle Fedor. Dennis yells, 'BLAZE DOES NOT GET OUTPERFORMED IN HIS OWN BOOTH.'\\n\\nTanya watches the pool area from the garage doorway, phone aimed at Kai and Niko like a sniper scope. She turns to her friend and says, Tanya says, 'Interesting. Give it twenty minutes.' Her friend asks what happens in twenty minutes. Tanya smiles. Tanya says, 'The truth.'\\n\\nMorgan appears at the sliding glass door, paper towels in hand, and sees the kitchen counter covered in shoe prints from Fedor's performance. Morgan's left eye twitches. Their phone buzzes. It is a text from Mom: 'Quick question — did you leave the back porch light on?' Morgan stares at the text for five seconds, types 'yes,' deletes it, types 'haha yeah,' deletes it, and puts the phone face down on the counter.\",\n  \"dialogue\": [\n    { \"speaker\": \"Kai Nakamura\", \"line\": \"Yeah. Most pools are.\", \"emotion\": \"amused\" },\n    { \"speaker\": \"DJ Blaze\", \"line\": \"BLAZE DOES NOT GET OUTPERFORMED IN HIS OWN BOOTH.\", \"emotion\": \"outraged\" },\n    { \"speaker\": \"Tanya Okafor\", \"line\": \"Interesting. Give it twenty minutes.\", \"emotion\": \"calculating\" },\n    { \"speaker\": \"Tanya Okafor\", \"line\": \"The truth.\", \"emotion\": \"smug\" }\n  ],\n  \"consequences\": [\n    { \"type\": \"immediate\", \"domain\": \"relationships\", \"summary\": \"Niko made Kai genuinely laugh — positive first impression\" },\n    { \"type\": \"immediate\", \"domain\": \"reputation\", \"summary\": \"Fedor's karaoke battle with DJ Blaze is being filmed by 40 people — this is going on social media\" },\n    { \"type\": \"delayed\", \"domain\": \"narrative\", \"summary\": \"Tanya is timing her move — she has something planned for Kai\", \"details\": \"Expires turn 4\" },\n    { \"type\": \"delayed\", \"domain\": \"narrative\", \"summary\": \"Morgan's mom is getting suspicious about the house\", \"details\": \"Expires turn 5\" }\n  ],\n  \"next_prompt\": \"Niko, Kai is still standing by the pool looking at you like they are waiting for you to say something that is not about water. Fedor, you are on a kitchen counter with a microphone and DJ Blaze is challenging you to a round two while 40 phones are recording. Morgan just put their phone face down and is walking toward both of you with the expression of someone who is about to cry, scream, or start cleaning — possibly all three.\",\n  \"memory_patch\": {\n    \"canon_additions\": [\"Niko made an awkward first impression on Kai but got a genuine laugh\", \"Fedor battled DJ Blaze in karaoke and 40 people are filming it\", \"Tanya is watching Kai and planning something with a timeline\", \"Morgan's mom texted asking about the porch light — suspicion is building\"],\n    \"thread_updates\": [\n      { \"id\": \"tanya-plan\", \"status\": \"opened\", \"description\": \"Tanya is planning to expose something about Kai in front of the party\" },\n      { \"id\": \"parents-returning\", \"status\": \"opened\", \"description\": \"Morgan's mom is asking questions — the parents may be coming home\" }\n    ]\n  },\n  \"character_updates\": [\n    { \"name\": \"Kai Nakamura\", \"role\": \"The One Everyone Wants\", \"personality\": \"Genuinely amused by Niko — relaxed and engaged\", \"speaking_style\": \"Dry one-liners delivered with a half-smile\", \"emotional_baseline\": \"chill\", \"current_state\": \"Standing by the pool, interested in continuing the conversation with Niko\", \"relationships\": \"Positive first impression of Niko. Unaware Tanya is watching.\" },\n    { \"name\": \"DJ Blaze\", \"role\": \"The Worst DJ in Dune Cove\", \"personality\": \"Outraged that someone challenged him in his own booth but secretly thrilled for the attention\", \"speaking_style\": \"Screaming into a backup microphone with maximum hype energy\", \"emotional_baseline\": \"manic\", \"current_state\": \"Engaged in a karaoke battle with Fedor on the kitchen counter\", \"relationships\": \"Views Fedor as a rival and a threat to his DJ empire. Grudging respect.\" }\n  ],\n  \"open_threads\": [\n    { \"id\": \"niko-kai\", \"description\": \"Niko and Kai's conversation by the pool — chemistry building\", \"urgency\": \"medium\" },\n    { \"id\": \"fedor-blaze\", \"description\": \"Fedor vs DJ Blaze karaoke battle being filmed by dozens of people\", \"urgency\": \"low\" },\n    { \"id\": \"tanya-plan\", \"description\": \"Tanya is timing something about Kai — waiting for the right moment\", \"urgency\": \"medium\" },\n    { \"id\": \"parents-returning\", \"description\": \"Morgan's mom is getting suspicious\", \"urgency\": \"medium\" }\n  ]\n}",
+  "target_game_length": 8,
+  "relationship_map": [
+    {
+      "from": "Morgan Chase",
+      "to": "Kai Nakamura",
+      "type": "Secret Crush",
+      "description": "Morgan has liked Kai all summer and threw this entire party as an excuse to hang out with them. Morgan has told nobody except their bathroom mirror. Unfortunately, Tanya figured it out."
+    },
+    {
+      "from": "Tanya Okafor",
+      "to": "Kai Nakamura",
+      "type": "Betrayed Trust",
+      "description": "Tanya and Kai were close friends. Tanya found out Kai is moving away and told nobody. She sees this as Kai treating their friendship as disposable and plans to expose it publicly as payback."
+    },
+    {
+      "from": "Tanya Okafor",
+      "to": "Morgan Chase",
+      "type": "Complicated Friendship",
+      "description": "Tanya knows Morgan likes Kai. Part of her exposing Kai's departure is genuinely trying to protect Morgan from getting attached to someone who is leaving. The other part is that Tanya likes being the one who controls information."
+    },
+    {
+      "from": "DJ Blaze",
+      "to": "Morgan Chase",
+      "type": "Oblivious Gratitude",
+      "description": "Dennis thinks Morgan specifically invited him to DJ. Morgan did not. Dennis told his mom he got a professional gig. His mom made him a 'DJ BLAZE' banner that is currently taped to the kitchen backsplash."
+    },
+    {
+      "from": "Kai Nakamura",
+      "to": "Morgan Chase",
+      "type": "Unspoken Feelings",
+      "description": "Kai likes Morgan back but has not said anything because they are moving in a week and starting something feels cruel. They came to the party specifically to see Morgan one last time."
+    }
+  ]
+}

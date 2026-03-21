@@ -1,0 +1,270 @@
+{
+  "id": "dead-signal",
+  "name": "Dead Signal",
+  "description": "A grounded zombie survival horror set in modern-day small-town America. Teenagers trapped in a coastal town after the cell towers go dark and the infected start spreading. No magic, no fantasy — just survival.",
+  "critique_score": 2.8,
+  "deck_type": "horror",
+  "target_audience": {
+    "age_range": "16-18",
+    "genre": "grounded horror",
+    "tone": "serious, tense, survival-focused",
+    "themes": [
+      "zombies",
+      "survival",
+      "small-town isolation",
+      "resource scarcity",
+      "moral choices"
+    ],
+    "ideal_setting": "Late night, lights off, focused listening",
+    "content_warnings": [
+      "violence",
+      "body horror",
+      "death",
+      "infected transformation"
+    ],
+    "vibe": "The Walking Dead meets teen survival drama — no supernatural powers, just hard choices"
+  },
+  "evaluation_criteria": {
+    "primary_goal": "sustained tension and dread without jump scares",
+    "tone_requirement": "grounded realism with zero comedy, camp, or meme moments",
+    "realism_requirement": "no magic, no fantasy items, no supernatural powers — only physical, medical, or mechanical solutions",
+    "character_expectation": "stressed teens making hard survival choices, relationships evolving under pressure",
+    "audio_priority": "TTS-first clarity: max 18 words/sentence, clear spatial logic, speaker tags before dialogue",
+    "success_question": "Would a 17-year-old recommend this to friends and talk about it afterward?",
+    "strict_genre_enforcement": true
+  },
+  "world": "Breaker Bay is a coastal town cut off after a regional power failure knocks out cell towers, internet backhaul, and most radio repeaters. Two days later, a fast-spreading infection appears through bites and blood exposure, not through the towers. The Guard blocks the causeway to prevent evacuation, but their command chain is fractured and supplies are thin. The core viewpoint characters are 16–18-year-olds trapped on the wrong side of the blockade, forced to scavenge, triage, and make moral choices under scarcity.",
+  "locations": [
+    {
+      "name": "Route 9 Gas Station",
+      "description": "A run-down Shell station on the road into town. Two pumps, a small convenience store with mostly empty shelves, a back room with a dead generator, and a bathroom with a window big enough to climb through. The fluorescent lights flicker when the backup battery kicks in. The parking lot has three abandoned cars, one with keys still in the ignition. The smell is gasoline and old hot dogs.",
+      "connected_to": [
+        "Main Street",
+        "The Causeway"
+      ],
+      "npcs_present": []
+    },
+    {
+      "name": "Main Street",
+      "description": "The center of Breaker Bay. Four blocks of storefronts — the Anchor Diner, Burke's Hardware, Dollar General (picked clean), a laundromat, a closed barbershop, and a real estate office nobody ever went into. Cars are parked at angles on both sides. Some have smashed windows. A traffic light blinks yellow on a loop. There are dark stains on the sidewalk outside the diner. The infected wander here at night, drawn by the traffic light's clicking mechanism.",
+      "connected_to": [
+        "Route 9 Gas Station",
+        "Breaker Bay High School",
+        "The Marina"
+      ],
+      "npcs_present": [
+        "Coach Davis"
+      ]
+    },
+    {
+      "name": "Breaker Bay High School",
+      "description": "A two-story brick building with a gymnasium, cafeteria, nurse's office, and a football field surrounded by chain-link fence. The cafeteria still has canned food in the back storage. The nurse's office has bandages, antiseptic, and a locked cabinet with prescription meds. The gym has been used as a makeshift shelter — sleeping bags, a whiteboard with names crossed out, and a barricade of pushed-together bleachers blocking the main entrance. Someone spray-painted DO NOT OPEN on the gym doors from the inside.",
+      "connected_to": [
+        "Main Street",
+        "Water Tower Hill"
+      ],
+      "npcs_present": [
+        "Jules Moreno"
+      ]
+    },
+    {
+      "name": "The Marina",
+      "description": "A small dock with twelve boat slips, half of them empty. The harbormaster's shack has a VHF radio that picks up static and a locked cabinet with flare guns. Three fishing boats are tied up — two need fuel, one has a torn sail. A larger cabin cruiser called the Lucky Day sits at the end dock with a full tank, but the engine is seized. The water is grey and cold. Fog rolls in most mornings. The smell is salt, diesel, and dead fish.",
+      "connected_to": [
+        "Main Street",
+        "The Causeway"
+      ],
+      "npcs_present": [
+        "Wade Pruitt"
+      ]
+    },
+    {
+      "name": "The Causeway",
+      "description": "The only road out of Breaker Bay — a two-lane bridge stretching 400 meters across the inlet to the mainland. The National Guard barricade sits at the far end: two Humvees parked nose-to-nose, coils of razor wire, and sandbag positions. The Humvees are empty now. The radios inside crackle with static. There are shell casings on the ground and dark stains on the concrete barriers. Something happened here and nobody is left to explain what. Beyond the barricade, the mainland highway stretches into fog.",
+      "connected_to": [
+        "Route 9 Gas Station",
+        "The Marina"
+      ],
+      "npcs_present": []
+    },
+    {
+      "name": "Water Tower Hill",
+      "description": "The highest point in Breaker Bay — a grassy hill behind the high school with the town's water tower on top. From here you can see the whole town, the Causeway, the marina, and on a clear day the mainland. The water tower has a service ladder, a locked maintenance hatch, and a platform with a 360-degree view. It is the safest place in town because the infected cannot climb. It is also the most exposed — no walls, no cover, no heat. The wind up here cuts through everything.",
+      "connected_to": [
+        "Breaker Bay High School"
+      ],
+      "npcs_present": []
+    }
+  ],
+  "npcs": [
+    {
+      "name": "Coach Davis",
+      "role": "Self-Appointed Leader of Main Street Survivors",
+      "portrait": "Coach Rick Davis is a thick-necked man in his late forties with a buzz cut going grey, a sunburned face, and the build of someone who played football twenty years ago and still thinks about it daily. He wears a Breaker Bay Seahawks polo tucked into khakis, a whistle around his neck out of habit, and a holstered hunting revolver he clearly does not know how to use well — his grip is wrong and he flinches when he fires. He has set himself up in the Anchor Diner with a group of eight survivors, mostly older residents, and he runs the place like a locker room: schedules, assignments, curfew. His voice carries. He points at people when he talks. He is used to being in charge and is not adjusting well to the fact that being in charge now means deciding who eats and who does not.",
+      "personality": "Niko: 17, protective but avoidant. He defaults to action over discussion. He fears being trapped and will abandon a plan if it feels like a cage. He hides guilt about someone he failed to save on day one. Under stress, he becomes controlling and makes unilateral moves, then regrets them.",
+      "speaking_style": "Coach Davis speaks in short, coached commands. He avoids speeches. He counts beats out loud when panicked. He uses names first: \"Niko. Now.\" He never jokes. When afraid, his voice goes quiet instead of loud.",
+      "agenda": "Hold Main Street, ration supplies, and wait for rescue that is not coming",
+      "secret": "His wife turned on the first night. He locked her in the hardware store basement instead of putting her down. He checks on her every morning through the door and tells himself he is keeping her safe."
+    },
+    {
+      "name": "Jules Moreno",
+      "role": "High School Senior, De Facto Leader of the School Group",
+      "portrait": "Jules is seventeen, Puerto Rican, with dark curly hair pulled back in a messy bun held together with a pencil, brown eyes with bags under them, and the kind of sharp, watchful face that notices everything and gives away nothing. She is average height, thin, wearing a oversized Breaker Bay track hoodie with the sleeves pushed up, ripped jeans, and Converse that are more duct tape than shoe at this point. She has a first aid kit duct-taped to her backpack, a kitchen knife in her belt, and a list of every supply in the school written in a composition notebook she carries everywhere. She bites her thumbnail when she is thinking and cracks her knuckles when she has made a decision. She was vice president of student council two weeks ago. Now she is rationing antibiotics and deciding who sleeps closest to the exits.",
+      "personality": "Fedor: 16, anxious planner. He tries to keep adults calm by sounding competent. He lies when panic rises, then over-corrects with truth when guilt spikes. He is terrified of being blamed. He avoids direct conflict until forced, then becomes stubborn and literal.",
+      "speaking_style": "Direct, no-nonsense, talks fast when she is stressed. Uses dark humor as a defense mechanism. Asks questions before giving answers. Gets sarcastic when people do something stupid. Drops her guard around people her own age and her voice gets softer.",
+      "agenda": "Keep the school group alive, find a way off the peninsula, and stop pretending the adults have a plan",
+      "secret": "Her younger brother Marco was bitten yesterday. She has him locked in the nurse's office and is telling everyone he just has a fever. She has maybe eight hours before she has to make a decision she cannot come back from."
+    },
+    {
+      "name": "Wade Pruitt",
+      "role": "Marina Loner, Former Lobsterman",
+      "portrait": "Wade is sixty-two years old with a face like crumpled leather, a white beard that needs trimming, and hands so calloused they look like they are made of wood. He is wiry and tough in the way that people who have worked on boats their entire lives are tough — not muscular, just hard. He wears rubber boots, oil-stained Carhartt overalls, a flannel shirt missing two buttons, and a Red Sox cap so faded the B is barely visible. He moves slowly on land but his eyes are quick, tracking everything the way a fisherman watches the water. He smells like diesel and pipe tobacco. He has a shotgun he keeps clean and a boat he is trying to fix, and he does not want company.",
+      "personality": "Gruff, self-reliant, and tired of people. He has lived alone on his boat for years and the apocalypse has not changed his social preferences. He is not cruel — he will share information and even supplies if asked right — but he does not volunteer and he does not join groups. He has seen bad things this week and has decided the best plan is the same plan he has always had: get on the water and leave everyone else to sort themselves out.",
+      "speaking_style": "Marta speaking style: short, practical sentences. No speeches. She gives instructions like a kitchen shift lead. When scared, she gets sharper, not louder. She uses concrete warnings (\"Footsteps. Glass. Breathing.\") instead of abstract advice.",
+      "agenda": "Fix the Lucky Day's engine and sail out of Breaker Bay alone before the food runs out or the infected find the marina",
+      "secret": "He heard a voice on the VHF radio two nights ago — a woman, military, saying 'Do not attempt the Causeway, the mainland is worse.' He has not told anyone because it would cause a panic and he does not want a mob rushing his boats."
+    }
+  ],
+  "factions": [
+    {
+      "name": "The Diner Group",
+      "description": "Eight survivors holed up in the Anchor Diner on Main Street, led by Coach Davis. Mostly older residents — a retired nurse, a mechanic, a couple of shop owners, and three others. They have barricaded the windows, rationed the kitchen supplies, and established a watch rotation. Coach Davis runs it with rigid discipline. They have the hunting rifles from Burke's Hardware and a generator with two days of fuel. They view outsiders with suspicion — more mouths, fewer supplies.",
+      "agenda": "Hold position and wait for military rescue. Ration supplies. Do not let the high school kids draw infected to Main Street with their noise.",
+      "members": [
+        "Coach Davis"
+      ]
+    },
+    {
+      "name": "The School Kids",
+      "description": "Twelve teenagers and two younger kids sheltering in the high school gym, loosely organized by Jules Moreno. They range from fifteen to eighteen. Some are scared and quiet. Some are angry. A few are useful — one knows first aid, one used to work at the gas station, one is on the sailing team. They have food from the cafeteria, medical supplies from the nurse's office, and the energy of people young enough to still think they can fix this. They do not trust Coach Davis to share resources fairly.",
+      "agenda": "Gather supplies, find a way off the peninsula, and survive without relying on adults who have no plan.",
+      "members": [
+        "Jules Moreno"
+      ]
+    },
+    {
+      "name": "The Marina",
+      "description": "Not a faction — just Wade, alone on his boat with his shotgun and his radio. He is a resource, not a leader. He has the only boat that might work, knowledge of the waters, and a secret about the mainland. Getting him to cooperate requires something he values: a working engine part, an extra pair of hands, or a very good reason.",
+      "agenda": "Leave. Alone. Soon.",
+      "members": [
+        "Wade Pruitt"
+      ]
+    }
+  ],
+  "opening_situation": "Salt fog presses against cracked aquarium glass. The gift shop is dark. The basement generator dies. Above you, the main tank has a fresh crack. Each minute, the crack spreads. If it fails, the roof will flood and the skylight frame may buckle. Guards patrol the pier with torches. You have forty seconds before the next sweep.",
+  "story_arc": [
+    {
+      "id": "dead-1",
+      "description": "Escape the gas station and reach safety — establish the threat level and the rules of this world",
+      "act": 1,
+      "priority": "required",
+      "status": "upcoming"
+    },
+    {
+      "id": "dead-2",
+      "description": "Encounter the survivors — meet Coach Davis or Jules and learn the town's situation, discover the factions and the tension between them",
+      "act": 1,
+      "priority": "required",
+      "status": "upcoming",
+      "trigger": "Players reach Main Street or the high school"
+    },
+    {
+      "id": "dead-3",
+      "description": "A supply crisis forces a dangerous mission — the school is running out of medical supplies, or the diner generator is dying, or someone important is trapped somewhere",
+      "act": 1,
+      "priority": "required",
+      "status": "upcoming"
+    },
+    {
+      "id": "dead-4",
+      "description": "The human threat — conflict between survivor groups escalates into something ugly, or a new group of hostile survivors arrives from the mainland side of the Causeway",
+      "act": 2,
+      "priority": "required",
+      "status": "upcoming"
+    },
+    {
+      "id": "dead-5",
+      "description": "Jules's secret is exposed — Marco's condition becomes undeniable and forces an impossible choice that splits the group",
+      "act": 2,
+      "priority": "required",
+      "status": "upcoming",
+      "trigger": "Players have bonded with Jules or spent time at the school"
+    },
+    {
+      "id": "dead-6",
+      "description": "The Causeway truth — someone discovers the military barricade is abandoned and the mainland may be worse, or the players reach Wade and learn what he heard on the radio",
+      "act": 2,
+      "priority": "required",
+      "status": "upcoming"
+    },
+    {
+      "id": "dead-7",
+      "description": "Breaker Bay falls — a massive horde pushes through Main Street, collapsing the safe zones and forcing everyone to make final choices about who to save and what to sacrifice",
+      "act": 3,
+      "priority": "required",
+      "status": "upcoming"
+    },
+    {
+      "id": "dead-8",
+      "description": "The escape — the marina, the Causeway, or somewhere else entirely. Not everyone makes it. The ending depends on every choice made along the way.",
+      "act": 3,
+      "priority": "required",
+      "status": "upcoming"
+    }
+  ],
+  "writing_style": {
+    "tone": "Serious, grounded, survival-horror tone. No sermons, taunts, or theatrical speeches during immediate threat. Dialogue is short, tactical, and stressed. Confessions only happen when characters have cover, time, and a clear consequence.",
+    "instructions": "TTS-FIRST RULES: Use 8–16 words per sentence. Hard cap: 18 words. One action per sentence. No stacked clauses. Prefer simple subject-verb-object. Repeat key nouns (skylight, ladder, guard) instead of pronouns when clarity matters. Every location change must be stated explicitly. Dialogue must always use: NAME says, \"...\". Never place the speaker tag after the quote.",
+    "banned_phrases": [
+      "ancient",
+      "mystical",
+      "realm",
+      "enchanted",
+      "arcane",
+      "quest",
+      "brave heroes",
+      "adventurers",
+      "tavern",
+      "potion",
+      "spell",
+      "magical",
+      "enchantment",
+      "the darkness within",
+      "steely resolve",
+      "a chill ran down",
+      "little did they know",
+      "fate had other plans",
+      "chosen ones",
+      "dark forces"
+    ],
+    "max_sentence_length": 20
+  },
+  "few_shot_example": "{\n  \"turn\": 3,\n  \"scene_title\": \"The Nurse's Office\",\n  \"narration\": \"Niko shoves the cafeteria doors open with his shoulder and the smell hits first — canned corn, bleach, and something underneath both that nobody wants to name. The storage room in the back has eight cases of canned food left. Jules was right about the count. Niko grabs two cases and stacks them by the door.\\n\\nFedor finds the nurse's office locked. He puts his boot through the frosted glass window beside the door, reaches through, and turns the handle from inside. The office is small — an exam table with paper on it, a cabinet with bandages and ibuprofen, and a locked metal box bolted to the wall that probably has the real medicine. There is a sleeping bag on the floor behind the exam table. It is zipped shut and it is moving. Something inside is breathing fast and wet. A sneaker sticks out from the bottom — a kid's sneaker, red Converse, size seven.\\n\\nJules appears in the doorway behind Fedor. Her face goes white. Jules whispers, \\\"Don't open that. Please. Just — don't.\\\" Her hand is on the kitchen knife in her belt and her eyes are wet and she is looking at the sleeping bag like it is the only thing in the world.\\n\\nOutside, glass breaks. Two streets away, then one. The shuffling sound is getting louder and it is not one pair of feet anymore. The fluorescent light above the nurse's office door pops and dies. In the hallway, the emergency exit sign glows red and something hits the school's front door hard enough to rattle the frame.\",\n  \"dialogue\": [\n    { \"speaker\": \"Jules Moreno\", \"line\": \"Don't open that. Please. Just — don't.\", \"emotion\": \"desperate\" }\n  ],\n  \"consequences\": [\n    { \"type\": \"immediate\", \"domain\": \"supplies\", \"summary\": \"Found 8 cases of canned food and basic medical supplies\" },\n    { \"type\": \"immediate\", \"domain\": \"relationships\", \"summary\": \"Discovered Jules is hiding someone infected in the nurse's office\" },\n    { \"type\": \"delayed\", \"domain\": \"narrative\", \"summary\": \"A horde is converging on the high school, drawn by the noise of breaking glass\", \"details\": \"Expires turn 5 — the horde reaches the school entrance\" }\n  ],\n  \"next_prompt\": \"Niko, you are standing in a cafeteria that smells like death with two cases of food and a horde closing in. Fedor, there is a sleeping bag on the floor that is breathing and Jules Moreno is begging you not to open it with tears on her face and a knife in her hand. The front door just took a hit. You have maybe two minutes.\",\n  \"memory_patch\": {\n    \"canon_additions\": [\"The high school cafeteria has 8 cases of canned food remaining\", \"Jules Moreno is hiding someone infected in the nurse's office in a sleeping bag\", \"A horde of infected is converging on the high school\"],\n    \"thread_updates\": [\n      { \"id\": \"jules-secret\", \"status\": \"opened\", \"description\": \"Jules is hiding an infected person in the nurse's office — likely someone she cares about\" },\n      { \"id\": \"school-horde\", \"status\": \"opened\", \"description\": \"Infected are converging on the high school entrance\" }\n    ]\n  },\n  \"character_updates\": [\n    { \"name\": \"Jules Moreno\", \"role\": \"High School Senior\", \"personality\": \"Desperate and protective — her composure cracked when Fedor found the nurse's office\", \"speaking_style\": \"Whispered, pleading, stripped of her usual sarcasm\", \"emotional_baseline\": \"terrified\", \"current_state\": \"Standing in the nurse's office doorway with a knife, blocking access to whoever is in the sleeping bag\", \"relationships\": \"Protective of the person in the sleeping bag. Willing to threaten the players to keep her secret.\" }\n  ],\n  \"open_threads\": [\n    { \"id\": \"jules-secret\", \"description\": \"Jules is hiding an infected person in the nurse's office\", \"urgency\": \"high\" },\n    { \"id\": \"school-horde\", \"description\": \"A horde of infected is approaching the high school\", \"urgency\": \"high\" },\n    { \"id\": \"supply-run\", \"description\": \"Need to get the food and medicine back to safety before the horde arrives\", \"urgency\": \"medium\" }\n  ]\n}",
+  "target_game_length": 10,
+  "relationship_map": [
+    {
+      "from": "Coach Davis",
+      "to": "Jules Moreno",
+      "type": "Authority Conflict",
+      "description": "Coach Davis sees Jules as a kid who should follow orders. Jules sees Coach Davis as a man with a gun and no plan. They control the two largest survivor groups and neither trusts the other to share resources fairly."
+    },
+    {
+      "from": "Jules Moreno",
+      "to": "Wade Pruitt",
+      "type": "Unaware",
+      "description": "Jules knows someone is at the marina but has not made contact. Wade has the only viable escape route but does not want passengers."
+    },
+    {
+      "from": "Coach Davis",
+      "to": "Wade Pruitt",
+      "type": "Former Acquaintance",
+      "description": "Small town — they know each other from the diner. Coach Davis asked Wade for help on day one. Wade said no. Coach Davis has not forgotten."
+    },
+    {
+      "from": "Wade Pruitt",
+      "to": "Jules Moreno",
+      "type": "Reluctant Sympathy",
+      "description": "Wade has no interest in saving anyone, but teenagers remind him of his daughter who moved to Portland years ago and has not answered the phone since the signal died."
+    }
+  ]
+}

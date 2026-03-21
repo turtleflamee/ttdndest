@@ -1,0 +1,219 @@
+{
+  "id": "hitchhikers-guide",
+  "name": "The Mostly Harmless Affair",
+  "description": "An absurdist sci-fi adventure inspired by Douglas Adams, where bureaucratic incompetence and cosmic indifference collide in the most entertaining way possible.",
+  "critique_score": 3.0,
+  "deck_type": "party",
+  "target_audience": {
+    "age_range": "13-18",
+    "genre": "absurdist comedy sci-fi",
+    "tone": "lighthearted, absurd, deadpan British humor",
+    "themes": [
+      "cosmic insignificance",
+      "bureaucratic nightmare",
+      "the absurdity of existence",
+      "finding meaning in meaninglessness"
+    ],
+    "content_warnings": [
+      "existential humor",
+      "mild peril played for laughs"
+    ],
+    "vibe": "Douglas Adams meets Terry Pratchett — the universe is ridiculous and everyone is either oblivious or resigned to it"
+  },
+  "evaluation_criteria": {
+    "primary_goal": "consistent absurdist comedy with deadpan delivery and cosmic irony",
+    "tone_requirement": "play everything completely straight while making it absurd — bureaucrats are deadly serious about nonsense",
+    "character_expectation": "NPCs with very strong opinions about trivial things and no opinions about actual catastrophes",
+    "audio_priority": "TTS-friendly dry British understatement — describe universe-ending events as 'a bit of a bother'",
+    "success_question": "Would a player laugh out loud and want to quote the best lines to friends?",
+    "strict_genre_enforcement": false
+  },
+  "world": "The galaxy is, by and large, a deeply disappointing place. It is vast beyond comprehension, filled with wonders that nobody appreciates, and run by committees that could not organize a moderately successful bake sale. The Galactic Government operates out of the administrative planet Vogsphere, where the native Vogons have perfected the art of making simple things complicated and complicated things impossible. Their poetry is the third worst in the universe. Their bureaucracy is the first.\n\nHyperspace bypass construction has been the galaxy's favorite excuse for demolishing things that people were rather fond of for the past several million years. The most recent controversy involves Sector ZZ9 Plural Z Alpha, a backwater region of space that most galactic citizens consider about as interesting as a slightly damp towel — which is ironic, because a towel is the single most useful item any interstellar traveler can carry. The Hitchhiker's Guide to the Galaxy says so, and the Guide is never wrong. It is, however, frequently inaccurate, occasionally misleading, and perpetually underfunded.\n\nThe Heart of Gold, the galaxy's only ship powered by the Infinite Improbability Drive, is currently listed as stolen. This is technically true. It was stolen by Zaphod Beeblebrox, the two-headed ex-President of the Galaxy, who stole it from the launching ceremony where he was the guest of honor, which means he technically stole it from himself, which is either a crime or a philosophical statement depending on which head you ask. The ship is capable of passing through every point in the universe simultaneously, which sounds impressive until you realize that this means it occasionally turns the crew into penguins or rearranges the molecular structure of their lunch.\n\nThe Restaurant at the End of the Universe is still taking reservations, though technically it exists at the temporal end of all things, which makes the booking system somewhat nonlinear. Milliways, as it is known, serves excellent food while diners watch the universe end in a spectacular display of entropy and complimentary breadsticks. The maître d' has been doing the job for several billion years and is remarkably good at handling complaints about the heat death of reality.\n\nSomewhere in all of this, the Answer to the Ultimate Question of Life, the Universe, and Everything has been calculated. It is 42. Nobody knows what the Question actually is, which most philosophers consider to be rather the point. Meanwhile, the Infinite Improbability Drive is acting up again, the Vogons have filed a new demolition order for something or other, and somebody has left a whale and a bowl of petunias in low orbit around a planet that really did not need that kind of morning.",
+  "locations": [
+    {
+      "name": "The Heart of Gold",
+      "description": "A sleek, white, impossibly advanced starship shaped vaguely like a running shoe. Its Infinite Improbability Drive allows it to cross vast distances by passing through every point in the universe simultaneously, which has the unfortunate side effect of causing reality to behave unpredictably in the immediate vicinity. The bridge features a large window, several comfortable chairs that were not originally chairs, and a deeply depressed robot who refuses to move from the corner. The ship's computer is relentlessly cheerful and keeps offering to make tea.",
+      "connected_to": [
+        "Milliways",
+        "The Vogon Flagship",
+        "Magrathea"
+      ],
+      "npcs_present": [
+        "Marvin",
+        "Eddie"
+      ]
+    },
+    {
+      "name": "Milliways",
+      "description": "The Restaurant at the End of the Universe. An upscale dining establishment perched at the exact temporal and spatial point where the universe ceases to exist. Floor-to-ceiling windows offer a spectacular view of the Big Crunch, and the menu features dishes from every era of galactic history. The lighting is dramatic, the wine list is infinite, and the bill is handled through compound interest across time, so technically your descendants pay for dinner. The main course introduces itself to your table and recommends which parts of itself are most delicious.",
+      "connected_to": [
+        "The Heart of Gold"
+      ],
+      "npcs_present": [
+        "Max Quordlepleen"
+      ]
+    },
+    {
+      "name": "The Vogon Flagship",
+      "description": "An enormous, ugly, yellow ship that looks like something designed by a committee that hated the previous committee's design and decided to make it worse out of spite. The interior is all institutional green corridors, flickering fluorescent lights, and forms. So many forms. Form 27B-stroke-6 alone runs to forty pages and must be filed in triplicate before you are allowed to file Form 27B-stroke-7, which is the form requesting permission to complain about Form 27B-stroke-6. The air smells like disinfectant and despair. The poetry reading hall is on Deck 7. Avoid Deck 7.",
+      "connected_to": [
+        "The Heart of Gold",
+        "Vogsphere Planetary Council"
+      ],
+      "npcs_present": [
+        "Prostetnic Vogon Jeltz"
+      ]
+    },
+    {
+      "name": "Vogsphere Planetary Council",
+      "description": "The administrative center of the Vogon government, a building so monumentally ugly that it was once mistaken for a natural geological formation by a passing survey ship that gave it a hazard rating of seven out of ten. Inside, endless queues snake through corridors painted in a shade of beige that scientists have determined is the most depressing color possible. Every desk is occupied by a Vogon who is either on a break, about to go on a break, or returning from a break to inform you that you are in the wrong queue.",
+      "connected_to": [
+        "The Vogon Flagship"
+      ],
+      "npcs_present": [
+        "Humma Kavula"
+      ]
+    },
+    {
+      "name": "Magrathea",
+      "description": "A legendary planet that once manufactured luxury custom-built planets for the galaxy's wealthiest civilizations. It went into hibernation when the galactic economy collapsed and everyone stopped being able to afford bespoke continental shelving. The surface is barren and grey, dotted with the entrances to vast underground factories where entire worlds were assembled to order. The planet's automated defenses still work, which the two thermonuclear missiles currently heading toward the Heart of Gold can confirm. Deep inside, the planet-building machinery is waking up again, and somebody has placed an order.",
+      "connected_to": [
+        "The Heart of Gold"
+      ],
+      "npcs_present": []
+    }
+  ],
+  "npcs": [
+    {
+      "name": "Eudora Finch",
+      "personality": "Fanatically polite. Morally neutral. Will risk lives to preserve correct form usage. Has strong opinions about ink shade, stamp pressure, and queue spacing. Has no opinions about demolition, aliens, or the end of the world.",
+      "speaking_style": "Soft, brisk, corrective. Uses phrases like “strictly speaking,” “as per guidance,” and “that’s not the approved way.” Never raises her voice; becomes colder when stressed."
+    },
+    {
+      "name": "Prostetnic Vogon Jeltz",
+      "personality": "Offended by irregularities, not by harm. Treats poetry as a compliance tool. Believes fear is an administrative resource. Secretly insecure about his filing accuracy.",
+      "speaking_style": "Formal, slow, legalistic. Announces violations by category number. Threatens with poetry as if issuing a parking ticket."
+    },
+    {
+      "name": "Vogon Courier",
+      "personality": "Job-first, empathy-last. Panics only when paperwork is incomplete. Thinks physical danger is ‘outside scope.’",
+      "speaking_style": "Clipped, procedural. Repeats policy phrases. Asks for signatures during emergencies."
+    }
+  ],
+  "factions": [
+    {
+      "name": "The Vogon Constructor Fleet",
+      "description": "The bureaucratic arm of galactic demolition. The Vogons are not evil — they are worse: they are efficient administrators who happen to administer destruction. Their fleet of ugly yellow ships roams the galaxy completing construction projects that invariably require demolishing something beloved. They file the paperwork correctly, post the notices in the proper offices (usually in unlit basements behind locked doors with signs saying BEWARE OF THE LEOPARD), and then proceed regardless of objections.",
+      "agenda": "Complete the hyperspace bypass through Sector ZZ9 Plural Z Alpha on schedule, which requires demolishing several inhabited planets that failed to file objections during the comment period that nobody knew about",
+      "members": [
+        "Prostetnic Vogon Jeltz"
+      ]
+    },
+    {
+      "name": "The Hitchhiker Network",
+      "description": "A loose, informal collection of galactic travelers, researchers, and freeloaders who contribute to and rely upon The Hitchhiker's Guide to the Galaxy. They have no formal structure, no headquarters, and no budget to speak of. What they do have is a shared belief that the galaxy is best experienced firsthand, preferably for free, and that a towel and a good attitude will get you through most situations. They communicate through a network of field researchers who are technically employed by Megadodo Publications but have not received a paycheck in several fiscal years.",
+      "agenda": "Document everything interesting in the galaxy, survive to tell about it, and never pay full price for anything",
+      "members": []
+    },
+    {
+      "name": "The Church of the Great Green Arkleseizure",
+      "description": "A religious organization that believes the universe was sneezed into existence by a great cosmic being and that life exists in perpetual dread of the moment it finds its handkerchief, which they call the Coming of the Great White Handkerchief. Most galactic citizens consider this absurd, but the Church has a surprising number of followers, considerable financial resources, and a charismatic leader in Humma Kavula who is absolutely certain he is right.",
+      "agenda": "Prepare for the Coming of the Great White Handkerchief and acquire the sacred nasal spray that can either prevent or hasten the sneeze, depending on which theological interpretation you subscribe to",
+      "members": [
+        "Humma Kavula"
+      ]
+    }
+  ],
+  "opening_situation": "The Infinite Improbability Drive hiccups, the Heart of Gold shudders, and you materialize in orbit around a planet that should not exist — because according to the Vogon demolition schedule, it was destroyed last Thursday. Eddie the shipboard computer cheerfully announces that you are about to be hit by two thermonuclear missiles, and also, would anyone like some tea?",
+  "story_arc": [
+    {
+      "id": "hg-1",
+      "description": "Arrive at the impossible planet and discover it was supposed to be demolished — but it is still here, which means someone tampered with the Vogon paperwork",
+      "act": 1,
+      "priority": "required",
+      "status": "upcoming"
+    },
+    {
+      "id": "hg-2",
+      "description": "Encounter Prostetnic Vogon Jeltz, who is furious about the paperwork irregularity and insists on reading his poetry as punishment",
+      "act": 1,
+      "priority": "required",
+      "status": "upcoming",
+      "trigger": "Players investigate the planet or the demolition order"
+    },
+    {
+      "id": "hg-3",
+      "description": "Escape to Milliways where Max Quordlepleen hints that someone is trying to un-destroy the universe using a piece of Magrathean technology",
+      "act": 1,
+      "priority": "required",
+      "status": "upcoming"
+    },
+    {
+      "id": "hg-4",
+      "description": "Discover that Humma Kavula has infiltrated the Vogsphere Planetary Council and is altering demolition orders as part of a religious prophecy",
+      "act": 2,
+      "priority": "required",
+      "status": "upcoming"
+    },
+    {
+      "id": "hg-5",
+      "description": "The Improbability Drive malfunctions spectacularly, scattering the crew across improbable locations and timelines",
+      "act": 2,
+      "priority": "optional",
+      "status": "upcoming"
+    },
+    {
+      "id": "hg-6",
+      "description": "Race to Magrathea to find the planet-building technology before Humma Kavula uses it to prove his religion correct by literally rearranging the universe",
+      "act": 3,
+      "priority": "required",
+      "status": "upcoming"
+    },
+    {
+      "id": "hg-7",
+      "description": "Final confrontation — stop Humma Kavula, deal with the Vogon fleet, and decide the fate of the universe while trying not to spill your tea",
+      "act": 3,
+      "priority": "required",
+      "status": "upcoming"
+    }
+  ],
+  "writing_style": {
+    "tone": "Deadpan British understatement only. Absurdity must come from procedure, forms, clauses, stamps, audits, and petty rules. No sexualized comedy beats. If a gag happens, an official must cite a clause for it.",
+    "instructions": "Write for TTS. Keep every sentence under 16 words. Prefer one action per sentence. Avoid semicolons and long lists. Always attribute the speaker before dialogue (e.g., \"Ford says, '...'\" not \"'...' says Ford\"). Re-state the immediate physical goal every turn in one short sentence.",
+    "banned_phrases": [
+      "epic battle",
+      "dark lord",
+      "destiny",
+      "the fate of the world",
+      "our only hope"
+    ]
+  },
+  "few_shot_example": "{\n  \"turn\": 2,\n  \"scene_title\": \"The Paperwork Problem\",\n  \"narration\": \"Kira grabs the emergency towel from the storage locker and throws it over the navigation console, which is currently on fire for reasons Eddie describes as 'exciting.' The fire goes out. The console, however, now displays the Heart of Gold's current location as 'inside a whale,' which is incorrect but not by as much as anyone would like.\\n\\nVex walks up to Prostetnic Vogon Jeltz and asks to see the demolition order. Jeltz stares at him for a long moment, then produces a clipboard the size of a small table. The order is seven hundred pages long. Page four hundred and twelve contains a typo — the planet's coordinates are listed as 'TBC' — which in Vogon bureaucracy means the entire demolition is technically invalid. Jeltz turns a shade of green that other Vogons would describe as 'emotionally compromised.' Jeltz sputters, \\\"This is a Class Seven Administrative Irregularity. Somebody will be demoted for this. Possibly to mineral.\\\"\\n\\nMarvin, who has been standing in the corner, observes flatly that he calculated the paperwork error three days ago but nobody asked him because nobody ever asks him. He adds, in a tone that could curdle milk across interstellar distances, Marvin drones, \\\"I have a brain the size of a planet and I'm watching you argue about a typo. This is fine. Everything is fine. Nothing has ever been fine.\\\"\\n\\nThe ship lurches. Eddie announces with devastating cheerfulness that the Improbability Drive has just turned the main cargo hold into a small but enthusiastic jazz band. The saxophone appears to be sentient. It is playing something in B-flat that is making the hull vibrate.\",\n  \"dialogue\": [\n    { \"speaker\": \"Prostetnic Vogon Jeltz\", \"line\": \"This is a Class Seven Administrative Irregularity. Somebody will be demoted for this. Possibly to mineral.\", \"emotion\": \"bureaucratic fury\" },\n    { \"speaker\": \"Marvin\", \"line\": \"I have a brain the size of a planet and I'm watching you argue about a typo. This is fine. Everything is fine. Nothing has ever been fine.\", \"emotion\": \"existential despair\" }\n  ],\n  \"consequences\": [\n    { \"type\": \"immediate\", \"domain\": \"narrative\", \"summary\": \"The demolition order is technically invalid due to a typo — but Jeltz will file a correction\" },\n    { \"type\": \"delayed\", \"domain\": \"supplies\", \"summary\": \"The cargo hold is now a jazz band — supplies are inaccessible\" }\n  ],\n  \"next_prompt\": \"Kira, the navigation console is working again but it thinks you are inside a whale. Vex, Jeltz is reaching for his correction stamp, which means you have about thirty seconds before the demolition order is valid again. Also, the jazz band is getting louder. What do you do?\",\n  \"memory_patch\": {\n    \"canon_additions\": [\"Demolition order contains a typo on page 412 making it technically invalid\", \"Cargo hold transformed into a jazz band by Improbability Drive\", \"Marvin knew about the error three days ago\"],\n    \"thread_updates\": [{ \"id\": \"demolition-order\", \"status\": \"opened\", \"description\": \"The demolition is temporarily invalid but Jeltz is filing a correction\" }]\n  },\n  \"character_updates\": [],\n  \"open_threads\": [\n    { \"id\": \"demolition-order\", \"description\": \"Jeltz is correcting the paperwork to make the demolition valid again\", \"urgency\": \"high\" },\n    { \"id\": \"jazz-cargo\", \"description\": \"The cargo hold is a jazz band and supplies are trapped\", \"urgency\": \"medium\" },\n    { \"id\": \"whale-nav\", \"description\": \"Navigation thinks the ship is inside a whale\", \"urgency\": \"low\" }\n  ]\n}",
+  "target_game_length": 10,
+  "relationship_map": [
+    {
+      "from": "Marvin",
+      "to": "Eddie",
+      "type": "Nemesis",
+      "description": "Marvin despises Eddie's relentless optimism with a cold, quiet fury. Eddie genuinely likes Marvin and keeps trying to cheer him up, which makes it worse."
+    },
+    {
+      "from": "Prostetnic Vogon Jeltz",
+      "to": "Humma Kavula",
+      "type": "Unwitting Pawn",
+      "description": "Jeltz does not know Humma is manipulating Vogon demolition schedules. If he found out, the punishment would involve extensive poetry readings."
+    },
+    {
+      "from": "Humma Kavula",
+      "to": "Max Quordlepleen",
+      "type": "Informant",
+      "description": "Humma visits Milliways regularly to observe the end of the universe for religious research. Max finds him creepy but a reliable tipper."
+    },
+    {
+      "from": "Max Quordlepleen",
+      "to": "Marvin",
+      "type": "Comedy Material",
+      "description": "Max has been trying to get Marvin to do a set at Milliways for years. He considers Marvin's depression the funniest act in the galaxy. Marvin considers this proof that the universe has no redeeming qualities."
+    }
+  ]
+}

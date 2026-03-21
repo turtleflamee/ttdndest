@@ -1,0 +1,25 @@
+{
+  "id": "simple-adventure",
+  "name": "Simple Adventure",
+  "description": "A minimal adventure template. Use this with the Adventure prompt set to fully sculpt your own tone, world, and rules without the default GM tuning.",
+  "world": "A small world. You can edit this in the scenario file or override with your own prompt set.",
+  "opening_situation": "The heroes are at the start. What happens next is up to the players and your prompts.",
+  "locations": [
+    {
+      "name": "The Start",
+      "description": "Where the story begins. Add or change locations in the scenario template or via your prompts."
+    }
+  ],
+  "npcs": [],
+  "factions": [],
+  "story_arc": [],
+  "writing_style": {
+    "tone": "Clear and simple. Sculpt this in the Adventure prompt set.",
+    "pacing": "Steady. One thing at a time.",
+    "themes": ["adventure", "choice", "discovery"]
+  },
+  "special_rules": [
+    "Keep the story easy to follow. One main thread.",
+    "You can add or change these rules in the scenario file or in the Adventure prompt set."
+  ]
+}

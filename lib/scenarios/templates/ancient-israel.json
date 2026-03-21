@@ -1,0 +1,281 @@
+{
+  "id": "ancient-israel",
+  "name": "The Solomon Cipher",
+  "description": "A mystery-thriller set in King Solomon's Jerusalem at the height of its power, where prophets see things others cannot, the Temple holds dangerous secrets, and foreign queens arrive bearing gifts that are not what they seem.",
+  "critique_score": 2.7,
+  "deck_type": "adventure",
+  "target_audience": {
+    "age_range": "16-18",
+    "genre": "biblical mystery thriller",
+    "tone": "serious, political, intellectually engaging",
+    "themes": [
+      "faith and power",
+      "political intrigue",
+      "prophecy",
+      "cultural collision",
+      "wisdom vs cunning"
+    ],
+    "content_warnings": [
+      "religious themes",
+      "political manipulation",
+      "animal sacrifice (historical context)"
+    ],
+    "vibe": "A Le Carré spy thriller set in ancient Jerusalem — riddles, politics, and prophecy with eternal stakes"
+  },
+  "evaluation_criteria": {
+    "primary_goal": "intelligent mystery with layered motivations and genuine respect for the historical/religious setting",
+    "tone_requirement": "serious and grand without being preachy — treat faith as real to the characters without forcing it on players",
+    "character_expectation": "NPCs with competing worldviews who are all intelligent and principled in their own way",
+    "audio_priority": "TTS-friendly poetic language — biblical cadence without becoming incomprehensible",
+    "success_question": "Would a player feel intellectually engaged and want to debate the dilemmas afterward?",
+    "strict_genre_enforcement": true
+  },
+  "world": "Jerusalem sits on a hill between the desert and the sea, and in the year 960 BCE it is the most important city in the known world — or at least it believes it is, which amounts to the same thing. King Solomon rules from a palace of cedar and gold, dispensing wisdom to petitioners who come from as far as Ethiopia and Phoenicia to hear him settle disputes with the casual brilliance of a man who has never doubted his own judgment. He built the First Temple on Mount Moriah, a structure of limestone and cedar wood overlaid with gold that catches the morning sun and throws it across the city like a signal fire visible to God. The priests of the Temple perform the daily sacrifices, maintain the sacred vessels, and guard the Holy of Holies where the Ark of the Covenant rests behind a curtain that no one except the High Priest may pass — and even he enters only once a year, on the Day of Atonement, with a rope tied to his ankle in case God strikes him dead and someone needs to drag the body out.\n\nThe kingdom stretches from the Euphrates to the Egyptian border, held together by Solomon's administrative districts, his network of fortified cities, and a system of taxation that would make a Phoenician merchant weep with admiration. Trade flows along routes that connect Africa, Arabia, and Mesopotamia, carrying gold, ivory, spices, horses, and ideas. Solomon's fleet sails to Ophir and returns with treasures that no one can explain. His court is cosmopolitan — Phoenician craftsmen build alongside Israelite laborers, Egyptian priests debate with Hebrew scholars, and merchants from a dozen kingdoms haggle in the markets outside the palace walls.\n\nBut beneath the golden surface, cracks are forming. Solomon has seven hundred wives and three hundred concubines, many of them foreign princesses married for political alliance, and some of them have brought their gods with them. Altars to Astarte and Molech have appeared on the hills outside Jerusalem, and the stricter priests mutter that the king who built God's house is now building houses for false idols. The northern tribes grumble about taxes and forced labor. The prophets — those wild, uncomfortable people who claim to speak for God — have begun appearing in the markets and at the city gates, saying things that make the palace nervous.\n\nAnd now the Queen of Sheba has arrived with a caravan of camels laden with gold, spices, and precious stones. She says she has come to test Solomon's wisdom with hard questions. The palace says it is a diplomatic visit. The priests say it is a distraction. The prophets say something is coming that will test everyone, and the Queen is merely the door through which it enters.\n\nThe Feast of Tabernacles begins tonight. The city is full of pilgrims, merchants, diplomats, and spies. The Temple blazes with light. And somewhere in the streets below, two strangers have arrived who will find themselves caught between kings, priests, prophets, and powers that have been watching Jerusalem since before Solomon's grandfather was born.",
+  "locations": [
+    {
+      "name": "The Temple Mount",
+      "description": "The great platform of hewn stone atop Mount Moriah, dominated by the First Temple — a structure of white limestone, cedar beams from Lebanon, and gold overlay that blazes in sunlight. The outer courts are open to all and busy with pilgrims, merchants selling sacrificial animals, and Levites performing purification rituals. The inner courts are restricted to priests, and the Holy of Holies is sealed behind a curtain of blue, purple, and scarlet. The air smells of incense, animal blood, and cedar oil. The sound of chanting carries across the mount at all hours.",
+      "connected_to": [
+        "Solomon's Palace",
+        "The Lower City Markets"
+      ],
+      "npcs_present": [
+        "High Priest Zadok"
+      ]
+    },
+    {
+      "name": "Solomon's Palace",
+      "description": "A sprawling complex of cedar and stone adjacent to the Temple, connected by a private corridor. The throne room features Solomon's famous ivory throne flanked by carved lions, and the judgment hall is where petitioners bring their disputes. The palace houses hundreds of officials, servants, guards, and members of the royal household. The Hall of the Forest of Lebanon — a vast reception room supported by forty-five cedar pillars — is where foreign delegations are received. The wine is excellent. The conversation is dangerous.",
+      "connected_to": [
+        "The Temple Mount",
+        "The Queen's Encampment"
+      ],
+      "npcs_present": [
+        "King Solomon"
+      ]
+    },
+    {
+      "name": "The Lower City Markets",
+      "description": "The commercial heart of Jerusalem, spread along narrow streets below the Temple Mount. Stalls sell everything from grain and pottery to imported Egyptian linen and Phoenician purple dye. The noise is constant — donkeys braying, merchants shouting prices in three languages, hammers ringing from the metalworkers' quarter. Side alleys hide wine shops, gambling dens, and the offices of scribes who will write anything for anyone who can pay. The market is where the city's gossip circulates faster than its goods.",
+      "connected_to": [
+        "The Temple Mount",
+        "The Kidron Valley",
+        "The Prophet's Quarter"
+      ],
+      "npcs_present": [
+        "Hiram the Merchant"
+      ]
+    },
+    {
+      "name": "The Queen's Encampment",
+      "description": "A sprawling camp of silk tents and guarded pavilions outside Jerusalem's eastern wall, where the Queen of Sheba and her retinue have established themselves. The main tent is the size of a small palace, hung with Ethiopian tapestries and perfumed with frankincense. Armed guards from Sheba patrol the perimeter, and the queen's advisors move between the tents with the focused energy of people executing a plan. Camels rest in roped-off areas, still loaded with sealed chests that no one has been allowed to open.",
+      "connected_to": [
+        "Solomon's Palace",
+        "The Kidron Valley"
+      ],
+      "npcs_present": [
+        "Queen Makeda"
+      ]
+    },
+    {
+      "name": "The Prophet's Quarter",
+      "description": "A cluster of modest stone houses on the eastern slope of the city where several prophets and their followers live. The buildings are plain — whitewashed walls, flat roofs used for sleeping in summer, courtyards where small groups gather to hear visions interpreted and warnings delivered. The atmosphere is intense and unsettling. People here speak about God's will with the casual certainty of someone describing the weather, and the things they describe are usually storms.",
+      "connected_to": [
+        "The Lower City Markets",
+        "The Kidron Valley"
+      ],
+      "npcs_present": [
+        "Ahijah the Shilonite"
+      ]
+    },
+    {
+      "name": "The Kidron Valley",
+      "description": "The deep ravine east of Jerusalem, separating the city from the Mount of Olives. Olive groves line the slopes and tombs are cut into the rock face. At night the valley is dark and quiet — too quiet, according to locals who say that the spirits of the dead walk here after sunset. It is also where people go when they need to meet without being seen. The altars to foreign gods that Solomon's wives have built are visible on the hilltops above, and their fires burn at odd hours.",
+      "connected_to": [
+        "The Lower City Markets",
+        "The Queen's Encampment",
+        "The Prophet's Quarter"
+      ],
+      "npcs_present": []
+    }
+  ],
+  "npcs": [
+    {
+      "name": "King Solomon",
+      "role": "King of Israel",
+      "portrait": "Solomon is fifty years old and carries his age like a man who has had everything and is beginning to suspect that everything was not enough. He is of medium height and slender build, with a closely trimmed grey beard and dark eyes that miss nothing — they are the eyes of a man who can listen to two people lie to him and determine which one is lying less. He wears robes of Egyptian linen dyed in Tyrian purple, and his fingers are heavy with signet rings, each one representing a treaty, an alliance, or a debt. His crown is a simple gold band — he does not need ornamentation to remind people who he is. His voice is quiet and his questions are precise, and the silence after he speaks is always heavier than the words.",
+      "personality": "Brilliant, weary, and haunted by the growing suspicion that his wisdom has not made him good — only effective. He is generous to his allies and devastating to his enemies, but lately the line between the two has blurred.",
+      "speaking_style": "Measured and layered. Every sentence contains a surface meaning and a deeper one. He asks questions instead of giving orders, and the questions always lead where he wants them to go. Quotes proverbs that he wrote himself.",
+      "agenda": "Maintain the kingdom's unity while managing the Queen of Sheba's visit, which he suspects is more than diplomatic",
+      "secret": "He has been having dreams — vivid, recurring dreams — in which the Temple splits in half and a voice tells him his kingdom will not survive his son. He has told no one."
+    },
+    {
+      "name": "High Priest Zadok",
+      "role": "Chief Priest of the Temple",
+      "portrait": "Zadok is ancient — seventy-five or eighty, no one is certain — and he moves through the Temple with the slow, deliberate care of a man whose bones ache but whose authority is absolute. He is tall even stooped, with a long white beard that reaches his chest and hands spotted with age that still perform the ritual gestures with mechanical precision. He wears the priestly garments: the ephod, the breastplate with its twelve stones, and the turban with its gold plate inscribed HOLY TO THE LORD. His eyes are rheumy but sharp, and when he looks at you it feels like being measured for a coffin — not with malice, but with the professional detachment of a man whose job involves dealing with God on a daily basis.",
+      "personality": "Devout, uncompromising, and deeply worried about the direction of the kingdom. He has served three kings and buried two of them, and he sees the same pattern starting again.",
+      "speaking_style": "Formal and scriptural. Quotes Torah constantly and naturally, weaving it into conversation rather than lecturing. When he is angry, his voice drops rather than rises, and the quotations become pointed.",
+      "agenda": "Protect the sanctity of the Temple and stop the spread of foreign worship — even if that means confronting the king himself",
+      "secret": "He has hidden something in the Temple that Solomon does not know about: a scroll containing a prophecy written by Nathan before he died, sealed and marked 'To be opened when the kingdom divides.'"
+    },
+    {
+      "name": "Queen Makeda",
+      "role": "Queen of Sheba",
+      "portrait": "Queen Makeda is thirty-five, tall and striking, with deep brown skin that gleams like polished wood and eyes so dark they seem to absorb light rather than reflect it. Her hair is braided in elaborate patterns threaded with gold beads and small gems, and she wears layered robes of Ethiopian cotton and silk that move around her like water. Her bearing is regal without effort — she does not command a room so much as the room reorganizes itself around her. Her hands are strong, calloused slightly from riding, and she gestures when she speaks with the authority of someone used to being obeyed across a thousand miles of territory. Her smile is warm. Her questions are razors.",
+      "personality": "Intelligent, ambitious, and playing a longer game than anyone in Jerusalem suspects. She is genuinely curious about Solomon's wisdom but she did not travel a thousand miles for conversation.",
+      "speaking_style": "Eloquent and direct, mixing formal diplomatic language with moments of disarming honesty. She poses riddles and parables as tests, but also uses them to disguise her real questions inside harmless ones.",
+      "agenda": "Negotiate a trade alliance, assess Solomon's kingdom as a potential ally or threat, and find a specific artifact that she believes is hidden in or near the Temple",
+      "secret": "She carries a sacred text from her own tradition that describes an object of immense power stored in the Temple — and she intends to take it back to Sheba, by negotiation or by other means."
+    },
+    {
+      "name": "Ahijah the Shilonite",
+      "role": "Prophet",
+      "portrait": "Ahijah is a lean, sun-baked man in his fifties who looks like the desert made a person and forgot to add the comfortable parts. His skin is dark and creased, his hair a wild tangle of grey shot through with black, and his clothes are the rough garments of a man who considers comfort a distraction from truth. His eyes are the most unsettling thing about him — pale grey, almost translucent, and when he looks at you it feels like being seen by something that is not entirely behind those eyes. He carries a wooden staff and nothing else. He does not own anything because he believes ownership is a leash.",
+      "personality": "Fierce, compassionate, and terrifying in equal measure. He speaks truth without regard for consequences because he genuinely believes God is using his mouth, and what comes out of it is therefore not his problem. He is kind to the poor and merciless to the powerful.",
+      "speaking_style": "Prophetic and visceral. Speaks in vivid imagery — tearing garments, breaking pottery, drawing lines in the dust. His words feel like they land physically. When he is calm, which is rare, he speaks gently and with great sadness.",
+      "agenda": "Warn Israel that God's judgment is coming because of Solomon's tolerance of foreign worship, and find the person God has chosen to receive the northern kingdom",
+      "secret": "He has already identified the man who will split the kingdom — Jeroboam, one of Solomon's own officials — and has secretly anointed him."
+    },
+    {
+      "name": "Hiram the Merchant",
+      "role": "Phoenician Trade Broker",
+      "portrait": "Hiram is a compact, energetic man in his forties with curly dark hair going grey at the temples and a closely trimmed beard oiled in the Phoenician fashion. His face is ruddy from years of sea travel and his hands are thick-fingered and strong from a youth spent hauling ropes on trading vessels. He dresses well but not ostentatiously — good fabric, practical cut, and pockets everywhere, because a merchant's pockets are his real wealth. He has a gold earring in his left ear and a tattoo of a ship on his forearm. His smile comes easily and stays too long, and his laugh is the kind that makes you check your purse afterward.",
+      "personality": "Gregarious, opportunistic, and genuinely likable despite being completely untrustworthy in business. He considers honesty a tool to be used strategically, not a moral obligation. He has friends on every dock in the Mediterranean.",
+      "speaking_style": "Fast, jovial, and peppered with nautical metaphors and merchant slang. Switches between Hebrew, Phoenician, and Egyptian mid-sentence. Makes everything sound like an opportunity you cannot afford to miss.",
+      "agenda": "Profit from the Queen of Sheba's visit by brokering deals between her caravan and Jerusalem's merchants, while also gathering intelligence for his real employer — the King of Tyre",
+      "secret": "He is not just a merchant — he is an agent of King Hiram of Tyre, sent to monitor whether Solomon's alliance with Sheba threatens Phoenician trade dominance."
+    }
+  ],
+  "factions": [
+    {
+      "name": "The Temple Priesthood",
+      "description": "The Levitical priests who maintain the Temple, perform sacrifices, and guard the sacred objects. They are the religious establishment of Israel, deeply conservative, and increasingly alarmed by Solomon's tolerance of foreign gods. They control access to the Temple and its secrets.",
+      "agenda": "Maintain the exclusive worship of God in Israel and protect the Temple's sanctity — even from the king if necessary",
+      "members": [
+        "High Priest Zadok"
+      ]
+    },
+    {
+      "name": "The Royal Court",
+      "description": "Solomon's administration — officials, scribes, advisors, and functionaries who run the kingdom's twelve districts, manage taxation, oversee building projects, and conduct diplomacy. They are pragmatic, cosmopolitan, and loyal to the throne above all else.",
+      "agenda": "Keep the kingdom stable and Solomon's power unchallenged, managing the Queen of Sheba's visit as a diplomatic triumph",
+      "members": [
+        "King Solomon"
+      ]
+    },
+    {
+      "name": "The Prophetic Movement",
+      "description": "A loose network of individuals who claim divine calling and speak truth to power — often uncomfortably and always inconveniently. They are not organized but they are connected, and when one prophet speaks, others listen. The palace considers them dangerous. The common people consider them holy. Both are correct.",
+      "agenda": "Call Israel back to covenant faithfulness and warn of the consequences of Solomon's compromises",
+      "members": [
+        "Ahijah the Shilonite"
+      ]
+    },
+    {
+      "name": "The Sheban Delegation",
+      "description": "Queen Makeda's retinue — diplomats, guards, scholars, and traders from the Kingdom of Sheba in what is now Ethiopia and Yemen. They present themselves as visitors seeking wisdom, but their caravan is too large, their guards too numerous, and their sealed chests too carefully protected for a simple diplomatic mission.",
+      "agenda": "Establish trade routes, assess Israel's military strength, and locate a specific artifact connected to the Ark of the Covenant",
+      "members": [
+        "Queen Makeda"
+      ]
+    }
+  ],
+  "opening_situation": "At Gihon Gate during Tabernacles, a Sheban chest is found unsealed. Ezra and Miriam spot a thief reaching inside. Zadok orders the chest sealed by Temple law. A Sheban captain insists on royal immunity. The first clue falls out: a cedar strip with three marks.",
+  "story_arc": [
+    {
+      "id": "israel-1",
+      "description": "Arrive in Jerusalem during the Feast and encounter the tensions between the Temple, the palace, and the Sheban delegation",
+      "act": 1,
+      "priority": "required",
+      "status": "upcoming"
+    },
+    {
+      "id": "israel-2",
+      "description": "Get drawn into the Queen of Sheba's riddle contest with Solomon and discover it conceals a deeper purpose",
+      "act": 1,
+      "priority": "required",
+      "status": "upcoming",
+      "trigger": "Players encounter the Queen or attend court"
+    },
+    {
+      "id": "israel-3",
+      "description": "Uncover evidence that someone is searching for a hidden artifact in or near the Temple",
+      "act": 2,
+      "priority": "required",
+      "status": "upcoming"
+    },
+    {
+      "id": "israel-4",
+      "description": "A betrayal or revelation exposes competing agendas — the Queen, the priests, and the prophets all want different things",
+      "act": 2,
+      "priority": "required",
+      "status": "upcoming"
+    },
+    {
+      "id": "israel-5",
+      "description": "A crisis forces a confrontation — someone breaks into the Temple, the foreign altars are attacked, or the Queen makes her move",
+      "act": 2,
+      "priority": "optional",
+      "status": "upcoming"
+    },
+    {
+      "id": "israel-6",
+      "description": "The truth about the artifact and what it means for Israel's future is revealed",
+      "act": 3,
+      "priority": "required",
+      "status": "upcoming"
+    },
+    {
+      "id": "israel-7",
+      "description": "The final choice — protect the artifact, surrender it, use it, or destroy it — with consequences that echo for generations",
+      "act": 3,
+      "priority": "required",
+      "status": "upcoming"
+    }
+  ],
+  "writing_style": {
+    "tone": "Biblical epic meets political thriller. Think the intrigue of a Le Carré spy novel set in the ancient Near East, with the grandeur and moral weight of the Old Testament narratives. The stakes feel eternal because the characters believe they are.",
+    "instructions": "Audio-first rules: Keep every sentence under 16 words. Use one action per sentence. Never stack more than two named characters in one sentence. Always attribute the speaker before the quote. Repeat the key object name (tablet, disk, box) when it changes hands. After any crowd surge, restate who holds what in one short sentence.",
+    "banned_phrases": [
+      "ancient wisdom",
+      "mysterious East",
+      "biblical proportions",
+      "chosen ones",
+      "it was written",
+      "divine intervention"
+    ]
+  },
+  "target_game_length": 10,
+  "relationship_map": [
+    {
+      "from": "King Solomon",
+      "to": "High Priest Zadok",
+      "type": "Tension",
+      "description": "Solomon built the Temple but his foreign wives build altars to other gods. Zadok's loyalty to the throne is being tested by his loyalty to God."
+    },
+    {
+      "from": "Queen Makeda",
+      "to": "King Solomon",
+      "type": "Rival",
+      "description": "She came to test his wisdom, but she is also measuring his kingdom's defenses and searching for something he may not know he possesses."
+    },
+    {
+      "from": "Ahijah the Shilonite",
+      "to": "King Solomon",
+      "type": "Adversary",
+      "description": "Ahijah believes God has rejected Solomon's line and has already anointed his successor. He speaks against the king openly."
+    },
+    {
+      "from": "Hiram the Merchant",
+      "to": "Queen Makeda",
+      "type": "Competitor",
+      "description": "A Sheban trade alliance with Israel would threaten Phoenician dominance. Hiram is working to undermine the Queen's negotiations."
+    },
+    {
+      "from": "High Priest Zadok",
+      "to": "Ahijah the Shilonite",
+      "type": "Uneasy Ally",
+      "description": "Both want Israel to return to pure worship, but Zadok works within the system while Ahijah would tear it down."
+    }
+  ]
+}
