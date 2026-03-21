@@ -252,6 +252,21 @@ function PlayPageInner() {
     );
   }, [displayResponse, game]);
 
+  const playTurnTTS = useCallback((turn: GMResponse) => {
+    if (!ttsRef.current) return;
+    const config = loadTTSConfig();
+    if (!config.narratorVoiceId) return;
+    const voices = game?.memoryBundle?.characters
+      ? buildCharacterVoices(game.memoryBundle.characters)
+      : undefined;
+    ttsRef.current.loadAndPlay(
+      turn.narration,
+      turn.dialogue ?? [],
+      config,
+      voices
+    );
+  }, [game]);
+
   const pauseTTS = () => ttsRef.current?.pause();
   const resumeTTS = () => ttsRef.current?.resume();
   const stopTTS = () => {
@@ -813,6 +828,23 @@ function PlayPageInner() {
                     <article key={turn.turn} id={`turn-${turn.turn}`}>
                       {/* Turn header */}
                       <div className="flex items-center gap-3 mb-3">
+                        {/* Play from this turn button */}
+                        {ttsReady && (
+                          <button
+                            className="w-6 h-6 flex items-center justify-center rounded-full shrink-0 transition-colors"
+                            style={{
+                              background: "var(--bg-card)",
+                              color: "var(--accent)",
+                              border: "1px solid var(--border)",
+                            }}
+                            onClick={() => playTurnTTS(turn)}
+                            title={`Play ${turn.turn === 0 ? "Prologue" : `Turn ${turn.turn}`} aloud`}
+                          >
+                            <svg width="10" height="12" viewBox="0 0 10 12" fill="currentColor">
+                              <polygon points="0,0 10,6 0,12" />
+                            </svg>
+                          </button>
+                        )}
                         <h2 className="text-xs font-semibold uppercase tracking-widest"
                           style={{ color: "var(--accent)", opacity: 0.8 }}>
                           {turn.turn === 0 ? "Prologue" : `Turn ${turn.turn}`}
