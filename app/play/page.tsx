@@ -7,8 +7,9 @@ import {
   TTSPlayer,
   parseNarrationToSegments,
   type SpeechSegment,
+  type TTSConfig,
 } from "@/lib/tts-service";
-import { loadTTSConfig } from "@/lib/tts-config";
+import { loadTTSConfig, saveTTSConfig } from "@/lib/tts-config";
 
 type PipelineState = "Idle" | "Generating..." | "Playing" | "Paused";
 
@@ -48,6 +49,22 @@ function PlayPageInner() {
   /* ---- sidebar ---- */
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [historyTurn, setHistoryTurn] = useState<number | null>(null);
+
+  /* ---- TTS config (live state) ---- */
+  const [ttsConfig, setTtsConfig] = useState<TTSConfig | null>(null);
+
+  useEffect(() => {
+    setTtsConfig(loadTTSConfig());
+  }, []);
+
+  const toggleAutoPlay = () => {
+    if (!ttsConfig) return;
+    const updated = { ...ttsConfig, autoPlay: !ttsConfig.autoPlay };
+    saveTTSConfig(updated);
+    setTtsConfig(updated);
+  };
+
+  const ttsReady = !!(ttsConfig?.narratorVoiceId);
 
   /* ---- debug panel ---- */
   const [showDebug, setShowDebug] = useState(false);
@@ -920,32 +937,71 @@ function PlayPageInner() {
         {shownResponse && (
           <div className="flex items-center justify-center gap-3 px-5 py-2.5 border-t shrink-0"
             style={{ borderColor: "var(--border)", background: "var(--bg-secondary)" }}>
-            <button className="btn btn-ghost text-xs px-3 py-1.5" onClick={playTTS} title="Play">
-              ▶ Play
-            </button>
-            {pipelineState === "Playing" && (
-              <button className="btn btn-ghost text-xs px-3 py-1.5" onClick={pauseTTS} title="Pause">
-                ⏸ Pause
-              </button>
+
+            {ttsReady ? (
+              <>
+                <button className="btn btn-ghost text-xs px-3 py-1.5" onClick={playTTS} title="Play narration with ElevenLabs TTS">
+                  ▶ Play
+                </button>
+                {pipelineState === "Playing" && (
+                  <button className="btn btn-ghost text-xs px-3 py-1.5" onClick={pauseTTS} title="Pause">
+                    ⏸ Pause
+                  </button>
+                )}
+                {pipelineState === "Paused" && (
+                  <button className="btn btn-ghost text-xs px-3 py-1.5" onClick={resumeTTS} title="Resume">
+                    ▶ Resume
+                  </button>
+                )}
+                {pipelineState !== "Idle" && (
+                  <button className="btn btn-ghost text-xs px-3 py-1.5" onClick={stopTTS} title="Stop">
+                    ◼ Stop
+                  </button>
+                )}
+
+                {/* Pipeline state indicator */}
+                <span className="text-xs" style={{
+                  color: pipelineState === "Idle" ? "var(--text-secondary)"
+                    : pipelineState === "Playing" ? "var(--success)"
+                    : pipelineState === "Paused" ? "var(--warning)"
+                    : "var(--accent)",
+                }}>
+                  {pipelineState}
+                </span>
+
+                {/* Divider */}
+                <span className="text-xs" style={{ color: "var(--border)" }}>|</span>
+
+                {/* Auto-play toggle */}
+                <button
+                  className="text-xs px-2 py-1 rounded"
+                  style={{
+                    background: ttsConfig?.autoPlay ? "rgba(108,92,231,0.2)" : "transparent",
+                    color: ttsConfig?.autoPlay ? "var(--accent)" : "var(--text-secondary)",
+                    border: `1px solid ${ttsConfig?.autoPlay ? "var(--accent)" : "var(--border)"}`,
+                  }}
+                  onClick={toggleAutoPlay}
+                  title="Auto-play narration after each turn generates"
+                >
+                  Auto-play {ttsConfig?.autoPlay ? "ON" : "OFF"}
+                </button>
+              </>
+            ) : (
+              <span className="text-xs" style={{ color: "var(--text-secondary)" }}>
+                No voice configured —
+              </span>
             )}
-            {pipelineState === "Paused" && (
-              <button className="btn btn-ghost text-xs px-3 py-1.5" onClick={resumeTTS} title="Resume">
-                ▶ Resume
-              </button>
-            )}
-            {pipelineState !== "Idle" && (
-              <button className="btn btn-ghost text-xs px-3 py-1.5" onClick={stopTTS} title="Stop">
-                ◼ Stop
-              </button>
-            )}
-            <span className="text-xs ml-2" style={{
-              color: pipelineState === "Idle" ? "var(--text-secondary)"
-                : pipelineState === "Playing" ? "var(--success)"
-                : pipelineState === "Paused" ? "var(--warning)"
-                : "var(--accent)",
-            }}>
-              {pipelineState}
-            </span>
+
+            {/* Settings link */}
+            <a
+              href="/settings"
+              target="_blank"
+              className="text-xs px-2 py-1 rounded"
+              style={{ color: "var(--accent)", border: "1px solid var(--border)" }}
+              title="Open TTS settings to choose a voice"
+            >
+              TTS Settings
+            </a>
           </div>
         )}
 
