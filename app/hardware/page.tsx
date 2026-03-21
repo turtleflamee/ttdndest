@@ -340,7 +340,15 @@ function PhysicalCardsTab() {
             Polling every 1.5s…
           </p>
         )}
-        {scanResult && (
+        {scanResult && (() => {
+          const sr = scanResult as Record<string, unknown>;
+          const rIdx = sr.readerIndex as number | undefined;
+          const cardText = sr.cardText as string | undefined;
+          const cardNum = sr.cardNumber as number | undefined;
+          const uid = sr.rfidUid as string | undefined;
+          const ts = sr.timestamp as string | undefined;
+          const history = Array.isArray(sr.history) ? (sr.history as Record<string, unknown>[]) : [];
+          return (
           <>
             {/* Current scan */}
             <div
@@ -351,36 +359,35 @@ function PhysicalCardsTab() {
                 <span className="text-xs font-semibold" style={{ color: "var(--accent)" }}>
                   Latest Scan
                 </span>
-                {(scanResult as Record<string, unknown>).readerIndex && (
+                {rIdx != null && (
                   <span className="text-xs px-1.5 py-0.5 rounded" style={{ background: "var(--accent)", color: "white" }}>
-                    Reader {String((scanResult as Record<string, unknown>).readerIndex)}
+                    Reader {rIdx}
                   </span>
                 )}
               </div>
-              {(scanResult as Record<string, unknown>).cardText ? (
+              {cardText ? (
                 <p className="text-sm">
-                  Card #{String((scanResult as Record<string, unknown>).cardNumber)} —{" "}
-                  <strong>{String((scanResult as Record<string, unknown>).cardText)}</strong>
+                  Card #{String(cardNum)} —{" "}
+                  <strong>{cardText}</strong>
                 </p>
               ) : (
                 <p className="text-sm" style={{ color: "var(--text-secondary)" }}>
-                  Unknown card (UID: {String((scanResult as Record<string, unknown>).rfidUid || "—")})
+                  Unknown card (UID: {uid || "—"})
                 </p>
               )}
               <p className="text-xs mt-1" style={{ color: "var(--text-secondary)" }}>
-                UID: {String((scanResult as Record<string, unknown>).rfidUid || "—")} | {String((scanResult as Record<string, unknown>).timestamp || "")}
+                UID: {uid || "—"} | {ts || ""}
               </p>
             </div>
 
             {/* Scan history */}
-            {Array.isArray((scanResult as Record<string, unknown>).history) &&
-              ((scanResult as Record<string, unknown>).history as Record<string, unknown>[]).length > 1 && (
+            {history.length > 1 && (
               <div>
                 <h4 className="text-xs font-semibold mb-2" style={{ color: "var(--text-secondary)" }}>
                   Scan History (last 20)
                 </h4>
                 <div className="flex flex-col gap-1">
-                  {((scanResult as Record<string, unknown>).history as Record<string, unknown>[]).slice(1).map((entry, idx) => (
+                  {history.slice(1).map((entry, idx) => (
                     <div
                       key={idx}
                       className="flex items-center gap-3 text-xs px-3 py-1.5 rounded"
@@ -407,7 +414,7 @@ function PhysicalCardsTab() {
               </div>
             )}
           </>
-        )}
+        );})()}
         {!scanResult && scanActive && (
           <p className="text-sm" style={{ color: "var(--text-secondary)" }}>
             No scans received yet. Make sure the plate is powered on and connected to WiFi.

@@ -7,3 +7,4 @@ out/
 next-env.d.ts
 test-results/
 .claude/settings.local.json
+.vercel
