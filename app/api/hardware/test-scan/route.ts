@@ -45,12 +45,20 @@ export async function POST(req: NextRequest) {
 
     const resolved = await resolveCard(rfidUid, cardNumber);
 
-    const testScan = {
+    const scanEntry = {
       rfidUid,
       readerIndex: readerIndex ?? null,
       cardNumber: resolved?.cardNumber ?? null,
       cardText: resolved?.cardText ?? null,
       timestamp: new Date().toISOString(),
+    };
+
+    // Store current scan + history of last 20 scans all in last_test_scan JSONB
+    const prev = plate.last_test_scan as Record<string, unknown> | null;
+    const prevHistory = Array.isArray(prev?.history) ? (prev.history as unknown[]) : [];
+    const testScan = {
+      ...scanEntry,
+      history: [scanEntry, ...prevHistory].slice(0, 20),
     };
 
     await updatePlate(plate.id, { last_test_scan: testScan });

@@ -329,12 +329,77 @@ function PhysicalCardsTab() {
           </p>
         )}
         {scanResult && (
-          <pre
-            className="text-xs p-3 rounded-lg overflow-x-auto"
-            style={{ background: "var(--bg-primary)", color: "var(--text-primary)" }}
-          >
-            {JSON.stringify(scanResult, null, 2)}
-          </pre>
+          <>
+            {/* Current scan */}
+            <div
+              className="p-3 rounded-lg mb-3"
+              style={{ background: "var(--bg-primary)", border: "1px solid var(--border)" }}
+            >
+              <div className="flex items-center gap-2 mb-1">
+                <span className="text-xs font-semibold" style={{ color: "var(--accent)" }}>
+                  Latest Scan
+                </span>
+                {(scanResult as Record<string, unknown>).readerIndex && (
+                  <span className="text-xs px-1.5 py-0.5 rounded" style={{ background: "var(--accent)", color: "white" }}>
+                    Reader {String((scanResult as Record<string, unknown>).readerIndex)}
+                  </span>
+                )}
+              </div>
+              {(scanResult as Record<string, unknown>).cardText ? (
+                <p className="text-sm">
+                  Card #{String((scanResult as Record<string, unknown>).cardNumber)} —{" "}
+                  <strong>{String((scanResult as Record<string, unknown>).cardText)}</strong>
+                </p>
+              ) : (
+                <p className="text-sm" style={{ color: "var(--text-secondary)" }}>
+                  Unknown card (UID: {String((scanResult as Record<string, unknown>).rfidUid || "—")})
+                </p>
+              )}
+              <p className="text-xs mt-1" style={{ color: "var(--text-secondary)" }}>
+                UID: {String((scanResult as Record<string, unknown>).rfidUid || "—")} | {String((scanResult as Record<string, unknown>).timestamp || "")}
+              </p>
+            </div>
+
+            {/* Scan history */}
+            {Array.isArray((scanResult as Record<string, unknown>).history) &&
+              ((scanResult as Record<string, unknown>).history as Record<string, unknown>[]).length > 1 && (
+              <div>
+                <h4 className="text-xs font-semibold mb-2" style={{ color: "var(--text-secondary)" }}>
+                  Scan History (last 20)
+                </h4>
+                <div className="flex flex-col gap-1">
+                  {((scanResult as Record<string, unknown>).history as Record<string, unknown>[]).slice(1).map((entry, idx) => (
+                    <div
+                      key={idx}
+                      className="flex items-center gap-3 text-xs px-3 py-1.5 rounded"
+                      style={{ background: "var(--bg-primary)" }}
+                    >
+                      <span className="font-mono" style={{ color: "var(--text-secondary)", minWidth: 24 }}>
+                        R{String(entry.readerIndex ?? "?")}
+                      </span>
+                      <span className="font-mono" style={{ color: "var(--text-secondary)", minWidth: 100 }}>
+                        {String(entry.rfidUid ?? "—")}
+                      </span>
+                      <span style={{ flex: 1 }}>
+                        {entry.cardText
+                          ? <>#{String(entry.cardNumber)} — <strong>{String(entry.cardText)}</strong></>
+                          : <span style={{ color: "var(--text-secondary)" }}>Unknown card</span>
+                        }
+                      </span>
+                      <span style={{ color: "var(--text-secondary)" }}>
+                        {String(entry.timestamp ?? "").slice(11, 19)}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+          </>
+        )}
+        {!scanResult && scanActive && (
+          <p className="text-sm" style={{ color: "var(--text-secondary)" }}>
+            No scans received yet. Make sure the plate is powered on and connected to WiFi.
+          </p>
         )}
       </div>
     </div>
