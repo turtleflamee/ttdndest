@@ -1147,9 +1147,27 @@ void initReaders() {
         readers[i].PCD_Init(READER_SS[i], READER_RST[i]);
         delay(50);
         byte v = readers[i].PCD_ReadRegister(MFRC522::VersionReg);
-        logf("Reader %d: version 0x%02X - %s",
-            i + 1, v,
-            (v == 0x00 || v == 0xFF) ? "NOT DETECTED" : "OK");
+        const char* status;
+        if (v == 0x00) status = "NOT DETECTED (0x00 - no response, check wiring)";
+        else if (v == 0xFF) status = "NOT DETECTED (0xFF - short circuit or bad connection)";
+        else if (v == 0x91) status = "OK (MFRC522 v1.0)";
+        else if (v == 0x92) status = "OK (MFRC522 v2.0)";
+        else if (v == 0x88) status = "OK (clone chip)";
+        else status = "UNKNOWN CHIP";
+        logf("Reader %d: SS=%d RST=%d version=0x%02X - %s",
+            i + 1, READER_SS[i], READER_RST[i], v, status);
+
+        // Self-test: check if reader has a ghost card already present
+        if (v != 0x00 && v != 0xFF) {
+            if (readers[i].PICC_IsNewCardPresent() && readers[i].PICC_ReadCardSerial()) {
+                String ghostUid = uidToString(readers[i].uid.uidByte, readers[i].uid.size);
+                logf("WARNING: Reader %d has card ALREADY PRESENT at boot: %s (possible ghost read or stuck card)", i + 1, ghostUid.c_str());
+                readers[i].PICC_HaltA();
+                readers[i].PCD_StopCrypto1();
+            } else {
+                logf("Reader %d: no card present at boot (good)", i + 1);
+            }
+        }
     }
 }
 
@@ -1175,14 +1193,22 @@ void checkReaders() {
 
     if (now - lastCardTime[i] < DEBOUNCE_MS) return;
 
-    if (!readers[i].PICC_IsNewCardPresent() || !readers[i].PICC_ReadCardSerial()) {
+    bool cardPresent = readers[i].PICC_IsNewCardPresent();
+    if (!cardPresent) return;
+
+    bool cardRead = readers[i].PICC_ReadCardSerial();
+    if (!cardRead) {
+        logf("[Reader %d] Card present but failed to read serial (collision or bad read)", i + 1);
         return;
     }
 
     String uid = uidToString(readers[i].uid.uidByte, readers[i].uid.size);
     lastCardTime[i] = now;
     lastScanTime = now;
-    logf("[Reader %d] Card detected: %s", i + 1, uid.c_str());
+
+    MFRC522::PICC_Type piccType = readers[i].PICC_GetType(readers[i].uid.sak);
+    logf("[Reader %d] Card detected: %s (type: %s, SAK: 0x%02X)",
+        i + 1, uid.c_str(), readers[i].PICC_GetTypeName(piccType), readers[i].uid.sak);
 
     // Read card number from MIFARE memory
     int cardNumber = readCardNumber(readers[i]);
@@ -1304,6 +1330,56 @@ void updateLED() {
     }
 }
 
+// ===== DIAGNOSTICS API =====
+void handleDiagAPI() {
+    JsonDocument doc;
+    doc["activeReaders"] = ACTIVE_READERS;
+    doc["uptime"] = millis() / 1000;
+    doc["wifiConnected"] = isWifiConnected();
+    doc["backendReachable"] = backendReachable;
+    doc["backendUrl"] = backendUrl;
+    doc["plateId"] = plateId;
+
+    JsonArray readersArr = doc["readers"].to<JsonArray>();
+    for (int i = 0; i < ACTIVE_READERS; i++) {
+        JsonObject r = readersArr.add<JsonObject>();
+        r["index"] = i + 1;
+        r["ssPin"] = READER_SS[i];
+        r["rstPin"] = READER_RST[i];
+
+        byte v = readers[i].PCD_ReadRegister(MFRC522::VersionReg);
+        r["versionReg"] = v;
+        if (v == 0x00) r["status"] = "NOT DETECTED (no response - check wiring)";
+        else if (v == 0xFF) r["status"] = "NOT DETECTED (short circuit or bad connection)";
+        else if (v == 0x91) r["status"] = "OK (MFRC522 v1.0)";
+        else if (v == 0x92) r["status"] = "OK (MFRC522 v2.0)";
+        else if (v == 0x88) r["status"] = "OK (clone chip)";
+        else r["status"] = "UNKNOWN CHIP";
+
+        r["detected"] = (v != 0x00 && v != 0xFF);
+
+        // Check if card is currently present
+        bool hasCard = readers[i].PICC_IsNewCardPresent();
+        if (hasCard && readers[i].PICC_ReadCardSerial()) {
+            r["cardPresent"] = true;
+            r["cardUid"] = uidToString(readers[i].uid.uidByte, readers[i].uid.size);
+            MFRC522::PICC_Type piccType = readers[i].PICC_GetType(readers[i].uid.sak);
+            r["cardType"] = readers[i].PICC_GetTypeName(piccType);
+            r["cardSAK"] = readers[i].uid.sak;
+            readers[i].PICC_HaltA();
+            readers[i].PCD_StopCrypto1();
+        } else {
+            r["cardPresent"] = false;
+        }
+
+        r["lastScanAgo"] = (lastCardTime[i] > 0) ? (millis() - lastCardTime[i]) / 1000 : -1;
+    }
+
+    String out;
+    serializeJsonPretty(doc, out);
+    server.send(200, "application/json", out);
+}
+
 // ===== SETUP =====
 void setup() {
     WRITE_PERI_REG(RTC_CNTL_BROWN_OUT_REG, 0);
@@ -1346,6 +1422,7 @@ void setup() {
     server.on("/api/card/write", HTTP_POST, handleCardWrite);
     server.on("/api/card/wipe", HTTP_POST, handleCardWipe);
     server.on("/api/card/exit", HTTP_POST, handleCardManagerExit);
+    server.on("/api/diag", handleDiagAPI);
     // Captive portal detection
     server.on("/generate_204", handleRedirect);
     server.on("/gen_204", handleRedirect);
