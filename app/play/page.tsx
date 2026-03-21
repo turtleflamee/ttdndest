@@ -639,11 +639,11 @@ function PlayPageInner() {
               </div>
             </section>
 
-            {/* Card Hands */}
+            {/* Card Hands / Plate Status */}
             <section>
               <h3 className="text-xs font-semibold uppercase tracking-wider mb-3"
                 style={{ color: "var(--text-secondary)" }}>
-                Card Hands
+                {game?.input_mode === "plate" ? "Scanned Cards" : "Card Hands"}
               </h3>
               <div className="space-y-3">
                 {game?.players.map((p) => (
@@ -652,18 +652,32 @@ function PlayPageInner() {
                       {p.name}
                     </p>
                     <div className="flex flex-wrap gap-1">
-                      {p.hand?.map((card) => (
-                        <span key={card.id} className="text-xs px-2 py-1 rounded"
-                          style={{
-                            background: p.pendingCard?.cardId === card.id
-                              ? "rgba(108,92,231,0.3)"
-                              : "var(--bg-primary)",
-                            border: `1px solid ${p.pendingCard?.cardId === card.id ? "var(--accent)" : "var(--border)"}`,
-                          }}>
-                          {card.text}
-                        </span>
-                      )) ?? (
-                        <span className="text-xs" style={{ color: "var(--text-secondary)" }}>No cards</span>
+                      {game?.input_mode === "plate" ? (
+                        p.pendingCard ? (
+                          <span className="text-xs px-2 py-1 rounded"
+                            style={{
+                              background: "rgba(108,92,231,0.3)",
+                              border: "1px solid var(--accent)",
+                            }}>
+                            {p.pendingCard.cardText}
+                          </span>
+                        ) : (
+                          <span className="text-xs" style={{ color: "var(--text-secondary)" }}>Waiting for scan...</span>
+                        )
+                      ) : (
+                        p.hand?.map((card) => (
+                          <span key={card.id} className="text-xs px-2 py-1 rounded"
+                            style={{
+                              background: p.pendingCard?.cardId === card.id
+                                ? "rgba(108,92,231,0.3)"
+                                : "var(--bg-primary)",
+                              border: `1px solid ${p.pendingCard?.cardId === card.id ? "var(--accent)" : "var(--border)"}`,
+                            }}>
+                            {card.text}
+                          </span>
+                        )) ?? (
+                          <span className="text-xs" style={{ color: "var(--text-secondary)" }}>No cards</span>
+                        )
                       )}
                     </div>
                   </div>
