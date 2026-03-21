@@ -7,7 +7,9 @@ const PUBLIC_PATHS = [
   "/player-view",
   "/api/unlock",
   "/api/player/",
+  "/api/games/",
   "/api/hardware/scan",
+  "/api/hardware/test-scan",
 ];
 
 export function middleware(request: NextRequest) {
