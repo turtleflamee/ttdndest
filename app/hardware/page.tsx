@@ -129,6 +129,9 @@ function PhysicalCardsTab() {
     }
   }
 
+  // Store raw poll data separately so reader filter is client-side only
+  const [rawScanResult, setRawScanResult] = useState<Record<string, unknown> | null>(null);
+
   useEffect(() => {
     if (scanActive && scanPlateId) {
       scanIntervalRef.current = setInterval(async () => {
@@ -137,11 +140,7 @@ function PhysicalCardsTab() {
             `/api/hardware/test-scan?plateId=${encodeURIComponent(scanPlateId)}`
           );
           const data = await res.json();
-          // Filter by selected reader if one is chosen
-          if (scanReader !== null && data && data.readerIndex !== undefined && data.readerIndex !== scanReader) {
-            return; // skip results from other readers
-          }
-          setScanResult(data);
+          setRawScanResult(data);
         } catch {
           /* ignore polling errors */
         }
@@ -150,7 +149,20 @@ function PhysicalCardsTab() {
     return () => {
       if (scanIntervalRef.current) clearInterval(scanIntervalRef.current);
     };
-  }, [scanActive, scanPlateId, scanReader]);
+  }, [scanActive, scanPlateId]);
+
+  // Apply reader filter client-side (no restart needed when switching readers)
+  useEffect(() => {
+    if (!rawScanResult) { setScanResult(null); return; }
+    if (scanReader === null) { setScanResult(rawScanResult); return; }
+
+    // Filter history to selected reader
+    const history = Array.isArray(rawScanResult.history) ? rawScanResult.history as Record<string, unknown>[] : [];
+    const filtered = history.filter((e) => e.readerIndex === scanReader);
+    if (filtered.length === 0) { setScanResult(null); return; }
+
+    setScanResult({ ...filtered[0], history: filtered });
+  }, [rawScanResult, scanReader]);
 
   return (
     <div className="flex flex-col gap-6">
