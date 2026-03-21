@@ -36,6 +36,15 @@ function gameToRow(game: GameState) {
     scene_title: game.scene_title ?? null,
     previous_response_id: game.previous_response_id ?? null,
     rules_text: game.rulesText ?? "",
+    // Legacy columns required by older DB schemas
+    player1_name: game.players?.[0]?.name ?? "Player 1",
+    player2_name: game.players?.[1]?.name ?? "Player 2",
+    player1_code: game.players?.[0]?.code ?? null,
+    player2_code: game.players?.[1]?.code ?? null,
+    player1_hand: game.players?.[0]?.hand ?? null,
+    player2_hand: game.players?.[1]?.hand ?? null,
+    pending_player1_card: game.players?.[0]?.pendingCard ?? null,
+    pending_player2_card: game.players?.[1]?.pendingCard ?? null,
   };
 }
 
