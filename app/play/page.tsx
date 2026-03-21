@@ -475,6 +475,9 @@ function PlayPageInner() {
     setError(null);
     setDebugCardLog([]);
 
+    // Track last picked card per player to avoid repeats
+    const lastPicked: Record<number, string> = {};
+
     try {
       for (let round = 0; round < debugRounds; round++) {
         const gameRes = await fetch(`/api/games/${gameId}`);
@@ -489,7 +492,11 @@ function PlayPageInner() {
           const picks: string[] = [];
           for (const player of currentGame.players) {
             if (player.hand && player.hand.length > 0 && !player.pendingCard) {
-              const randomCard = player.hand[Math.floor(Math.random() * player.hand.length)];
+              // Pick a different card than last round
+              const available = player.hand.filter((c) => c.id !== lastPicked[player.index]);
+              const pool = available.length > 0 ? available : player.hand;
+              const randomCard = pool[Math.floor(Math.random() * pool.length)];
+              lastPicked[player.index] = randomCard.id;
               picks.push(`${player.name}: "${randomCard.text}"`);
               await fetch("/api/player/submit-card", {
                 method: "POST",
