@@ -162,8 +162,17 @@ export async function getGameByPlayerCode(
   for (const row of data ?? []) {
     const game = rowToGame(row);
     const idx = game.players.findIndex((p) => p.code === code);
-    if (idx !== -1) return { game, playerIndex: idx };
+    if (idx !== -1) {
+      console.log(`[validate] Code "${code}" matched game ${game.id}, player ${idx} (${game.players[idx]?.name})`);
+      return { game, playerIndex: idx };
+    }
   }
+  console.log(`[validate] Code "${code}" not found. Games checked: ${(data ?? []).length}. Player codes in DB:`,
+    (data ?? []).map((row) => {
+      const g = rowToGame(row);
+      return { gameId: g.id, name: g.name, codes: g.players.map((p) => p.code) };
+    })
+  );
   return null;
 }
 
