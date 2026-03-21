@@ -39,6 +39,7 @@ export default function UnlockPage() {
       <form
         onSubmit={handleSubmit}
         className="card w-full max-w-sm flex flex-col items-center gap-5 py-8 px-6"
+        suppressHydrationWarning
       >
         <h1 className="text-2xl font-bold tracking-wide" style={{ color: "var(--accent)" }}>
           TTDND
@@ -53,7 +54,6 @@ export default function UnlockPage() {
           onChange={(e) => setCode(e.target.value)}
           placeholder="Admin code"
           className="input text-center"
-          autoFocus
         />
 
         {error && (
@@ -62,7 +62,7 @@ export default function UnlockPage() {
           </p>
         )}
 
-        <button type="submit" className="btn btn-primary w-full" disabled={loading || !code}>
+        <button type="submit" className="btn btn-primary w-full" disabled={loading || !code} suppressHydrationWarning>
           {loading ? "Checking…" : "Unlock"}
         </button>
       </form>
