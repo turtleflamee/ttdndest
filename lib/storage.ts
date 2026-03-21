@@ -9,6 +9,10 @@ import type { GameState, GMResponse } from "./types";
  * Only sends columns guaranteed to exist in the base 001 schema.
  */
 function gameToRow(game: GameState) {
+  // Pack ALL game state into memory_bundle JSONB so it works with any
+  // DB schema version. The base schema only guarantees: id, name,
+  // turn_number, memory_bundle, deck_state, scene_title,
+  // previous_response_id, rules_text.
   const memoryWithExtras = {
     ...game.memoryBundle,
     _game_complete: game.game_complete ?? false,
@@ -20,34 +24,26 @@ function gameToRow(game: GameState) {
     _plate_id: game.plate_id ?? null,
     _player_count: game.playerCount ?? 2,
     _players: game.players ?? [],
+    _replay_requested: game.replayRequested ?? false,
   };
 
   return {
     id: game.id,
     name: game.name,
-    player_count: game.playerCount ?? 2,
-    players: game.players ?? [],
     turn_number: game.turnCounter,
     memory_bundle: memoryWithExtras,
     deck_state: game.deck ?? null,
     scene_title: game.scene_title ?? null,
     previous_response_id: game.previous_response_id ?? null,
-    game_complete: game.game_complete ?? false,
-    game_mode: game.game_mode ?? "short",
-    scenario_id: game.scenario_id ?? null,
-    prompt_set_code: game.prompt_set_code ?? "default",
-    input_mode: game.input_mode ?? "phone",
-    plate_id: game.plate_id ?? null,
-    replay_requested: game.replayRequested ?? false,
     rules_text: game.rulesText ?? "",
-    history: game.history ?? [],
   };
 }
 
 function rowToGame(row: Record<string, unknown>): GameState {
   const rawBundle = (row.memory_bundle ?? {}) as Record<string, unknown>;
 
-  // Extract packed fields from memory_bundle (legacy fallback for older data)
+  // All game state is packed into memory_bundle JSONB with _ prefix.
+  // DB columns are optional — they may or may not exist depending on schema version.
   const packedPlayers = (rawBundle._players as GameState["players"]) ?? undefined;
   const packedHistory = (rawBundle._history as GMResponse[]) ?? undefined;
 
@@ -57,36 +53,30 @@ function rowToGame(row: Record<string, unknown>): GameState {
     if (key.startsWith("_")) delete memoryBundle[key];
   }
 
-  // Build players array: prefer DB players column, then packed _players
-  let players = row.players as GameState["players"];
-  if (!players || !Array.isArray(players) || players.length === 0) {
-    players = packedPlayers ?? [];
-  }
+  // Players: packed _players is authoritative (always written by gameToRow)
+  const players = packedPlayers ?? [];
 
-  // History: prefer DB history column, then packed _history
-  let history = row.history as GMResponse[];
-  if (!history || !Array.isArray(history) || history.length === 0) {
-    history = packedHistory ?? [];
-  }
+  // History: packed _history is authoritative
+  const history = packedHistory ?? [];
 
   return {
     id: row.id as string,
     name: row.name as string,
-    playerCount: (row.player_count as number) ?? players.length ?? 2,
+    playerCount: (rawBundle._player_count as number) ?? players.length ?? 2,
     players,
     turnCounter: (row.turn_number as number) ?? 0,
     memoryBundle: memoryBundle as unknown as GameState["memoryBundle"],
     deck: (row.deck_state as GameState["deck"]) ?? undefined,
     history,
     scene_title: (row.scene_title as string) ?? undefined,
-    game_mode: ((row.game_mode as string) ?? (rawBundle._game_mode as string) ?? "short") as GameState["game_mode"],
-    scenario_id: (row.scenario_id as string) ?? (rawBundle._scenario_id as string) ?? undefined,
-    prompt_set_code: (row.prompt_set_code as string) ?? (rawBundle._prompt_set_code as string) ?? undefined,
-    input_mode: ((row.input_mode as string) ?? (rawBundle._input_mode as string) ?? "phone") as GameState["input_mode"],
-    plate_id: (row.plate_id as string) ?? (rawBundle._plate_id as string) ?? undefined,
+    game_mode: ((rawBundle._game_mode as string) ?? "short") as GameState["game_mode"],
+    scenario_id: (rawBundle._scenario_id as string) ?? undefined,
+    prompt_set_code: (rawBundle._prompt_set_code as string) ?? undefined,
+    input_mode: ((rawBundle._input_mode as string) ?? "phone") as GameState["input_mode"],
+    plate_id: (rawBundle._plate_id as string) ?? undefined,
     previous_response_id: (row.previous_response_id as string) ?? null,
-    game_complete: (row.game_complete as boolean) ?? (rawBundle._game_complete as boolean) ?? false,
-    replayRequested: (row.replay_requested as boolean) ?? false,
+    game_complete: (rawBundle._game_complete as boolean) ?? false,
+    replayRequested: (rawBundle._replay_requested as boolean) ?? false,
     rulesText: (row.rules_text as string) ?? "",
     createdAt: row.created_at as string,
     updatedAt: row.updated_at as string,
