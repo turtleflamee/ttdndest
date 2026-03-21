@@ -53,6 +53,7 @@ export default function GameLibraryPage() {
   const [showForm, setShowForm] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [showAdvanced, setShowAdvanced] = useState(false);
+  const [createError, setCreateError] = useState<string | null>(null);
 
   // Form state
   const [campaignName, setCampaignName] = useState("");
@@ -94,6 +95,7 @@ export default function GameLibraryPage() {
     if (!campaignName.trim()) return;
     if (playerNames.some((n) => !n.trim())) return;
     setSubmitting(true);
+    setCreateError(null);
 
     try {
       const res = await fetch("/api/games", {
@@ -113,9 +115,17 @@ export default function GameLibraryPage() {
         }),
       });
       const created = await res.json();
+      if (!res.ok) {
+        setCreateError(created.error || `Failed to create game (${res.status})`);
+        return;
+      }
       if (created.id) {
         router.push(`/play?id=${created.id}`);
+      } else {
+        setCreateError("Game created but no ID returned");
       }
+    } catch (e: unknown) {
+      setCreateError(e instanceof Error ? e.message : "Failed to create game");
     } finally {
       setSubmitting(false);
     }
@@ -348,6 +358,11 @@ export default function GameLibraryPage() {
                 </div>
               </div>
             </div>
+          )}
+
+          {/* Error display */}
+          {createError && (
+            <p className="text-sm mb-3" style={{ color: "var(--danger)" }}>{createError}</p>
           )}
 
           {/* Submit */}

@@ -111,7 +111,11 @@ export async function POST(req: NextRequest) {
     const saved = await createGame(game);
 
     if (inputMode === "plate" && plateId) {
-      await updatePlate(plateId, { active_game_id: saved.id });
+      try {
+        await updatePlate(plateId, { active_game_id: saved.id });
+      } catch (plateErr) {
+        console.error("[api/games] Failed to activate plate, game still created:", plateErr);
+      }
     }
 
     return NextResponse.json(saved, { status: 201 });
