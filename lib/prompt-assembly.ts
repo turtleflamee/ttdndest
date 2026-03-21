@@ -607,6 +607,18 @@ export function buildTurnInput(opts: {
     return sections.join("\n\n");
   }
 
+  // Core direction — same energy as Turn 1
+  sections.push(
+    "The players use their cards to deal with the current obstacle. " +
+    "Show the cards WORKING — each card must visibly change the situation. " +
+    "Once the obstacle resolves, the players MOVE to a new location. " +
+    "Show the journey briefly. Then drop them into a NEW, DIFFERENT obstacle — " +
+    "something physical and exciting: a chase, a collapse, a confrontation, a trap, a locked path, a hostile stranger. " +
+    "The new obstacle must be FUN and require a creative action to solve. " +
+    "End the round with the players STUCK facing this new obstacle."
+  );
+
+  sections.push("### Player Cards This Round:");
   for (const move of moves) {
     const player = players.find((p) => p.index === move.playerId);
     const name = player?.name ?? `Player ${move.playerId}`;
