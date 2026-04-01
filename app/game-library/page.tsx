@@ -31,6 +31,7 @@ const PROMPT_SETS = [
   { code: "default", label: "Default" },
   { code: "adventure", label: "Adventure" },
   { code: "baby", label: "Baby AI" },
+  { code: "teen", label: "Teen AI" },
 ];
 const DECK_TYPES = ["adventure", "party", "horror", "cyberpunk"] as const;
 const ARCHETYPES = [
