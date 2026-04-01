@@ -401,11 +401,56 @@ export function buildSystemInstructions(opts: {
 
     blocks.push(overrides.systemInstructions);
 
+    // Player names — the AI needs these to use actual names, not "Player 0"
+    const playerLines = players
+      .filter((p) => p.name)
+      .map((p) => {
+        const parts = [`- ${p.name}`];
+        if (p.archetype) parts.push(`(${p.archetype})`);
+        if (p.character) parts.push(`playing as "${p.character}"`);
+        return parts.join(" ");
+      });
+    if (playerLines.length) {
+      blocks.push("## Players\n" + playerLines.join("\n"));
+    }
+
+    // Memory — the AI needs world state to stay consistent
+    const memBlock = formatMemoryBlock(memoryBundle);
+    if (memBlock) {
+      blocks.push("## World Memory\n" + memBlock);
+    }
+
+    // Recent history — the AI needs to know what happened
+    if (history?.length) {
+      const histBlock = formatHistoryBlock(history, 8);
+      if (histBlock) {
+        blocks.push("## Recent History\n" + histBlock);
+      }
+    }
+
+    if (memoryBundle.story_summary) {
+      blocks.push("## Story So Far\n" + memoryBundle.story_summary);
+    }
+
     // Only include scenario data if the scenario has real content
     // (not the minimal simple-adventure placeholder)
     if (scenario && scenario.npcs.length > 0) {
       blocks.push(formatScenarioBlock(scenario));
     }
+
+    // Pacing guidance
+    const targetLength =
+      scenario?.target_game_length ?? getDefaultTargetLength(gameMode);
+    blocks.push(
+      formatPacingBlock({
+        turnNumber,
+        gameMode,
+        storyBeats: memoryBundle.story_beats,
+        openThreads: memoryBundle.open_threads,
+        storySummary: memoryBundle.story_summary,
+        targetLength,
+      })
+    );
 
     return blocks.join("\n\n");
   }
