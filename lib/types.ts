@@ -260,7 +260,9 @@ export interface GameState {
   scenario_id?: string;
   prompt_set_code?: string;
   replayRequested?: boolean;
-  input_mode?: "phone" | "plate";
+  input_mode?: "phone" | "plate" | "party";
+  party_input_type?: "cards" | "free-text" | "speech";
+  party_timer_seconds?: number;
   plate_id?: string;
   game_complete?: boolean;
 }

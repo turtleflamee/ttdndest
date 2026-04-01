@@ -38,6 +38,8 @@ export async function POST(req: NextRequest) {
       inputMode,
       plateId,
       archetypes,
+      partyInputType,
+      partyTimerSeconds,
     } = body as {
       name: string;
       playerCount: number;
@@ -46,9 +48,11 @@ export async function POST(req: NextRequest) {
       gameMode?: string;
       deckType?: string;
       promptSetCode?: string;
-      inputMode?: "phone" | "plate";
+      inputMode?: "phone" | "plate" | "party";
       plateId?: string;
       archetypes?: string[];
+      partyInputType?: "cards" | "free-text" | "speech";
+      partyTimerSeconds?: number;
     };
 
     const players: PlayerSlot[] = playerNames.map((pName, i) => ({
@@ -58,10 +62,11 @@ export async function POST(req: NextRequest) {
       archetype: archetypes?.[i],
     }));
 
-    // Only create digital deck and deal hands for phone mode
-    // Plate mode uses physical RFID cards — no digital hand needed
+    // Only create digital deck for phone mode or party+cards mode
+    // Plate mode uses physical RFID cards, party free-text/speech has no deck
     let deck = undefined;
-    if (inputMode !== "plate") {
+    const needsDeck = inputMode === "phone" || (inputMode === "party" && partyInputType === "cards");
+    if (needsDeck) {
       let deckState = createShuffledDeck(
         deckType as "adventure" | "party" | "horror" | "cyberpunk" | undefined,
       );
@@ -106,6 +111,8 @@ export async function POST(req: NextRequest) {
       prompt_set_code: promptSetCode,
       input_mode: inputMode,
       plate_id: plateId,
+      party_input_type: partyInputType,
+      party_timer_seconds: partyTimerSeconds,
     };
 
     const saved = await createGame(game);

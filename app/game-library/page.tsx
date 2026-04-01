@@ -25,7 +25,7 @@ interface PlateOption {
   active_game_id?: string | null;
 }
 
-const PLAYER_COUNTS = [2, 3, 4] as const;
+const PLAYER_COUNTS = [1, 2, 3, 4] as const;
 const GAME_LENGTHS = ["short", "long", "infinite"] as const;
 const PROMPT_SETS = [
   { code: "default", label: "Default" },
@@ -60,8 +60,10 @@ export default function GameLibraryPage() {
   const [playerCount, setPlayerCount] = useState<number>(3);
   const [playerNames, setPlayerNames] = useState<string[]>(["", "", ""]);
   const [scenarioId, setScenarioId] = useState("");
-  const [inputMode, setInputMode] = useState<"phone" | "plate">("phone");
+  const [inputMode, setInputMode] = useState<"phone" | "plate" | "party">("phone");
   const [selectedPlateId, setSelectedPlateId] = useState("");
+  const [partyInputType, setPartyInputType] = useState<"cards" | "free-text" | "speech">("free-text");
+  const [partyTimer, setPartyTimer] = useState(30);
   const [gameLength, setGameLength] = useState<string>("short");
   const [promptSet, setPromptSet] = useState("baby");
   const [deckType, setDeckType] = useState("adventure");
@@ -103,8 +105,10 @@ export default function GameLibraryPage() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           name: campaignName.trim(),
-          playerCount,
-          playerNames: playerNames.map((n) => n.trim()),
+          playerCount: inputMode === "party" ? 1 : playerCount,
+          playerNames: inputMode === "party"
+            ? [playerNames[0]?.trim() || "The Party"]
+            : playerNames.map((n) => n.trim()),
           scenarioId: scenarioId || undefined,
           gameMode: gameLength,
           deckType,
@@ -112,6 +116,8 @@ export default function GameLibraryPage() {
           inputMode,
           plateId: inputMode === "plate" && selectedPlateId ? selectedPlateId : undefined,
           archetypes: archetypes.some((a) => a) ? archetypes : undefined,
+          partyInputType: inputMode === "party" ? partyInputType : undefined,
+          partyTimerSeconds: inputMode === "party" ? partyTimer : undefined,
         }),
       });
       const created = await res.json();
@@ -170,40 +176,54 @@ export default function GameLibraryPage() {
             />
           </div>
 
-          {/* Player count */}
-          <div className="mb-4">
-            <label className="label">Players</label>
-            <div className="flex gap-2">
-              {PLAYER_COUNTS.map((n) => (
-                <button
-                  key={n}
-                  className={`btn ${playerCount === n ? "btn-primary" : "btn-ghost"} flex-1`}
-                  onClick={() => setPlayerCount(n)}
-                >
-                  {n} Players
-                </button>
+          {/* Player count — hidden in party mode */}
+          {inputMode !== "party" && (
+            <div className="mb-4">
+              <label className="label">Players</label>
+              <div className="flex gap-2">
+                {PLAYER_COUNTS.map((n) => (
+                  <button
+                    key={n}
+                    className={`btn ${playerCount === n ? "btn-primary" : "btn-ghost"} flex-1`}
+                    onClick={() => setPlayerCount(n)}
+                  >
+                    {n} {n === 1 ? "Player" : "Players"}
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Player names — party mode just gets a group name */}
+          {inputMode === "party" ? (
+            <div className="mb-4">
+              <label className="label">Party Name</label>
+              <input
+                className="input"
+                placeholder="The Adventurers"
+                value={playerNames[0] || ""}
+                onChange={(e) => setPlayerNames([e.target.value])}
+              />
+            </div>
+          ) : (
+            <div className="mb-4 grid gap-2" style={{ gridTemplateColumns: `repeat(${playerCount}, 1fr)` }}>
+              {playerNames.map((name, i) => (
+                <div key={i}>
+                  <label className="label">Player {i + 1}</label>
+                  <input
+                    className="input"
+                    placeholder={`Player ${i + 1}`}
+                    value={name}
+                    onChange={(e) => {
+                      const copy = [...playerNames];
+                      copy[i] = e.target.value;
+                      setPlayerNames(copy);
+                    }}
+                  />
+                </div>
               ))}
             </div>
-          </div>
-
-          {/* Player names */}
-          <div className="mb-4 grid gap-2" style={{ gridTemplateColumns: `repeat(${playerCount}, 1fr)` }}>
-            {playerNames.map((name, i) => (
-              <div key={i}>
-                <label className="label">Player {i + 1}</label>
-                <input
-                  className="input"
-                  placeholder={`Player ${i + 1}`}
-                  value={name}
-                  onChange={(e) => {
-                    const copy = [...playerNames];
-                    copy[i] = e.target.value;
-                    setPlayerNames(copy);
-                  }}
-                />
-              </div>
-            ))}
-          </div>
+          )}
 
           {/* Scenario picker */}
           <div className="mb-4">
@@ -226,13 +246,13 @@ export default function GameLibraryPage() {
           <div className="mb-5">
             <label className="label">Input Mode</label>
             <div className="flex gap-2">
-              {(["phone", "plate"] as const).map((mode) => (
+              {(["phone", "plate", "party"] as const).map((mode) => (
                 <button
                   key={mode}
                   className={`btn flex-1 ${inputMode === mode ? "btn-primary" : "btn-ghost"}`}
                   onClick={() => setInputMode(mode)}
                 >
-                  {mode === "phone" ? "Phone" : "Plate"}
+                  {mode === "phone" ? "Phone" : mode === "plate" ? "Plate" : "Party Mode"}
                 </button>
               ))}
             </div>
@@ -263,6 +283,49 @@ export default function GameLibraryPage() {
                     to add one.
                   </p>
                 )}
+              </div>
+            )}
+
+            {/* Party mode options */}
+            {inputMode === "party" && (
+              <div className="mt-3 space-y-3">
+                <p className="text-xs" style={{ color: "var(--text-secondary)" }}>
+                  Everyone plays on one screen. A timer counts down, then players yell, type, or play cards.
+                </p>
+
+                <div>
+                  <label className="label">How do players respond?</label>
+                  <div className="flex gap-2">
+                    {([
+                      { key: "free-text" as const, label: "Type It" },
+                      { key: "speech" as const, label: "Speech-to-Text" },
+                      { key: "cards" as const, label: "Cards" },
+                    ]).map((opt) => (
+                      <button
+                        key={opt.key}
+                        className={`btn flex-1 ${partyInputType === opt.key ? "btn-primary" : "btn-ghost"}`}
+                        onClick={() => setPartyInputType(opt.key)}
+                      >
+                        {opt.label}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+
+                <div>
+                  <label className="label">Discussion Timer (seconds)</label>
+                  <div className="flex gap-2 items-center">
+                    {[15, 30, 45, 60].map((t) => (
+                      <button
+                        key={t}
+                        className={`btn flex-1 ${partyTimer === t ? "btn-primary" : "btn-ghost"}`}
+                        onClick={() => setPartyTimer(t)}
+                      >
+                        {t}s
+                      </button>
+                    ))}
+                  </div>
+                </div>
               </div>
             )}
           </div>
@@ -368,7 +431,7 @@ export default function GameLibraryPage() {
           {/* Submit */}
           <button
             className="btn btn-primary w-full text-base py-3"
-            disabled={submitting || !campaignName.trim() || playerNames.some((n) => !n.trim()) || (inputMode === "plate" && !selectedPlateId)}
+            disabled={submitting || !campaignName.trim() || (inputMode === "party" ? !(playerNames[0] || "").trim() : playerNames.some((n) => !n.trim())) || (inputMode === "plate" && !selectedPlateId)}
             onClick={handleCreate}
           >
             {submitting ? "Creating…" : "Start Adventure"}

@@ -66,6 +66,109 @@ function PlayPageInner() {
 
   const ttsReady = !!(ttsConfig?.narratorVoiceId);
 
+  /* ---- party mode ---- */
+  const isPartyMode = game?.input_mode === "party";
+  const partyInputType = game?.party_input_type ?? "free-text";
+  const partyTimerDuration = game?.party_timer_seconds ?? 30;
+  const [partyText, setPartyText] = useState("");
+  const [partyTimerActive, setPartyTimerActive] = useState(false);
+  const [partyTimeLeft, setPartyTimeLeft] = useState(0);
+  const [partyListening, setPartyListening] = useState(false);
+  const partyTimerRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const recognitionRef = useRef<any>(null);
+  const gongRef = useRef<AudioContext | null>(null);
+
+  // Party timer countdown
+  useEffect(() => {
+    if (!partyTimerActive || partyTimeLeft <= 0) return;
+    partyTimerRef.current = setInterval(() => {
+      setPartyTimeLeft((t) => {
+        if (t <= 1) {
+          setPartyTimerActive(false);
+          // Play gong sound
+          try {
+            const ctx = gongRef.current || new AudioContext();
+            gongRef.current = ctx;
+            const osc = ctx.createOscillator();
+            const gain = ctx.createGain();
+            osc.type = "sine";
+            osc.frequency.setValueAtTime(150, ctx.currentTime);
+            osc.frequency.exponentialRampToValueAtTime(80, ctx.currentTime + 1.5);
+            gain.gain.setValueAtTime(0.6, ctx.currentTime);
+            gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 2);
+            osc.connect(gain).connect(ctx.destination);
+            osc.start();
+            osc.stop(ctx.currentTime + 2);
+          } catch { /* audio not supported */ }
+          return 0;
+        }
+        return t - 1;
+      });
+    }, 1000);
+    return () => { if (partyTimerRef.current) clearInterval(partyTimerRef.current); };
+  }, [partyTimerActive, partyTimeLeft]);
+
+  const startPartyTimer = () => {
+    setPartyText("");
+    setPartyTimeLeft(partyTimerDuration);
+    setPartyTimerActive(true);
+    if (partyInputType === "speech") startListening();
+  };
+
+  const startListening = () => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const W = window as any;
+    const SpeechRecognitionCtor = W.SpeechRecognition || W.webkitSpeechRecognition;
+    if (!SpeechRecognitionCtor) { setPartyText("Speech recognition not supported in this browser."); return; }
+    const recognition = new SpeechRecognitionCtor();
+    recognition.continuous = true;
+    recognition.interimResults = true;
+    recognition.lang = "en-US";
+    let finalTranscript = "";
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    recognition.onresult = (event: any) => {
+      let interim = "";
+      for (let i = event.resultIndex; i < event.results.length; i++) {
+        if (event.results[i].isFinal) finalTranscript += event.results[i][0].transcript + " ";
+        else interim += event.results[i][0].transcript;
+      }
+      setPartyText(finalTranscript + interim);
+    };
+    recognition.onerror = () => setPartyListening(false);
+    recognition.onend = () => setPartyListening(false);
+    recognition.start();
+    recognitionRef.current = recognition;
+    setPartyListening(true);
+  };
+
+  const stopListening = () => {
+    recognitionRef.current?.stop();
+    setPartyListening(false);
+  };
+
+  // Submit party text as a player move
+  const handlePartySubmit = async () => {
+    if (!gameId || !partyText.trim()) return;
+    stopListening();
+    setPartyTimerActive(false);
+    try {
+      await fetch("/api/player/submit-card", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          gameId,
+          playerIndex: 0,
+          cardId: `party-text-${Date.now()}`,
+          cardText: partyText.trim(),
+        }),
+      });
+      await fetchGame();
+    } catch (e) {
+      console.error("Party submit failed:", e);
+    }
+  };
+
   /* ---- debug panel ---- */
   const [showDebug, setShowDebug] = useState(false);
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -283,7 +386,8 @@ function PlayPageInner() {
     game?.players.every((p) => p.pendingCard != null) ?? false;
 
   const isAutoTurn = (game?.turnCounter ?? 0) <= 1;
-  const canGenerate = isAutoTurn || allSubmitted;
+  const partyReady = isPartyMode && game?.players[0]?.pendingCard != null;
+  const canGenerate = isAutoTurn || allSubmitted || partyReady;
 
   const handleGenerate = async () => {
     if (!gameId || generating) return;
@@ -1063,24 +1167,113 @@ function PlayPageInner() {
           <div className="px-5 py-4 border-t shrink-0"
             style={{ borderColor: "var(--border)", background: "var(--bg-secondary)" }}>
             <div className="max-w-3xl mx-auto">
-              {/* Player submission status */}
-              <div className="flex items-center gap-3 mb-3">
-                {game?.players.map((p) => (
-                  <div key={p.index} className="flex items-center gap-1.5 text-xs"
-                    style={{ color: p.pendingCard ? "var(--success)" : "var(--text-secondary)" }}>
-                    <span className="w-1.5 h-1.5 rounded-full"
-                      style={{ background: p.pendingCard ? "var(--success)" : "var(--border)" }} />
-                    {p.name}: {p.pendingCard ? "Ready" : "Waiting"}
-                  </div>
-                ))}
-              </div>
+              {/* Party mode controls */}
+              {isPartyMode && !isAutoTurn ? (
+                <div className="mb-3">
+                  {/* Timer display */}
+                  {partyTimerActive && (
+                    <div className="text-center mb-3">
+                      <div className="text-4xl font-bold tabular-nums" style={{
+                        color: partyTimeLeft <= 5 ? "var(--danger)" : "var(--accent)",
+                        transition: "color 0.3s",
+                      }}>
+                        {partyTimeLeft}s
+                      </div>
+                      <p className="text-xs mt-1" style={{ color: "var(--text-secondary)" }}>
+                        {partyInputType === "speech" ? "Yell what you want to do!" : "Type what the party does!"}
+                      </p>
+                    </div>
+                  )}
+
+                  {/* Input area */}
+                  {partyInputType !== "cards" && !partyReady && (
+                    <div className="space-y-2">
+                      {!partyTimerActive && !partyText && (
+                        <button
+                          className="btn btn-primary w-full py-3 text-sm"
+                          onClick={startPartyTimer}
+                          disabled={generating}
+                        >
+                          Start Discussion Timer ({partyTimerDuration}s)
+                        </button>
+                      )}
+
+                      {(partyTimerActive || partyText) && (
+                        <>
+                          {partyInputType === "speech" ? (
+                            <div className="relative">
+                              <div className="input min-h-[80px] text-sm whitespace-pre-wrap"
+                                style={{ background: "var(--bg-primary)" }}>
+                                {partyText || (partyListening ? "Listening..." : "Press start to speak")}
+                              </div>
+                              {partyListening && (
+                                <span className="absolute top-2 right-2 w-3 h-3 rounded-full animate-pulse"
+                                  style={{ background: "var(--danger)" }} />
+                              )}
+                            </div>
+                          ) : (
+                            <textarea
+                              className="input w-full text-sm"
+                              rows={3}
+                              placeholder="What does the party do?"
+                              value={partyText}
+                              onChange={(e) => setPartyText(e.target.value)}
+                              autoFocus
+                            />
+                          )}
+
+                          <div className="flex gap-2">
+                            {partyInputType === "speech" && (
+                              <button
+                                className={`btn ${partyListening ? "btn-danger" : "btn-ghost"} text-sm px-4`}
+                                onClick={partyListening ? stopListening : startListening}
+                              >
+                                {partyListening ? "Stop Mic" : "Start Mic"}
+                              </button>
+                            )}
+                            <button
+                              className="btn btn-primary flex-1 py-2 text-sm"
+                              disabled={!partyText.trim()}
+                              onClick={handlePartySubmit}
+                            >
+                              Lock In Action
+                            </button>
+                          </div>
+                        </>
+                      )}
+                    </div>
+                  )}
+
+                  {/* Party ready status */}
+                  {partyReady && (
+                    <div className="text-center py-2">
+                      <span className="text-xs font-medium px-3 py-1 rounded-full"
+                        style={{ background: "rgba(46,213,115,0.15)", color: "var(--success)" }}>
+                        Action locked in: &ldquo;{game?.players[0]?.pendingCard?.cardText}&rdquo;
+                      </span>
+                    </div>
+                  )}
+                </div>
+              ) : (
+                /* Normal player submission status */
+                <div className="flex items-center gap-3 mb-3">
+                  {game?.players.map((p) => (
+                    <div key={p.index} className="flex items-center gap-1.5 text-xs"
+                      style={{ color: p.pendingCard ? "var(--success)" : "var(--text-secondary)" }}>
+                      <span className="w-1.5 h-1.5 rounded-full"
+                        style={{ background: p.pendingCard ? "var(--success)" : "var(--border)" }} />
+                      {p.name}: {p.pendingCard ? "Ready" : "Waiting"}
+                    </div>
+                  ))}
+                </div>
+              )}
 
               {/* Generate + Regenerate buttons */}
               <div className="flex gap-2">
                 <button
                   className="btn btn-primary flex-1 py-3 text-sm"
                   disabled={generating || (!canGenerate)}
-                  onClick={handleGenerate}
+                  onClick={() => { setPartyText(""); handleGenerate(); }}
                 >
                   {generating ? (
                     <span className="flex items-center justify-center gap-2">
@@ -1090,8 +1283,10 @@ function PlayPageInner() {
                     </span>
                   ) : isAutoTurn ? (
                     "Generate"
-                  ) : allSubmitted ? (
+                  ) : (allSubmitted || partyReady) ? (
                     "Generate Next Turn"
+                  ) : isPartyMode && partyInputType === "cards" ? (
+                    "Play a card first"
                   ) : (
                     "Waiting for players..."
                   )}

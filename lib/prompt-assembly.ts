@@ -607,25 +607,43 @@ export function buildTurnInput(opts: {
     return sections.join("\n\n");
   }
 
-  // Core direction — same energy as Turn 1
-  sections.push(
-    "The players use their cards to deal with the current obstacle. " +
-    "Show the cards WORKING — each card must visibly change the situation. " +
-    "Once the obstacle resolves, the players MOVE to a new location. " +
-    "Show the journey briefly. Then drop them into a NEW, DIFFERENT obstacle — " +
-    "something physical and exciting: a chase, a collapse, a confrontation, a trap, a locked path, a hostile stranger. " +
-    "The new obstacle must be FUN and require a creative action to solve. " +
-    "End the round with the players STUCK facing this new obstacle."
-  );
+  // Detect party mode free-text input (cardId starts with "party-text-")
+  const isPartyFreeText = moves.length === 1 && moves[0].cardId?.startsWith("party-text-");
 
-  sections.push("### Player Cards This Round:");
-  for (const move of moves) {
-    const player = players.find((p) => p.index === move.playerId);
-    const name = player?.name ?? `Player ${move.playerId}`;
-    let line = `${name} plays: "${move.cardPlayed}"`;
-    if (move.target) line += ` (targeting: ${move.target})`;
-    if (move.intent) line += ` [intent: ${move.intent}]`;
-    sections.push(line);
+  if (isPartyFreeText) {
+    // Party mode: the group described what they want to do in free text
+    sections.push(
+      "The party decides what to do about the current obstacle. " +
+      "Use their plan to drive the action — show it happening with vivid detail. " +
+      "The plan may work, partially work, or create unexpected complications. " +
+      "Once the obstacle resolves, the party MOVES to a new location. " +
+      "Show the journey briefly. Then drop them into a NEW, DIFFERENT obstacle — " +
+      "something physical and exciting: a chase, a collapse, a confrontation, a trap, a locked path, a hostile stranger. " +
+      "The new obstacle must be FUN and require a creative action to solve. " +
+      "End the round with the party STUCK facing this new obstacle."
+    );
+    sections.push(`### The Party Decides:\n"${moves[0].cardPlayed}"`);
+  } else {
+    // Normal card mode
+    sections.push(
+      "The players use their cards to deal with the current obstacle. " +
+      "Show the cards WORKING — each card must visibly change the situation. " +
+      "Once the obstacle resolves, the players MOVE to a new location. " +
+      "Show the journey briefly. Then drop them into a NEW, DIFFERENT obstacle — " +
+      "something physical and exciting: a chase, a collapse, a confrontation, a trap, a locked path, a hostile stranger. " +
+      "The new obstacle must be FUN and require a creative action to solve. " +
+      "End the round with the players STUCK facing this new obstacle."
+    );
+
+    sections.push("### Player Cards This Round:");
+    for (const move of moves) {
+      const player = players.find((p) => p.index === move.playerId);
+      const name = player?.name ?? `Player ${move.playerId}`;
+      let line = `${name} plays: "${move.cardPlayed}"`;
+      if (move.target) line += ` (targeting: ${move.target})`;
+      if (move.intent) line += ` [intent: ${move.intent}]`;
+      sections.push(line);
+    }
   }
 
   if (overrides.turnStyle) {

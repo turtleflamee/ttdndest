@@ -25,6 +25,8 @@ function gameToRow(game: GameState) {
     _player_count: game.playerCount ?? 2,
     _players: game.players ?? [],
     _replay_requested: game.replayRequested ?? false,
+    _party_input_type: game.party_input_type ?? null,
+    _party_timer_seconds: game.party_timer_seconds ?? null,
   };
 
   return {
@@ -77,6 +79,8 @@ function rowToGame(row: Record<string, unknown>): GameState {
     scenario_id: (rawBundle._scenario_id as string) ?? undefined,
     prompt_set_code: (rawBundle._prompt_set_code as string) ?? undefined,
     input_mode: ((rawBundle._input_mode as string) ?? "phone") as GameState["input_mode"],
+    party_input_type: (rawBundle._party_input_type as GameState["party_input_type"]) ?? undefined,
+    party_timer_seconds: (rawBundle._party_timer_seconds as number) ?? undefined,
     plate_id: (rawBundle._plate_id as string) ?? undefined,
     previous_response_id: (row.previous_response_id as string) ?? null,
     game_complete: (rawBundle._game_complete as boolean) ?? false,
