@@ -187,12 +187,16 @@ export async function POST(req: NextRequest) {
       try {
         let result;
 
+        // Turn 0 (intro) needs more tokens (~300 words + JSON wrapper)
+        // Turn 1+ needs fewer (~250 words + JSON wrapper)
+        const maxTokens = turnNumber === 0 ? 2048 : 1500;
+
         if (attempt === 1) {
           result = await getOpenAI().responses.create({
             model: "gpt-5-mini",
             instructions: systemInstructions,
             input: turnInput,
-            max_output_tokens: 4096,
+            max_output_tokens: maxTokens,
             ...(previousResponseId
               ? { previous_response_id: previousResponseId }
               : {}),
@@ -202,7 +206,7 @@ export async function POST(req: NextRequest) {
             model: "gpt-5-mini",
             instructions: systemInstructions,
             input: turnInput,
-            max_output_tokens: 4096,
+            max_output_tokens: maxTokens,
           });
         } else {
           result = await getOpenAI().responses.create({
