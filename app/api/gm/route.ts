@@ -153,6 +153,7 @@ export async function POST(req: NextRequest) {
     }
 
     // 4. Build prompts
+    const t0 = Date.now();
     console.log(`[gm] Game ${gameId}: prompt_set_code = "${game.prompt_set_code ?? "UNDEFINED — falling back to default!"}"`)
     const systemInstructions = buildSystemInstructions({
       players: game.players,
@@ -173,6 +174,9 @@ export async function POST(req: NextRequest) {
       promptSetCode: game.prompt_set_code,
     });
     const turnNumber = game.turnCounter;
+
+    const tPrompt = Date.now();
+    console.log(`[gm] Prompt built in ${tPrompt - t0}ms | system: ${systemInstructions.length} chars | input: ${turnInput.length} chars`);
 
     // 5. Call OpenAI with 3-tier retry
     let gmResponse: GMResponse | null = null;
@@ -209,6 +213,8 @@ export async function POST(req: NextRequest) {
           });
         }
 
+        const tApi = Date.now();
+        console.log(`[gm] Attempt ${attempt}: OpenAI responded in ${tApi - tPrompt}ms`);
         newResponseId = result.id;
         const raw = result.output_text ?? "";
         console.log(`[gm] Attempt ${attempt}: raw output ${raw.length} chars`);
@@ -284,7 +290,10 @@ export async function POST(req: NextRequest) {
     }
 
     // 11. Save updated game state
+    const tSave = Date.now();
     await updateGame(game);
+    const tDone = Date.now();
+    console.log(`[gm] DB save: ${tDone - tSave}ms | Total: ${tDone - t0}ms`);
 
     // 12. Return response with debug info
     return NextResponse.json({
@@ -296,6 +305,12 @@ export async function POST(req: NextRequest) {
         turnInput,
         attempt: gmResponse ? "ok" : "fallback",
         turnNumber,
+        timing: {
+          promptBuildMs: tPrompt - t0,
+          openAiMs: tSave - tPrompt,
+          dbSaveMs: tDone - tSave,
+          totalMs: tDone - t0,
+        },
       },
     });
   } catch (err) {

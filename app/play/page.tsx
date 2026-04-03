@@ -992,6 +992,22 @@ function PlayPageInner() {
                           <div className="mb-2 font-sans font-semibold text-xs" style={{ color: "var(--accent)" }}>
                             AI Debug — Turn {turn.turn}
                           </div>
+                          {debugData[turn.turn].timing && (
+                            <div className="mb-2 flex gap-4 flex-wrap">
+                              <span style={{ color: "var(--success)" }}>
+                                Total: {(debugData[turn.turn].timing.totalMs / 1000).toFixed(1)}s
+                              </span>
+                              <span style={{ color: "var(--text-secondary)" }}>
+                                OpenAI: {(debugData[turn.turn].timing.openAiMs / 1000).toFixed(1)}s
+                              </span>
+                              <span style={{ color: "var(--text-secondary)" }}>
+                                DB: {debugData[turn.turn].timing.dbSaveMs}ms
+                              </span>
+                              <span style={{ color: "var(--text-secondary)" }}>
+                                Prompt: {debugData[turn.turn].timing.promptBuildMs}ms
+                              </span>
+                            </div>
+                          )}
                           <div className="mb-2">
                             <span style={{ color: "var(--text-secondary)" }}>System prompt: </span>
                             <span>{debugData[turn.turn].systemInstructionsLength} chars</span>
