@@ -187,9 +187,9 @@ export async function POST(req: NextRequest) {
       try {
         let result;
 
-        // Turn 0 (intro) needs more tokens (~300 words + JSON wrapper)
-        // Turn 1+ needs fewer (~250 words + JSON wrapper)
-        const maxTokens = turnNumber === 0 ? 2048 : 1500;
+        // Turn 0 (intro) needs full budget (~300 words + full JSON with all keys)
+        // Turn 1+ needs less (~250 words + JSON wrapper)
+        const maxTokens = turnNumber === 0 ? 4096 : 1500;
 
         if (attempt === 1) {
           result = await getOpenAI().responses.create({
